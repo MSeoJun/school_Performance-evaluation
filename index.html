@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./fontello/css/fontello.css">
+    <style>
+        body{
+            background-image: url('https://source.unsplash.com/1600x900/?beach');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height:100vh;
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        .content{
+            background-color:rgba(255,255,255,0.4);
+            display: inline-block;
+            position:fixed;
+            top:50%;
+            transform: translateY(-50%);
+            font-weight:200;
+            left:50%;
+            transform: translateX(-50%);
+            padding:0.5rem;
+        }
+        .content p {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .menu{
+            position:fixed;
+            bottom:0;
+            background-color:rgba(255,255,255,0.4);
+            width:100%;
+        }
+        .menu li{
+            float:left;
+            margin-left:1.5rem;
+        }
+        .menu ul {
+            list-style:none;
+        }
+        .menu p{
+            text-decoration: none;
+            color:black;
+            font-weight:200;
+        }
+        .menu p:hover{
+            color:red;
+            cursor: pointer;
+        }
+    </style>
+    <title>Good-Bye</title>
+</head>
+<body>
+    <article>
+        <div class='content'>
+            <p id="content">지금까지 2학년 12반으로 열심히 일해주셔서 감사합니다.</p>
+        </div>
+    </article>
+   <footer>
+       <div class="menu">
+           <ul>
+               <li>
+                <p id="play" onClick="audio.play();" class="icon-play-circle2">Play</p>
+               </li>
+               <li>
+                <p href="" id="pause" onClick="audio.pause();" class="icon-stop">Pause</p>
+               </li>
+               <li>
+                   <p id="p1">페이지 1</p>
+               </li>
+               <li>
+                   <p id="p2">페이지 2</p>
+               </li>
+           </ul>
+       </div>
+   </footer>
+   <script>
+       var p1 = document.getElementById('p1');
+       var p2 = document.getElementById('p2');
+       var content = document.getElementById('content');
+       p1.addEventListener('click',(event) => {
+        content.innerHTML="지금부터 지금까지 배워온 것을 발표하겠습니다.";
+        document.querySelector('body').style.backgroundImage="url('https://source.unsplash.com/1600x900/?nature,water')";
+       });
+       p2.addEventListener('click',(event) => {
+        content.innerHTML="테스트 2번째페이지";
+        document.querySelector('body').style.backgroundImage="url('https://source.unsplash.com/1600x900/?love')";
+       });
+        var audio = new Audio();
+        audio.src='./Fade.mp3';
+    </script>
+</body>
+</html>
