@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2 onclick="showCoords(event)">이부분을 클릭하면 클릭된 위치의 X좌표와 Y좌표를 표시합니다</h2>
+<input type = "button" value = "버튼의 여러부분을 클릭해보세요" OnClick = "javascript:showCoords(event)"
+ style="width:300px;height:70px">
+<p id="demo"></p>
+<script>
+function showCoords(event) {
+
+    var x = event.clientX;
+
+    var y = event.clientY;
+
+    var coords = "X coords: " + x + ", Y coords: " + y;
+
+    document.getElementById("demo").innerHTML = coords;
+
+}
+</script>
+</body>
+</html>

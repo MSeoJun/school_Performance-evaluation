@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button class="btn">시작하기</button> -->
+    <center>
+        <h1 id="score"></h1>    
+        <hr id="line" class="line" /> 
+        <div id="D" class="line1"><p>D</p></div>
+        <div id="F" class="line2"><p>F</p></div>
+        <div id="J" class="line3"><p>J</p></div>
+        <div id="K" class="line4"><p>K</p></div>
+        <div id="d_block1" class="d_block1"></div>
+        <!-- <div id="d_block2" class="d_block2"></div> -->
+        <div id="f_block1" class="f_block1"></div>
+        <div id="j_block1" class="j_block1"></div>
+        <div id="k_block1" class="k_block1"></div>
+    </center>  
+
+    <script>
+        var body = document.querySelector('body');
+        var D = document.getElementById('D');
+        var F = document.getElementById('F');
+        var J = document.getElementById('J');
+        var K = document.getElementById('K');
+
+        var d_1 = document.getElementById('d_block1');
+        var d_2 = document.getElementById('d_block2');
+        var f_1 = document.getElementById('f_block1');
+        var j_1 = document.getElementById('j_block1');
+        var k_1 = document.getElementById('k_block1');
+
+        var line = document.getElementById('line');
+        var score = document.getElementById('score');
+        var result = 0;
+
+        score.innerText = `점수 : ${result}`
+
+        //라인 눌렀을때 반응
+        body.addEventListener('keypress',(e) => {
+            console.log(d_1.offsetTop);
+            if(e.key === 'd') {
+                D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+                setTimeout(() => {
+                    D.style.removeProperty("background-color");
+                }, 100);
+                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
+                    console.log(result);
+                    console.log('미르스띤');
+                    result = result + 100;
+                    console.log(result);
+                    score.innerText = `점수 : ${result}`;
+                    d_1.style.display= 'none'
+                } 
+            }
+
+            // if(e.key === 'd') {
+            //     D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+            //     setTimeout(() => {
+            //         D.style.removeProperty("background-color");
+            //     }, 100);
+            //     if(545<=d_2.offsetTop && d_2.offsetTop<=585) {
+            //         console.log('미르스띤');
+            //         var result = result+100;
+            //         score.innerText = `점수 : ${result}`;
+            //         d_2.style.display= 'none'
+            //     } 
+            // }
+
+            if(e.key === 'f') {
+                F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+                setTimeout(() => {
+                    F.style.removeProperty("background-color");
+                }, 100);
+                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
+                    console.log('미르스띤');
+                    var result = result+100;
+                    score.innerText = `점수 : ${result}`;
+                    f_1.style.display= 'none'
+                } 
+            }
+
+            if(e.key === 'j') {
+                J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+                setTimeout(() => {
+                    J.style.removeProperty("background-color");
+                }, 100);
+                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
+                    console.log('미르스띤');
+                    var result = result+100;
+                    score.innerText = `점수 : ${result}`;
+                    j_1.style.display= 'none'
+                } 
+            }
+
+            if(e.key === 'k') {
+                K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+                setTimeout(() => {
+                    K.style.removeProperty("background-color");
+                }, 100);
+                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
+                    console.log('미르스띤');
+                    var result = result+100;
+                    score.innerText = `점수 : ${result}`;
+                    k_1.style.display= 'none'
+                } 
+            }
+        })
+    </script>
+</body>
+</html>
