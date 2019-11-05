@@ -26,15 +26,25 @@
             top:50%;
             transform: translateY(-50%);
         }
+        #best {
+            left:40%;
+            transform: translateX(-40%);
+            position: fixed;
+            top:70%;
+            transform: translateY(-70%);
+        }
     </style>
 </head>
 <body>
     <h1 id="desc"></h1>
+    <h2 id='best'></h2>
     <script>
         var state = 'ready';
         const body = document.querySelector('body');
         const desc = document.getElementById('desc');
+        const best = document.getElementById('best');
         desc.innerText='게임을 시작하려면 스페이스바 를 눌러주세요!';
+        localStorage.best?best.innerText=`당신의 최고 속도는?? : ${localStorage.best} ms`:best.innerText=``;
         var start;
         var end;
         // 준비 상태에서 Spacebar 를 눌렀을 때
@@ -46,11 +56,11 @@
                 if(this.state === 'ready') {
                     setTimeout(() => {
                         this.state = 'waiting';
-                        console.log(this.state);
+                        best.innerText='';
                     }, 100);
                     body.style.backgroundColor='black';
                     desc.innerText='화면이 전환될 때 스페이스바 를 눌러주세요!';
-                    const second = Math.floor(Math.random() * 10000);
+                    const second = Math.floor(Math.random() * 6000);
                     setTimeout(() => {
                         this.state = 'now';
                         this.start = new Date();
@@ -70,9 +80,14 @@
                 // 정확한 타이밍일 때 의 상태관리
                 if(this.state === 'now') {
                     this.end = new Date();
+                    const result = this.end-this.start;
                     body.style.backgroundColor='white';
                     desc.style.color='black';
-                    desc.innerText=`정확한 타이밍입니다! 반응 속도는 : ${this.end-this.start}ms`;
+                    desc.innerText=`정확한 타이밍입니다! 반응 속도는 : ${result} ms`;
+                    localStorage.best = result;
+                    setTimeout(() => {
+                        location.reload();
+                    }, 500);
                 }
             }
         });
