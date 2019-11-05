@@ -6,110 +6,85 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <button class="btn">시작하기</button> -->
     <center>
+        <h1 id="timer"></h1>
         <h1 id="score"></h1>    
         <hr id="line" class="line" /> 
+        <hr id="lines" class="lines" />
+
+         <!-- D, F, J, K 라인 -->
         <div id="D" class="line1"><p>D</p></div>
         <div id="F" class="line2"><p>F</p></div>
         <div id="J" class="line3"><p>J</p></div>
         <div id="K" class="line4"><p>K</p></div>
+
+        <!-- D블록 -->
         <div id="d_block1" class="d_block1"></div>
-        <!-- <div id="d_block2" class="d_block2"></div> -->
+        <div id="d_block2" class="d_block2"></div>
+        <div id="d_block3" class="d_block3"></div>
+        <div id="d_block4" class="d_block4"></div>
+        <div id="d_block5" class="d_block5"></div>
+        <div id="d_block6" class="d_block6"></div>
+        <div id="d_block7" class="d_block7"></div>
+        <div id="d_block8" class="d_block8"></div>
+        <div id="d_block9" class="d_block9"></div>
+        <div id="d_block10" class="d_block10"></div>
+        <div id="d_block11" class="d_block11"></div>
+        <div id="d_block12" class="d_block12"></div>
+        <div id="d_block13" class="d_block13"></div>
+        <div id="d_block14" class="d_block14"></div>
+        <div id="d_block15" class="d_block15"></div>
+        <div id="d_block16" class="d_block16"></div>
+
+        <!-- F블록 -->
         <div id="f_block1" class="f_block1"></div>
+        <div id="f_block2" class="f_block2"></div>
+        <div id="f_block3" class="f_block3"></div>
+        <div id="f_block4" class="f_block4"></div>
+        <div id="f_block5" class="f_block5"></div>
+        <div id="f_block6" class="f_block6"></div>
+        <div id="f_block7" class="f_block7"></div>
+        <div id="f_block8" class="f_block8"></div>
+        <div id="f_block9" class="f_block9"></div>
+        <div id="f_block10" class="f_block10"></div>
+        <div id="f_block11" class="f_block11"></div>
+        <div id="f_block12" class="f_block12"></div>
+        <div id="f_block13" class="f_block13"></div>
+        <div id="f_block14" class="f_block14"></div>
+
+        <!-- J블록 -->
         <div id="j_block1" class="j_block1"></div>
+        <div id="j_block2" class="j_block2"></div>
+        <div id="j_block3" class="j_block3"></div>
+        <div id="j_block4" class="j_block4"></div>
+        <div id="j_block5" class="j_block5"></div>
+        <div id="j_block6" class="j_block6"></div>
+        <div id="j_block7" class="j_block7"></div>
+        <div id="j_block8" class="j_block8"></div>
+        <div id="j_block9" class="j_block9"></div>
+        <div id="j_block10" class="j_block10"></div>
+        <div id="j_block11" class="j_block11"></div>
+        <div id="j_block12" class="j_block12"></div>
+        <div id="j_block13" class="j_block13"></div>
+        <div id="j_block14" class="j_block14"></div>
+
+        <!-- K블록 -->
         <div id="k_block1" class="k_block1"></div>
+        <div id="k_block2" class="k_block2"></div>
+        <div id="k_block3" class="k_block3"></div>
+        <div id="k_block4" class="k_block4"></div>
+        <div id="k_block5" class="k_block5"></div>
+        <div id="k_block6" class="k_block6"></div>
+        <div id="k_block7" class="k_block7"></div>
+        <div id="k_block8" class="k_block8"></div>
+        <div id="k_block9" class="k_block9"></div>
+        <div id="k_block10" class="k_block10"></div>
+        <div id="k_block11" class="k_block11"></div>
+        <div id="k_block12" class="k_block12"></div>
     </center>  
 
-    <script>
-        var body = document.querySelector('body');
-        var D = document.getElementById('D');
-        var F = document.getElementById('F');
-        var J = document.getElementById('J');
-        var K = document.getElementById('K');
-
-        var d_1 = document.getElementById('d_block1');
-        var d_2 = document.getElementById('d_block2');
-        var f_1 = document.getElementById('f_block1');
-        var j_1 = document.getElementById('j_block1');
-        var k_1 = document.getElementById('k_block1');
-
-        var line = document.getElementById('line');
-        var score = document.getElementById('score');
-        var result = 0;
-
-        score.innerText = `점수 : ${result}`
-
-        //라인 눌렀을때 반응
-        body.addEventListener('keypress',(e) => {
-            console.log(d_1.offsetTop);
-            if(e.key === 'd') {
-                D.style.backgroundColor= 'rgba(255,255,255,0.4)';
-                setTimeout(() => {
-                    D.style.removeProperty("background-color");
-                }, 100);
-                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
-                    console.log(result);
-                    console.log('미르스띤');
-                    result = result + 100;
-                    console.log(result);
-                    score.innerText = `점수 : ${result}`;
-                    d_1.style.display= 'none'
-                } 
-            }
-
-            // if(e.key === 'd') {
-            //     D.style.backgroundColor= 'rgba(255,255,255,0.4)';
-            //     setTimeout(() => {
-            //         D.style.removeProperty("background-color");
-            //     }, 100);
-            //     if(545<=d_2.offsetTop && d_2.offsetTop<=585) {
-            //         console.log('미르스띤');
-            //         var result = result+100;
-            //         score.innerText = `점수 : ${result}`;
-            //         d_2.style.display= 'none'
-            //     } 
-            // }
-
-            if(e.key === 'f') {
-                F.style.backgroundColor= 'rgba(255,255,255,0.4)';
-                setTimeout(() => {
-                    F.style.removeProperty("background-color");
-                }, 100);
-                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
-                    console.log('미르스띤');
-                    var result = result+100;
-                    score.innerText = `점수 : ${result}`;
-                    f_1.style.display= 'none'
-                } 
-            }
-
-            if(e.key === 'j') {
-                J.style.backgroundColor= 'rgba(255,255,255,0.4)';
-                setTimeout(() => {
-                    J.style.removeProperty("background-color");
-                }, 100);
-                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
-                    console.log('미르스띤');
-                    var result = result+100;
-                    score.innerText = `점수 : ${result}`;
-                    j_1.style.display= 'none'
-                } 
-            }
-
-            if(e.key === 'k') {
-                K.style.backgroundColor= 'rgba(255,255,255,0.4)';
-                setTimeout(() => {
-                    K.style.removeProperty("background-color");
-                }, 100);
-                if(545<=d_1.offsetTop && d_1.offsetTop<=585) {
-                    console.log('미르스띤');
-                    var result = result+100;
-                    score.innerText = `점수 : ${result}`;
-                    k_1.style.display= 'none'
-                } 
-            }
-        })
+    <script src="./Rhythm.js">
+        
     </script>
 </body>
 </html>

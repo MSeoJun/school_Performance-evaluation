@@ -8,7 +8,7 @@ body {
 h1 {
     color: white;
     position: fixed;
-    right: 43%;
+    right: 38%;
     padding:0;
     margin:0;
     border:0;
@@ -21,6 +21,22 @@ hr.line {
     border: 4px solid red;
     position: fixed;
     top: 77%;
+}
+
+/* 시작 타이밍 선 */
+hr.lines {
+    position: fixed;
+    top: -10%;
+    width: 48.4%;
+    color: white;
+    border: 1px solid white;
+    animation-name: lines;
+    animation-duration: 3s;
+}
+
+@keyframes lines {
+    from {top:-10%; left:0%;}
+    to {left:0%; top:100%;}
 }
 
 /* D */
@@ -94,41 +110,24 @@ hr.line {
     height:100vh;
     width:12%;
 }
-
-/* 시작 버튼 */
-.btn {
-    font-family: "Helvetica Neue", Helvetica, Arials, sans;
-    display: inline-block;
-    background: transparent;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 0.625rem;
-    letter-spacing: 0.3em;
-    color: rgba(223,190,106,0.7);
-    border-radius: 0;
-    padding: 18px 80px 20px;
-    transition: all 0.7s ease-out;
-    background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
-    background-position: 1% 50%;
-    background-size: 300% 300%;
-    text-decoration: none;
-    margin: 0.625rem;
-    border: none;
-    border: 1px solid goldenrod;
-    position: relative;
-    top: 570px;
-    left: 1250px;
-  }
   
-  /* 시작 버튼 호버 */
-  .btn:hover {
-    color: #fff;
-    border: 1px solid goldenrod;
-    color: white;
-    background-position: 99% 50%;
-    cursor: pointer;
-  }
+/* 시작버튼 */
+#play {
+    position: fixed;
+    right: 10%;
+}
+
+#pause {
+    position: fixed;
+    right: 5%;
+}
+
+#timer {
+    position:fixed;
+    right:20%;
+    top:40%;
+    font-size:10rem;
+}
 
 /* 커서 스타일 */
 
@@ -141,9 +140,10 @@ hr.line {
     transform: translateX(-0%);
     height:5vh;
     width:12.2%;
-    background-color: hotpink;
+    background-color: pink;
     animation-name: drop_d;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
+    animation-delay: 4.8s;
 }
 
 .d_block2 {
@@ -154,10 +154,206 @@ hr.line {
     transform: translateX(-0%);
     height:5vh;
     width:12.2%;
-    background-color: hotpink;
+    background-color: pink;
     animation-name: drop_d;
-    animation-duration: 1s;
-    animation-delay: 1s;
+    animation-duration: 1.5s;
+    animation-delay: 6s;
+}
+
+.d_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 6.4s;
+}
+
+.d_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 7.8s;
+}
+
+.d_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 8.7s;
+}
+
+.d_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 9.1s;
+}
+
+.d_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 10.1s;
+}
+
+.d_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 10.3s;
+}
+
+.d_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 11.1s;
+}
+
+.d_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 12.1s;
+}
+
+.d_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 12.5s;
+}
+
+.d_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 13.3s;
+}
+
+.d_block13 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 14.4s;
+}
+
+.d_block14 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 15s;
+}
+
+.d_block15 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 15.6s;
+}
+
+.d_block16 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 16.4s;
 }
 
 @keyframes drop_d {
@@ -176,7 +372,190 @@ hr.line {
     width:12.2%;
     background-color: aqua;
     animation-name: drop_f;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
+    animation-delay: 5.6s;
+}
+
+.f_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 6.2s;
+}
+
+.f_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 6.6s;
+}
+
+.f_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 7.6s;
+}
+
+.f_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 9.3s;
+}
+
+.f_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 9.9s;
+}
+
+.f_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 10.5s;
+}
+
+.f_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 12.3s;
+}
+
+.f_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 12.9s;
+}
+
+.f_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 13.7s;
+}
+
+.f_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 14.6s;
+}
+
+.f_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 15.2s;
+}
+
+.f_block13 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 15.8s;
+}
+
+.f_block14 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 16.6s;
 }
 
 @keyframes drop_f {
@@ -193,9 +572,192 @@ hr.line {
     transform: translateX(-27.6%);
     height:5vh;
     width:12.2%;
-    background-color: greenyellow;
+    background-color: yellow;
     animation-name: drop_j;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
+    animation-delay: 5.2s;
+}
+
+.j_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 6.8s;
+}
+
+.j_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 7.4s;
+}
+
+.j_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 8s;
+}
+
+.j_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 8.5s;
+}
+
+.j_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 9.7s;
+}
+
+.j_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 10.7s;
+}
+
+.j_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 11.4s;
+}
+
+.j_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 11.8s;
+}
+
+.j_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 13.1s;
+}
+
+.j_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 13.9s;
+}
+
+.j_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 14.8s;
+}
+
+.j_block13 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 16s;
+}
+
+.j_block14 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 16.8s;
 }
 
 @keyframes drop_j {
@@ -214,7 +776,162 @@ hr.line {
     width:12.2%;
     background-color: greenyellow;
     animation: drop_k;  
-    animation-duration: 1s;
+    animation-duration: 1.5s;
+    animation-delay: 5.3s;
+}
+
+.k_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.k_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 7.2s;
+}
+
+.k_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%; 
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 8.4s;
+}
+
+.k_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 9.5s;
+}
+
+.k_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 10.9s;
+}
+
+.k_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 11.6s;
+}
+
+.k_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 12.7s;
+}
+
+.k_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 13.5s;
+}
+
+.k_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 14.2s;
+}
+
+.k_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 16.2s;
+}
+
+.k_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 17s;
 }
 
 @keyframes drop_k {
