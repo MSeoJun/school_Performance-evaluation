@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's Cap</title>
+    <style>
+        /* body 와 h1 의 기본 영역할당을 초기화 */
+        body {
+            padding:0;
+            margin:0;
+            border:0;
+            background-color:gold;
+        }
+        h1 {
+            padding:0;
+            margin:0;
+            border:0;
+            color:indianred;
+        }
+        #desc {
+            left:35%;
+            transform: translateX(-35%);
+            position: fixed;
+            top:50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="desc"></h1>
+    <script>
+        var state = 'ready';
+        const body = document.querySelector('body');
+        const desc = document.getElementById('desc');
+        desc.innerText='게임을 시작하려면 스페이스바 를 눌러주세요!';
+        var start;
+        var end;
+        // 준비 상태에서 Spacebar 를 눌렀을 때
+        if(state === 'ready') {
+            body.addEventListener('keypress',(e) => {
+            if(e.keyCode === 32) {
+
+                // 준비 상태일 때 대기 상태로 변경
+                if(this.state === 'ready') {
+                    setTimeout(() => {
+                        this.state = 'waiting';
+                        console.log(this.state);
+                    }, 100);
+                    body.style.backgroundColor='black';
+                    desc.innerText='화면이 전환될 때 스페이스바 를 눌러주세요!';
+                    const second = Math.floor(Math.random() * 10000);
+                    setTimeout(() => {
+                        this.state = 'now';
+                        this.start = new Date();
+                        body.style.backgroundColor='aqua';
+                        desc.innerText='지금 어서 스페이스바를 누르세요!!';
+                    },second)
+                }
+                // 대기 상태일 때 상태관리
+                if(this.state === 'waiting') {
+                    body.style.backgroundColor='gray';
+                    desc.innerText='너무 빨리 클릭하셨습니다 !';
+                    desc.style.color='yellow';
+                    setTimeout(() => {
+                        location.reload();
+                    }, 500);
+                }
+                // 정확한 타이밍일 때 의 상태관리
+                if(this.state === 'now') {
+                    this.end = new Date();
+                    body.style.backgroundColor='white';
+                    desc.style.color='black';
+                    desc.innerText=`정확한 타이밍입니다! 반응 속도는 : ${this.end-this.start}ms`;
+                }
+            }
+        });
+        }
+        
+    </script>
+</body>
+</html>
