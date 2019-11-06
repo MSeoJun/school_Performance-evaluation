@@ -14,6 +14,10 @@
             margin:0;
             border:0;
         }
+        h2 {
+            padding:0;
+            margin:0;
+        }
         article {
             border:1px solid black;
             position:fixed;
@@ -42,6 +46,25 @@
             display:block;
             border:none;
         }
+        #id {
+            height:6.8vh;
+            width:100%;
+        }
+        #pw {
+            height:6.8vh;
+            width:100%;
+        }
+        #submit {
+            display:inline-block;
+            width:100%;
+            height:7.2vh;
+        }
+        #login {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            border-bottom:2px dotted gray;
+        }
     </style>
 </head>
 <body>
@@ -50,9 +73,10 @@
         <p>게시판</p>
     </article>
     <nav>
-        <input type="text" id="id" placeholder="ID"></input>
+        <h2 id="login">로그인</h2>
+        <input autocomplete="off" type="text" id="id" placeholder="ID"></input>
         <input type="password" id="pw" placeholder="PassWord"></input>
-        <input type="submit"/>
+        <input id="submit" value="로그인 하기" type="submit"/>
     </nav>
     <footer>
         <p>게임뭉치</p>
