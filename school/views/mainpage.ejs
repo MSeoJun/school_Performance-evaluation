@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>리듬세상</title>
+    <style>
+            body {
+                padding:0;
+                margin:0;
+                border:0;
+            }
+
+            #title{
+                text-align:center;
+            }
+
+            h1 {
+                padding:0;
+                margin:0;
+                border:0;
+            }
+
+            h2 {
+                padding:0;
+                margin:0;
+            }
+
+            article {
+                border:1px solid black;
+                position:fixed;
+                left:0;
+                top:15%;
+                width:69.8%;
+                height:30vh;
+            }
+
+            article p{
+                font-size: 30px;
+                color: brown;
+                margin: 0;
+            }
+
+            nav {
+                border:1px solid black;
+                position:fixed;
+                right:0;
+                top:15%;
+                width:30%;
+                height:30vh;
+            }
+
+            nav input {
+                border: none;
+                line-height: 30px;
+                cursor: pointer;
+            }
+
+            nav input:focus {
+                outline: none;
+            }
+
+            input {
+                padding:0;
+                margin:0;   
+                font-size: 1rem;                                                                                                              
+            }
+
+            #id {
+                height:6.8vh;
+                width:100%;
+                display: block;
+                cursor: text;
+            }
+
+            #pw {
+                height:6.8vh;
+                width:100%;
+                display: block;
+                cursor: text;
+            }
+
+            #submit {
+                width:50%;
+                height:7.2vh;
+            }
+
+            #register {
+                width:50%;
+                height:7.2vh;
+                float:right;
+            }
+
+            #register:hover {
+                background-color: black;
+                color: white;
+            }
+
+            #submit:hover {
+                background-color: black;
+                color: white;
+            }
+
+            #login {
+                text-align: center;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+                border-bottom:2px dotted gray;
+            }
+
+            footer {
+                border:1px solid black;
+                position:fixed;
+                left:0;
+                top:45.1%;
+                width:100%;
+                height:55vh;
+            }
+
+            footer p {
+                font-size: 30px;
+                margin: 0;
+            }
+
+            img {
+                width: 16%;
+                height: 5%;
+            }
+
+            #g1 {
+                position: fixed;
+                left: 13%;  
+            }
+
+            #g1 h3 {
+                position: fixed;
+                bottom: 22%;
+                left: 14.5%;
+                padding:0;
+                margin:0;
+            }
+
+            #g2 {
+                position: fixed;
+                left: 30%;  
+            }
+
+            #g2 h3 {
+                position: fixed;
+                bottom: 22%;
+                left: 30%;
+                padding:0;
+                margin:0;
+            }
+            
+            a { 
+                color: black;
+            }
+
+            a:visited {
+                text-decoration: none;
+                color: black;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="title">게임세상</h1>
+    <article>
+        <p>게시판</p>
+    </article>
+    <nav>
+        <h2 id="login">로그인</h2>
+        <input autocomplete="off" type="text" id="id" placeholder="ID"></input>
+        <input type="password" id="pw" placeholder="PassWord"></input>
+        <input type="submit" id="submit" value="로그인">
+        <input type="submit" id="register" value="회원가입">
+    </nav>
+    <footer>
+        <p>게임뭉치</p>
+        <div id="g1">
+            <a href="Rhythm"><img src="https://github.com/MSeoJun/school_Performance-evaluation/blob/master/Rhythm.png?raw=true"></a>
+            <a href="Rhythm"><h3>피아노 타일</h3></a>
+        </div>
+
+        <div id="g2">
+            <a href="iwbd"><img src=""></a>
+            <a href="iwbd"><h3>아이워너 비더 도제</h3></a>
+        </div>
+    </footer>
+</body>
+</html>
