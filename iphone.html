@@ -160,7 +160,7 @@
         }
     </style>
 </head>
-<body>
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
     <header>
         <div class="topbar">
 
@@ -218,6 +218,12 @@
         </div>
     </footer>
     <script>
+        var body = document.querySelector('body');
+        body.addEventListener('keydown',(e) => {
+            if (e.keyCode === 32) {
+                location.href='./iphone_main.html';
+            }
+        });
         var date = new Date();
         if(date.getHours() > 12) {
             var timeH = Number(date.getHours())-12;
