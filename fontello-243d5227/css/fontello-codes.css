@@ -1,0 +1,6 @@
+
+.icon-play-circle2:before { content: '\e800'; } /* '' */
+.icon-stop:before { content: '\e801'; } /* '' */
+.icon-signal:before { content: '\e802'; } /* '' */
+.icon-wifi:before { content: '\f1eb'; } /* '' */
+.icon-battery-4:before { content: '\f240'; } /* '' */

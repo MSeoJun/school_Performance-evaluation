@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fontello-243d5227/css/fontello.css">
+    <link rel="stylesheet" href="./fontello-b4045e8c/css/fontello.css">
+    <link rel="stylesheet" href="./fontello-f3a7fd07/css/fontello.css">
+    <title>IPHONE</title>
+    <style>
+        body {
+            background-image: url('./iphone_lock.jpg');
+            padding:0;
+            margin:0;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .topbar {
+            background-color:rgba(255,255,255,0.4);
+            width:50%;
+            height:5%;
+            transform: translateX(-50%);
+            left:50%;
+            position:fixed;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+        .top_right {
+            right:5%;
+            position: fixed;
+            width:15%;
+            height:5%;
+            border-bottom: 1px solid rgba(255,255,255,0.8);
+        }
+        .lock {
+            position:fixed;
+        }
+        #clock {
+            color:white;
+            position:fixed;
+            font-size: 3.5rem;
+            font-weight: 100;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        #day {
+            color:white;
+            position:fixed;
+            font-size: 1rem;
+            font-weight: 100;
+            left:32%;
+            transform: translateX(-32%);
+            top:24%;
+            transform: translateY(-24%);
+        }
+        .nav1 {
+            background-color:rgba(255,255,255,0.7);
+            width:100%;
+            height:11vh;
+            position:fixed;
+            top:33%;
+            transform: translateY(-33%);
+            border-radius: 5%;
+            left:15%;
+            transform: translateX(-15%);
+        }
+        .nav2 {
+            background-color:rgba(255,255,255,0.7);
+            width:100%;
+            height:11vh;
+            position:fixed;
+            top:45%;
+            transform: translateY(-45%);
+            border-radius: 5%;
+            left:15%;
+            transform: translateX(-15%);
+        }
+        .nav3 {
+            background-color:rgba(255,255,255,0.7);
+            width:100%;
+            height:11vh;
+            position:fixed;
+            top:57%;
+            transform: translateY(-57%);
+            border-radius: 5%;
+            left:15%;
+            transform: translateX(-15%);
+        }
+        .title {
+            position: fixed;
+            font-size:0.3rem;
+            left:15%;
+            transform: translateX(-15%);
+            top:0%;
+            transform: translateY(-0%);
+            font-weight: 100;
+            color:rgba(0,0,0,0.78);
+        }
+        .time {
+            position: fixed;
+            font-size:0.3rem;
+            left:88%;
+            transform: translateX(-88%);
+            top:0%;
+            transform: translateY(-0%);
+            font-weight: 100;
+            color:rgba(0,0,0,0.78);
+        }
+        .who {
+            position: fixed;
+            font-size:1rem;
+            left:5%;
+            transform: translateX(-5%);
+            top:20%;
+            transform: translateY(-20%);
+            font-weight: 100;
+            color:black;
+        }
+        .message {
+            position: fixed;
+            font-size:0.5rem;
+            left:5%;
+            transform: translateX(-5%);
+            top:70%;
+            transform: translateY(-70%);
+            font-weight: 100;
+            color:rgba(0,0,0,0.78);
+        }
+        .bot_left {
+            position:fixed;
+            background-color:rgba(255,255,255,0.4);
+            width:15%;
+            height:9%;
+            left:11%;
+            border-radius: 100%;
+            transform: translateX(-15%);
+            top:90%;
+            transform: translateY(-90%);
+        }
+        .bot_right {
+            position:fixed;
+            background-color:rgba(255,255,255,0.4);
+            width:15%;
+            height:9%;
+            right:11%;
+            border-radius: 100%;
+            transform: translateX(-85%);
+            top:90%;
+            transform: translateY(-90%);
+        }
+        .bot_border {
+            position:fixed;
+            border-bottom:4px solid white;
+            width:7rem;
+            height:15px;
+            bottom: 0%;
+            left:32%;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <header>
+        <div class="topbar">
+
+        </div>
+        <div class="top_right">
+            <p class="icon-signal"></p>
+            <p class="icon-wifi"></p>
+            <p class="icon-battery-4"></p>
+        </div>
+    </header>
+    <article>
+        <div class='lock'>
+            <p class="icon-lock-open-alt"></p>
+        </div>
+        <div class='date'>
+            <p id='clock'></p>
+            <p id='day'></p>
+        </div>
+    </article>
+    <nav>
+        <div class="nav1">
+            <p class="icon-comment"></p>
+            <p class="title">카카오 톡</p>
+            <p class='time'>지금</p>
+            <p class='who'>문서준</p>
+            <p class="message">아니 김우빈 지금 뭐하냐고</p>
+            <p class="icon-emo-angry"></p>
+        </div>
+        <div class="nav2">
+            <p class="icon-comment"></p>
+            <p class="title">카카오 톡</p>
+            <p class='time'>2분 전</p>
+            <p class='who'>김현준</p>
+            <p class="message">ㅎ사랑해 자기야 잘장 쪽쪽</p>
+            <p class="icon-emo-thumbsup"></p>
+        </div>
+        <div class="nav3">
+            <p class="icon-comment"></p>
+            <p class="title">카카오 톡</p>
+            <p class='time'>12분 전</p>
+            <p class='who'>12반 단체 정신병원</p>
+            <p class="message">정명철 : 얘들아 심심행</p>
+            <p class="icon-emo-cry"></p>
+        </div>
+    </nav>
+    <footer>
+        <div class="bot_left">
+            <p class="icon-flashlight"></p>   
+        </div>
+        <div class="bot_right">
+            <p class="icon-camera"></p>
+        </div>
+        <div class="bot_border">
+
+        </div>
+    </footer>
+    <script>
+        var body = document.querySelector('body');
+        body.addEventListener('keydown',(e) => {
+            if (e.keyCode === 32) {
+                location.href='./iphone_main.html';
+            }
+        });
+        var date = new Date();
+        if(date.getHours() > 12) {
+            var timeH = Number(date.getHours())-12;
+        } else {
+            var timeH = date.getHours();
+        }
+
+        if(date.getMinutes() < 10) {
+            var timeM = `0${date.getMinutes()}`;
+        } else {
+            var timeM = date.getMinutes();
+        }
+        
+        if(date.getDay() === 1) {
+            var getdate = '월'
+        } else if (date.getDay() === 2) {
+            var getdate = '화'
+        } else if (date.getDay() === 3) {
+            var getdate = '수'
+        } else if (date.getDay() === 4) {
+            var getdate = '목'
+        } else if (date.getDay() === 5) {
+            var getdate = '금'
+        } else if (date.getDay() === 6) {
+            var getdate = '토'
+        } else if (date.getDay() === 7) {
+            var getdate = '일'
+        }
+        var now = `${(date.getMonth() + 1)}월 ${date.getDate()}일 ${getdate}요일`;
+        const clock = document.getElementById('clock');
+        clock.innerHTML=`${timeH}:${timeM}`;
+        const day = document.getElementById('day');
+        day.innerHTML = `${now}`;
+    </script>
+</body>
+</html>
