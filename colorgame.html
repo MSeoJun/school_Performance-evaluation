@@ -26,8 +26,8 @@
         </tr>
       </table>
 
-      <br />
-      <button onclick="reset();">리셋</button>
+      <!-- <br />
+      <button onclick="reset();">리셋</button> -->
     </center>
   </body>
   <script>
@@ -71,6 +71,8 @@
         window.location.reload();
       } else {
         alert("실패");
+        localStorage.clear();
+        window.location.reload();
       }
     }
 
