@@ -10,11 +10,28 @@
     <title>IPHONE</title>
     <style>
         body {
-            background-image: url('./iphone_lock.jpg');
             padding:0;
             margin:0;
+            position: fixed;
+            background-image: url('./iphone_lock.jpg');
             background-repeat: no-repeat;
             background-size: cover;
+            transition:background-image 1s;
+        }
+        @keyframes unlock {
+            from {top:100%;}
+            to {top:-150%;}
+        }
+        .back {
+            position: fixed;
+            background-image: url('./iphone_lock.jpg');
+            width:100%;
+            height:100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: unlock;
+            animation-duration: 1s;
+            animation-play-state: paused;
         }
         .topbar {
             background-color:rgba(255,255,255,0.4);
@@ -32,9 +49,11 @@
             width:15%;
             height:5%;
             border-bottom: 1px solid rgba(255,255,255,0.8);
+            /* display: none; */
         }
         .lock {
             position:fixed;
+            /* display: none; */
         }
         #clock {
             color:white;
@@ -64,6 +83,7 @@
             border-radius: 5%;
             left:15%;
             transform: translateX(-15%);
+
         }
         .nav2 {
             background-color:rgba(255,255,255,0.7);
@@ -75,6 +95,7 @@
             border-radius: 5%;
             left:15%;
             transform: translateX(-15%);
+
         }
         .nav3 {
             background-color:rgba(255,255,255,0.7);
@@ -86,6 +107,7 @@
             border-radius: 5%;
             left:15%;
             transform: translateX(-15%);
+
         }
         .title {
             position: fixed;
@@ -96,6 +118,7 @@
             transform: translateY(-0%);
             font-weight: 100;
             color:rgba(0,0,0,0.78);
+
         }
         .time {
             position: fixed;
@@ -106,6 +129,7 @@
             transform: translateY(-0%);
             font-weight: 100;
             color:rgba(0,0,0,0.78);
+
         }
         .who {
             position: fixed;
@@ -116,6 +140,7 @@
             transform: translateY(-20%);
             font-weight: 100;
             color:black;
+
         }
         .message {
             position: fixed;
@@ -126,6 +151,7 @@
             transform: translateY(-70%);
             font-weight: 100;
             color:rgba(0,0,0,0.78);
+
         }
         .bot_left {
             position:fixed;
@@ -137,6 +163,7 @@
             transform: translateX(-15%);
             top:90%;
             transform: translateY(-90%);
+
         }
         .bot_right {
             position:fixed;
@@ -148,6 +175,7 @@
             transform: translateX(-85%);
             top:90%;
             transform: translateY(-90%);
+
         }
         .bot_border {
             position:fixed;
@@ -161,26 +189,26 @@
     </style>
 </head>
 <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <header>
-        <div class="topbar">
+    <header id="top">
+        <div id="top_mid" class="topbar">
 
         </div>
-        <div class="top_right">
-            <p class="icon-signal"></p>
-            <p class="icon-wifi"></p>
-            <p class="icon-battery-4"></p>
+        <div id="top_right" class="top_right">
+            <p id="top_right1" class="icon-signal"></p>
+            <p id="top_right2" class="icon-wifi"></p>
+            <p id="top_right3" class="icon-battery-4"></p>
         </div>
     </header>
     <article>
         <div class='lock'>
-            <p class="icon-lock-open-alt"></p>
+            <p id="lock" class="icon-lock-open-alt"></p>
         </div>
         <div class='date'>
             <p id='clock'></p>
             <p id='day'></p>
         </div>
     </article>
-    <nav>
+    <nav id="contents">
         <div class="nav1">
             <p class="icon-comment"></p>
             <p class="title">카카오톡</p>
@@ -206,22 +234,57 @@
             <p class="icon-emo-cry"></p>
         </div>
     </nav>
-    <footer>
-        <div class="bot_left">
+    <footer id="menu">
+        <div id="bot_left" class="bot_left">
             <p class="icon-flashlight"></p>   
         </div>
-        <div class="bot_right">
+        <div id="bot_right" class="bot_right">
             <p class="icon-camera"></p>
         </div>
         <div class="bot_border">
 
         </div>
     </footer>
+    <div id="back" class="back">
+    
+    </div>
     <script>
+        var back = document.getElementById('back');
+        var lock = document.getElementById('lock');
         var body = document.querySelector('body');
+        var top_mid = document.getElementById('top_mid');
+        var top_right = document.getElementById('top_right');
+        var top_right1 = document.getElementById('top_right1');
+        var top_right2 = document.getElementById('top_right2');
+        var top_right3 = document.getElementById('top_right3');
+        var contents = document.getElementById('contents');
+        var top = document.getElementById('top');
+        var date = document.getElementById('date');
+        var menu = document.getElementById('menu');
+        var bot_left = document.getElementById('bot_left');
+        var bot_right = document.getElementById('bot_right');
         body.addEventListener('keydown',(e) => {
             if (e.keyCode === 32) {
-                location.href='./iphone_main.html';
+                bot_left.style.display = 'none';
+                bot_right.style.display = 'none';
+                clock.style.display='none';
+                day.style.display='none';
+                lock.style.display='none';
+                contents.style.display='none';
+                top_mid.style.display='none';
+                top_right.style.display='none';
+                top_right1.style.display='none';
+                top_right2.style.display='none';
+                top_right3.style.display='none';
+                back.style.animationPlayState='running';
+                setTimeout(() => {
+                    back.style.display='none';
+                    body.style.backgroundImage="url(./iphoneback.png)"
+                },500)
+                setTimeout(() => {
+                    location.href="iphone_main.html";
+                },1300)
+                // location.href='./iphone_main.html';
             }
         });
         var date = new Date();

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontello-115bbf6b/css/fontello.css">
+    <link rel="stylesheet" href="./fontello-73105591/css/fontello.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Iphone_main</title>
     <style>
@@ -13,9 +16,149 @@
             padding:0;
             margin:0;
         }
+        .team {
+            padding:0;
+            margin:0;
+            position: fixed;
+            color:white;
+            font-weight: 400;
+            font-size:0.8rem;
+            left:8%;
+            top:.5%;
+        }
+        .dater {
+            padding:0;
+            margin:0;
+            position: fixed;
+            color:white;
+            font-weight: 400;
+            font-size:0.8rem;
+            left:17%;
+            top:.5%;
+        }
+        .time {
+            padding:0;
+            margin:0;
+            position: fixed;
+            color:white;
+            font-weight: 400;
+            font-size:0.8rem;
+            left:40%;
+            top:.5%;
+        }
+        .percent {
+            padding:0;
+            margin:0;
+            position: fixed;
+            color:white;
+            font-weight: 400;
+            font-size:0.7rem;
+            right:11%;
+            top:.7%;
+        }
+        .white_box {
+            background-color:rgba(255,255,255,0.4);
+            top:100%;
+            transform: translateY(-100%);
+            position: fixed;
+            width:100%;
+            height:17vh;
+        }
+
+        .box1 {
+            position: fixed;
+            top:12.5%;
+            left:3%;
+            width:22%;
+            height:13vh;
+            background:linear-gradient(170deg,rgb(166, 230, 103) 0%,rgb(95, 180, 10) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+        }
+        .box2 {
+            position: fixed;
+            top:12.5%;
+            left:28%;
+            width:22%;
+            height:13vh;
+            background:linear-gradient(170deg,rgb(233, 10, 10) 0%,rgba(180, 10, 10, 0.63) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+        }
+        .box3 {
+            position: fixed;
+            top:12.5%;
+            left:52%;
+            width:22%;
+            height:13vh;
+            background:linear-gradient(170deg,rgb(70, 79, 206) 0%,rgb(34, 32, 187) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+        }
+        .box4 {
+            position: fixed;
+            top:12.5%;
+            left:76%;
+            width:22%;
+            height:13vh;
+            background:linear-gradient(170deg,rgb(241, 253, 73) 0%,rgba(206, 209, 3, 300) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+        }
     </style>
 </head>
 <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <header>
+        <p class="icon-signal"></p>
+        <p class="team">SKT</p>
+        <p class="dater">LTE</p>
+        <p id="time" class="time"></p>
+        <p class="icon-bluetooth-b"></p>
+        <p class="icon-headphones"></p>
+        <p class="percent">45%</p>
+        <p class="icon-battery-2"></p>
+    </header>
+    <nav>
 
+    </nav>
+    <footer>
+        <div class="white_box">
+            <div class="box1">
+                <p class="icon-phone"></p>
+            </div>
+            <div class="box2">
+                <p class="icon-youtube-play"></p>
+            </div>
+            <div class="box3">
+                <p class="icon-facebook-squared"></p>
+            </div>
+            <div class="box4">
+                <p class="icon-comment"></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var time = document.getElementById('time');
+        var date = new Date();
+        if(Number(date.getHours()) >12) {
+            var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+            var hour = `오전${Number(date.getHours())}:`;
+        }
+        if(Number(date.getMinutes()) <10) {
+            var minute = `0${date.getMinutes()}`;
+        } else {
+            var minute = date.getMinutes();
+        }
+        time.innerHTML = `${hour}${minute}`;
+    </script>
 </body>
 </html>
