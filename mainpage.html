@@ -138,112 +138,7 @@
             text-decoration: none;
             color: black;
         }
-        .ii {
-            cursor: pointer;
-        }
-        /* 뭔지 모르겠음 */
-        @media screen and (max-width: 768px) {
-
-        .modal_inner {
-            width: 90%;
-            height: 90%;
-            box-sizing: border-box;
-        }
-    }
-
-/* x버튼 관련 */
-.modal_close {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 1.1em;
-  height: 1.1em;
-  cursor: pointer;
-}
-
-/* x버튼 관련 */
-.modal_close:after,
-.modal_close:before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 1.5em;
-  background: #ccc;
-  display: block;
-  transform: rotate(45deg);
-  left: 50%;
-  margin: -3px 0 0 -1px;
-  top: 0;
-}
-
-/* x버튼 색 */
-.modal_close:hover:after,
-.modal_close:hover:before {
-  background: gold;
-}
-
-/* x버튼 */
-.modal_close:before {
-  transform: rotate(-45deg);
-}
-
-.modal {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: left;
-  background: rgba(0,0,0, .6);
-  transition: opacity .25s ease;
-}
-
-.modal_bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-/* 팝업창 뜰때 체크 */
-.modal-state {
-  display: none;
-}
-
-.modal-state:checked + .modal {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* 뭔지 모름 */
-.modal-state:checked + .modal .modal__inner {
-  top: 0;
-}
-
-/* 팝업창 스타일 */
-.modal_inner {
-  transition: top .25s ease;
-  position: absolute;
-  top: -20%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 15%;
-  margin: auto;
-  overflow: auto;
-  background: white;
-  border-radius: 5px;
-  padding: 1em 2em;
-  height: 50%;
-}
-
-.btn {
-    cursor: pointer;
-}
+        
     </style>
 </head>
 <body>
@@ -259,8 +154,8 @@
         <input type="submit" id="register" value="회원가입">
     </nav>
     <footer>
-        <p>
-            <label class="btn" for="open-pop">게임뭉치</label>
+        <p onclick="popup()">
+            게임뭉치
         </p>
         <div id="g1">
             <a href="Rhythm"><img src="https://github.com/MSeoJun/school_Performance-evaluation/blob/master/Rhythm.png?raw=true"></a>
@@ -272,17 +167,6 @@
             <a href="iwbd"><h3>아이워너 비더 도제</h3></a>
         </div>
     </footer>
-    <input class="modal-state" id="open-pop" type="checkbox" />
-              <div class="modal">
-                <label class="modal_bg" for="open-pop"></label>
-                <div class="modal_inner">
-                  <label class="modal_close" for="open-pop"></label>
-                  <h2>뭔지 모르겠다</h2>
-                  <p>우빈아 알아서 해</p>
-                </div>
-              </div>
-              
-              </div>  
     <script>
 
         const popup = () => {
