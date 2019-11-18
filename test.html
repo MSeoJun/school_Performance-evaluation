@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main_Page</title>
+    <title>sign_up</title>
     <style>
         body {
             padding:0;
@@ -16,7 +16,7 @@
         #title {
             color: white;
             text-align: center;
-            background-image:url('http://img.hani.co.kr/imgdb/resize/2015/0718/00535983901_20150718.JPG');
+            background-image:url('https://github.com/MSeoJun/school_Performance-evaluation/blob/master/school/uni.jpg?raw=true');
             width: 100%;
             height: 21.3%;
             line-height: 135px;
@@ -38,7 +38,7 @@
             position: fixed;
             top: 28%;
             left: 33%;
-            width: 12%;
+            width: 14.7%;
             height: 6%;
             border: 3px solid #ccc;
             border-radius: 10px;
@@ -58,7 +58,7 @@
             position: fixed;
             top: 28%;
             right: 33%;
-            width: 12%;
+            width: 15%;
             height: 6%;
             border: 3px solid #ccc;
             border-radius: 10px;
@@ -137,7 +137,7 @@
 
         #pwok {
             position: fixed;
-            top: 80%;
+            top: 81.5%;
             right: 33%;
             width: 32.4%;
             height: 6%;
@@ -159,7 +159,7 @@
             width: 4%;
             height: 7%;
             position: fixed;
-            top: 91%;
+            top: 91.5%;
             left: 48%;
             border: 0;
             background-color: #3333ff;
@@ -173,6 +173,12 @@
         #ok:hover {
             background-color: #4d4dff;
         }
+
+        #inp {
+            position: fixed;
+            bottom: 17%;
+            left: 33.5%;
+        }
     </style>
 </head>
 <body>
@@ -180,10 +186,11 @@
     <h1 id="title">Apple ID 생성</h1>
     <input type="text" id="last" placeholder="성" autocomplete="off" required>
     <input type="text" id="name" placeholder="이름" autocomplete="off" required>
-    <input type="text" id="birth" placeholder="생년월일" autocomplete="off" required>
+    <input type="text" id="birth" placeholder="0000-00-00" autocomplete="off" required>
     <hr id="line" />
     <input type="email" id="email" placeholder="name@example.com" autocomplete="off" required>
     <input type="text" id="pw" placeholder="암호" autocomplete="off" required>
+    <h5 id="inp">※숫자와 문자를 포함한 6~12자리의 형태</h5>
     <input type="text" id="pwok" placeholder="암호 확인" autocomplete="off" required>
     <input type="submit" id="ok" value="확인">
     </form>
@@ -191,16 +198,29 @@
     <script>
         function check() {
             var email=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            var birth = RegExp(/^(19|20)[0-9]{2}-(0[1-9]|1[1-2])(0[1-9]-|-[1-2][0-9]|3[0-1])$/);
+            var pw = /^[A-Za-z0-9]{6,12}$/;
+            var name= RegExp(/^[가-힣]+$/);
+            var last= RegExp(/^[가-힣]+$/);
 
-            //이름 유효성
+            // 이메일 유효성 검사
             if (!email.test($("#email").val())) {
-                alert("이메일을 다시 확인해주세요..");
+                alert("이메일을 다시 확인해주세요.");
                 $("#email").val("");
                 $("#email").focus();
                 return false;
             }
 
-            //비밀번호 똑같은지
+            // 비밀번호 유효성 검사
+            if(!pw.test($("#pw").val())) { 
+                alert("비밀번호 형식에 맞게 입력해주세요."); 
+                $("#pw").val("");
+                $("#pwok").val(""); 
+                $("#pw").focus(); 
+                return false; 
+            }
+
+            //비밀번호가 같은지 검사
             if($("#pw").val() != ($("#pwok").val())){ 
                 alert("비밀번호가 같지 않습니다.");
                 $("#pw").val("");
@@ -208,10 +228,30 @@
                 $("#pw").focus();
                 return false;
             }
+
+            // 이름 유효성 검사
+            if(!name.test($("#name").val())) { 
+                alert("이름 형식에 맞게 입력해주세요."); 
+                $("#name").val(""); 
+                $("#name").focus(); 
+                return false; 
+            }
+
+            if(!last.test($("#last").val())) { 
+                alert("성 을 맞게 입력해주세요."); 
+                $("#last").val(""); 
+                $("#last").focus(); 
+                return false; 
+            }
+
+            // 생일 유효성 검사
+            if(!birth.test($("#birth").val())) { 
+                alert("생일 형식에 맞게 입력해주세요."); 
+                $("#birth").val(""); 
+                $("#birth").focus(); 
+                return false; 
+            }
         }
-        
-        
-    
     </script>
 </body>
 </html>

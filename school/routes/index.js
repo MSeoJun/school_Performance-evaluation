@@ -3,15 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('mainpage');
+  res.render('login');
 });
 
-router.get('/Rhythm', function(req, res, next) {
-  res.render('Rhythm');
-});
-
-router.get('/iwbd', function(req, res, next) {
-  res.render('iwbd');
+router.get('/register', function(req, res, next) {
+  res.render('register');
 });
 
 module.exports = router;
