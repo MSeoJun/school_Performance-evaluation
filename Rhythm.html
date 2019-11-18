@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+body {
+    background: black;
+    padding:0;
+    margin:0;
+}
+
+/* 점수임 */
+#score {
+    color: white;
+    position: fixed;
+    right: 38%;
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+/* 시작 대기시간 */
+#timer {
+    color: white;
+    position: fixed;
+    right: 38%;
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+/* 판정 선 */
+hr.line {
+    width: 48%;
+    color: red;
+    border: 4px solid red;
+    position: fixed;
+    top: 77%;
+}
+
+/* 스페이스바를 누르면 게임시작 */
+#start {
+    color: white;
+    position: fixed;
+    right: 5%;
+    top: 40%;
+    font-size: 40px;
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+/* 게임 끝 화면 */
+#finish {
+    color: white;
+    position: fixed;
+    right: 13%;
+    top: 40%;
+    font-size: 40px;
+    display: none;
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+/* 게임 끝내기 버튼 */
+#end {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 20%;
+    cursor: pointer;
+}
+
+/* 게임 계속하기 버튼 */
+#restart {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 30%;
+    cursor: pointer
+}
+
+/* D */
+.line1 p {
+    color:white;
+    position: relative;
+    bottom: -75%;
+    font-size: 60px;
+}
+
+/* F */
+.line2 p {
+    color:white;
+    position: relative;
+    bottom: -75%;
+    font-size: 60px;
+}
+
+/* J */
+.line3 p {
+    color:white;
+    position: relative;
+    bottom: -75%;
+    font-size: 60px;
+}
+
+/* K */
+.line4 p {
+    color:white;
+    position: relative;
+    bottom: -75%;
+    font-size: 60px;
+}
+
+/* D라인 */
+.line1 {
+    position:fixed;
+    left:0%;
+    transform: translateX(-0%);
+    border:1px solid white;
+    height:100vh;
+    width:12%;
+}
+
+/* F라인 */
+.line2 {
+    position:fixed;
+    left:13.8%;
+    transform: translateX(-13.8%);
+    border:1px solid white;
+    height:100vh;
+    width:12%;
+}
+
+/* J라인 */
+.line3 {
+    position:fixed;
+    left:27.6%;
+    transform: translateX(-27.6%);
+    border:1px solid white;
+    height:100vh;
+    width:12%;
+}
+
+/* K라인 */
+.line4 {
+    position:fixed;
+    left:41.4%;
+    transform: translateX(-41.4%);
+    border:1px solid white;
+    height:100vh;
+    width:12%;
+}
+  
+/* 시작 타이밍 */
+#timer {
+    position:fixed;
+    right:20%;
+    top:40%;
+    font-size:10rem;
+}
+
+/* 커서 스타일 */
+
+/* D라인 블록 */
+.d_block1 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 0.4s;
+    animation-play-state: paused;
+}
+
+.d_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 1.6s;
+    animation-play-state: paused;
+}
+
+.d_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+
+.d_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 3.4s;
+    animation-play-state: paused;
+}
+
+.d_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-play-state: paused;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 4.3s;
+}
+
+.d_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 4.7s;
+    animation-play-state: paused;
+}
+
+.d_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 5.7s;
+    animation-play-state: paused;
+}
+
+.d_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 5.9s;
+    animation-play-state: paused;
+}
+
+.d_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 6.7s;
+}
+
+.d_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 7.7s;
+    animation-play-state: paused;
+}
+
+.d_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-play-state: paused;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 8.1s;
+}
+
+.d_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 8.9s;
+}
+
+.d_block13 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    animation-play-state: paused;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-duration: 1.5s;
+    animation-delay: 10s;
+}
+
+.d_block14 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 10.6s;
+}
+
+.d_block15 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 11.2s;
+}
+
+.d_block16 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:0%;
+    transform: translateX(-0%);
+    height:5vh;
+    width:12.2%;
+    background-color: pink;
+    animation-name: drop_d;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 12s;
+}
+
+@keyframes drop_d {
+    from {top:-10%; left:0%;}
+    to {left:0%; top:100%;}
+}
+
+/* F라인 블록 */
+.f_block1 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 1.2s;
+}
+
+.f_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 1.8s;
+}
+
+.f_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 2.2s;
+}
+
+.f_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-play-state: paused;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 3.2s;
+}
+
+.f_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 4.9s;
+}
+
+.f_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 5.5s;
+    animation-play-state: paused;
+}
+
+.f_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 6.1s;
+}
+
+.f_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 7.9s;
+    animation-play-state: paused;
+}
+
+.f_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 8.5s;
+}
+
+.f_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 9.3s;
+    animation-play-state: paused;
+}
+
+.f_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 10.2s;
+}
+
+.f_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 10.8s;
+}
+
+.f_block13 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-duration: 1.5s;
+    animation-delay: 11.4s;
+    animation-play-state: paused;
+}
+
+.f_block14 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:13.8%;
+    transform: translateX(-13.8%);
+    height:5vh;
+    width:12.2%;
+    background-color: aqua;
+    animation-name: drop_f;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 12.2s;
+}
+
+@keyframes drop_f {
+    from {top:-10%; left:13.8%;}
+    to {left:13.8%; top:100%;}
+}
+
+/* J라인 블록 */
+.j_block1 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 0.8s;
+}
+
+.j_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 2.4s;
+}
+
+.j_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 3s;
+}
+
+.j_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 3.6s;
+}
+
+.j_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 4.1s;
+}
+
+.j_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 5.3s;
+}
+
+.j_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-play-state: paused;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 6.3s;
+}
+
+.j_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.j_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-play-state: paused;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 7.4s;
+}
+
+.j_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 8.7s;
+}
+
+.j_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-play-state: paused;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 9.5s;
+}
+
+.j_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 10.4s;
+}
+
+.j_block13 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    animation-play-state: paused;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 11.6s;
+}
+
+.j_block14 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:27.6%;
+    transform: translateX(-27.6%);
+    height:5vh;
+    width:12.2%;
+    background-color: yellow;
+    animation-name: drop_j;
+    animation-duration: 1.5s;
+    animation-delay: 12.4s;
+    animation-play-state: paused;
+}
+
+@keyframes drop_j {
+    from {top:-10%; left:27.6%;}
+    to {left:27.6%; top:100%;}
+}
+
+/* K라인 블록 */
+.k_block1 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-play-state: paused;  
+    animation-duration: 1.5s;
+    animation-delay: 0.9s;
+}
+
+.k_block2 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 2.6s;
+}
+
+.k_block3 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 2.8s;
+    animation-play-state: paused;
+}
+
+.k_block4 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%; 
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 4s;
+    animation-play-state: paused;
+}
+
+.k_block5 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;  
+    animation-duration: 1.5s;
+    animation-delay: 5.1s;
+    animation-play-state: paused;
+}
+
+.k_block6 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-play-state: paused;
+}
+
+.k_block7 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 7.2s;
+}
+
+.k_block8 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-play-state: paused;
+    animation-duration: 1.5s;
+    animation-delay: 8.3s;
+}
+
+.k_block9 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 9.1s;
+    animation-play-state: paused;
+}
+
+.k_block10 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-delay: 9.8s;
+    animation-play-state: paused;
+}
+
+.k_block11 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 11.8s;
+}
+
+.k_block12 {
+    position: fixed;
+    top:-10%;
+    transform: translateY(10%);
+    left:41.4%;
+    transform: translateX(-41.4%);
+    height:5vh;
+    width:12.2%;
+    background-color: greenyellow;
+    animation: drop_k;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-delay: 12.6s;
+}
+
+@keyframes drop_k {
+    from {top:-10%; left:41.4%;}
+    to {left:41.4%; top:100%;}
+}
+    </style>
+</head>
+<body>
+    <center>
+        <h1 id="timer"></h1>
+        <h1 id="score"></h1>    
+        <hr id="line" class="line" />
+        <h1 id="start"></h1>
+        <h1 id="finish"></h1>
+        <input type="button" id="restart" value="다시하기" onclick="window.location.reload()">
+        <input type="button" id="end" value="끝내기" onclick="window.close()">
+
+         <!-- D, F, J, K 라인 -->
+        <div id="D" class="line1"><p>D</p></div>
+        <div id="F" class="line2"><p>F</p></div>
+        <div id="J" class="line3"><p>J</p></div>
+        <div id="K" class="line4"><p>K</p></div>
+
+        <!-- D블록 -->
+        <div id="d_block1" class="d_block1"></div>
+        <div id="d_block2" class="d_block2"></div>
+        <div id="d_block3" class="d_block3"></div>
+        <div id="d_block4" class="d_block4"></div>
+        <div id="d_block5" class="d_block5"></div>
+        <div id="d_block6" class="d_block6"></div>
+        <div id="d_block7" class="d_block7"></div>
+        <div id="d_block8" class="d_block8"></div>
+        <div id="d_block9" class="d_block9"></div>
+        <div id="d_block10" class="d_block10"></div>
+        <div id="d_block11" class="d_block11"></div>
+        <div id="d_block12" class="d_block12"></div>
+        <div id="d_block13" class="d_block13"></div>
+        <div id="d_block14" class="d_block14"></div>
+        <div id="d_block15" class="d_block15"></div>
+        <div id="d_block16" class="d_block16"></div>
+
+        <!-- F블록 -->
+        <div id="f_block1" class="f_block1"></div>
+        <div id="f_block2" class="f_block2"></div>
+        <div id="f_block3" class="f_block3"></div>
+        <div id="f_block4" class="f_block4"></div>
+        <div id="f_block5" class="f_block5"></div>
+        <div id="f_block6" class="f_block6"></div>
+        <div id="f_block7" class="f_block7"></div>
+        <div id="f_block8" class="f_block8"></div>
+        <div id="f_block9" class="f_block9"></div>
+        <div id="f_block10" class="f_block10"></div>
+        <div id="f_block11" class="f_block11"></div>
+        <div id="f_block12" class="f_block12"></div>
+        <div id="f_block13" class="f_block13"></div>
+        <div id="f_block14" class="f_block14"></div>
+
+        <!-- J블록 -->
+        <div id="j_block1" class="j_block1"></div>
+        <div id="j_block2" class="j_block2"></div>
+        <div id="j_block3" class="j_block3"></div>
+        <div id="j_block4" class="j_block4"></div>
+        <div id="j_block5" class="j_block5"></div>
+        <div id="j_block6" class="j_block6"></div>
+        <div id="j_block7" class="j_block7"></div>
+        <div id="j_block8" class="j_block8"></div>
+        <div id="j_block9" class="j_block9"></div>
+        <div id="j_block10" class="j_block10"></div>
+        <div id="j_block11" class="j_block11"></div>
+        <div id="j_block12" class="j_block12"></div>
+        <div id="j_block13" class="j_block13"></div>
+        <div id="j_block14" class="j_block14"></div>
+
+        <!-- K블록 -->
+        <div id="k_block1" class="k_block1"></div>
+        <div id="k_block2" class="k_block2"></div>
+        <div id="k_block3" class="k_block3"></div>
+        <div id="k_block4" class="k_block4"></div>
+        <div id="k_block5" class="k_block5"></div>
+        <div id="k_block6" class="k_block6"></div>
+        <div id="k_block7" class="k_block7"></div>
+        <div id="k_block8" class="k_block8"></div>
+        <div id="k_block9" class="k_block9"></div>
+        <div id="k_block10" class="k_block10"></div>
+        <div id="k_block11" class="k_block11"></div>
+        <div id="k_block12" class="k_block12"></div>
+    </center>  
+
+    <script>
+        // 리듬 라인
+var body = document.querySelector('body');
+var D = document.getElementById('D');
+var F = document.getElementById('F');
+var J = document.getElementById('J');
+var K = document.getElementById('K');
+
+// 음악 시작
+var audio = new Audio();
+audio.src='https://raw.githubusercontent.com/MSeoJun/school_Performance-evaluation/master/canonbbak.mp3';
+const play = document.getElementById('play');
+const timer = document.getElementById('timer');
+const start = document.getElementById('start');
+start.innerText = '스페이스바를 눌러 시작해주세요.'
+
+// 리듬 블럭
+
+// D라인
+const d_1 = document.getElementById('d_block1');
+const d_2 = document.getElementById('d_block2');
+const d_3 = document.getElementById('d_block3');
+const d_4 = document.getElementById('d_block4');
+const d_5 = document.getElementById('d_block5');
+const d_6 = document.getElementById('d_block6');
+const d_7 = document.getElementById('d_block7');
+const d_8 = document.getElementById('d_block8');
+const d_9 = document.getElementById('d_block9');
+const d_10 = document.getElementById('d_block10');
+const d_11 = document.getElementById('d_block11');
+const d_12 = document.getElementById('d_block12');
+const d_13 = document.getElementById('d_block13');
+const d_14 = document.getElementById('d_block14');
+const d_15 = document.getElementById('d_block15');
+const d_16 = document.getElementById('d_block16');
+
+// F라인
+const f_1 = document.getElementById('f_block1');
+const f_2 = document.getElementById('f_block2');
+const f_3 = document.getElementById('f_block3');
+const f_4 = document.getElementById('f_block4');
+const f_5 = document.getElementById('f_block5');
+const f_6 = document.getElementById('f_block6');
+const f_7 = document.getElementById('f_block7');
+const f_8 = document.getElementById('f_block8');
+const f_9 = document.getElementById('f_block9');
+const f_10 = document.getElementById('f_block10');
+const f_11 = document.getElementById('f_block11');
+const f_12 = document.getElementById('f_block12');
+const f_13 = document.getElementById('f_block13');
+const f_14 = document.getElementById('f_block14');
+
+// J라인
+const j_1 = document.getElementById('j_block1');
+const j_2 = document.getElementById('j_block2');
+const j_3 = document.getElementById('j_block3');
+const j_4 = document.getElementById('j_block4');
+const j_5 = document.getElementById('j_block5');
+const j_6 = document.getElementById('j_block6');
+const j_7 = document.getElementById('j_block7');
+const j_8 = document.getElementById('j_block8');
+const j_9 = document.getElementById('j_block9');
+const j_10 = document.getElementById('j_block10');
+const j_11 = document.getElementById('j_block11');
+const j_12 = document.getElementById('j_block12');
+const j_13 = document.getElementById('j_block13');
+const j_14 = document.getElementById('j_block14');
+
+// K라인
+const k_1 = document.getElementById('k_block1');
+const k_2 = document.getElementById('k_block2');
+const k_3 = document.getElementById('k_block3');
+const k_4 = document.getElementById('k_block4');
+const k_5 = document.getElementById('k_block5');
+const k_6 = document.getElementById('k_block6');
+const k_7 = document.getElementById('k_block7');
+const k_8 = document.getElementById('k_block8');
+const k_9 = document.getElementById('k_block9');
+const k_10 = document.getElementById('k_block10');
+const k_11 = document.getElementById('k_block11');
+const k_12 = document.getElementById('k_block12');
+
+// 판정 선
+const line = document.getElementById('line');
+
+// 점수
+const score = document.getElementById('score');
+var result = 0;
+score.innerText = `점수 : ${result}`
+
+// 게임 끝 화면
+const finish = document.getElementById('finish');
+finish.innerText = '게임이 끝났습니다.'
+
+//라인 눌렀을때 반응
+body.addEventListener('keypress',(e) => {
+    console.log(this.line.offsetTop);
+
+    // 스페이스바 눌렀을 때 음악 재생
+    if(e.keyCode === 32) {
+        setTimeout(() => {
+            start.style.display = 'none';
+            timer.innerText="3";
+        });
+        setTimeout(() => {
+            timer.innerText="2";
+        }, 1000);
+        setTimeout(() => {
+            timer.innerText="1";
+        }, 2000);
+        setTimeout(() => {
+            timer.innerText="";
+            audio.play();
+            d_1.style.animationPlayState='running';
+            d_2.style.animationPlayState='running';
+            d_3.style.animationPlayState='running';
+            d_4.style.animationPlayState='running';
+            d_5.style.animationPlayState='running';
+            d_6.style.animationPlayState='running';
+            d_7.style.animationPlayState='running';
+            d_8.style.animationPlayState='running';
+            d_9.style.animationPlayState='running';
+            d_10.style.animationPlayState='running';
+            d_11.style.animationPlayState='running';
+            d_12.style.animationPlayState='running';
+            d_13.style.animationPlayState='running';
+            d_14.style.animationPlayState='running';
+            d_15.style.animationPlayState='running';
+            d_16.style.animationPlayState='running';
+            f_1.style.animationPlayState='running';
+            f_2.style.animationPlayState='running';
+            f_3.style.animationPlayState='running';
+            f_4.style.animationPlayState='running';
+            f_5.style.animationPlayState='running';
+            f_6.style.animationPlayState='running';
+            f_7.style.animationPlayState='running';
+            f_8.style.animationPlayState='running';
+            f_9.style.animationPlayState='running';
+            f_10.style.animationPlayState='running';
+            f_11.style.animationPlayState='running';
+            f_12.style.animationPlayState='running';
+            f_13.style.animationPlayState='running';
+            f_14.style.animationPlayState='running';
+            j_1.style.animationPlayState='running';
+            j_2.style.animationPlayState='running';
+            j_3.style.animationPlayState='running';
+            j_4.style.animationPlayState='running';
+            j_5.style.animationPlayState='running';
+            j_6.style.animationPlayState='running';
+            j_7.style.animationPlayState='running';
+            j_8.style.animationPlayState='running';
+            j_9.style.animationPlayState='running';
+            j_10.style.animationPlayState='running';
+            j_11.style.animationPlayState='running';
+            j_12.style.animationPlayState='running';
+            j_13.style.animationPlayState='running';
+            j_14.style.animationPlayState='running';
+            k_1.style.animationPlayState='running';
+            k_2.style.animationPlayState='running';
+            k_3.style.animationPlayState='running';
+            k_4.style.animationPlayState='running';
+            k_5.style.animationPlayState='running';
+            k_6.style.animationPlayState='running';
+            k_7.style.animationPlayState='running';
+            k_8.style.animationPlayState='running';
+            k_9.style.animationPlayState='running';
+            k_10.style.animationPlayState='running';
+            k_11.style.animationPlayState='running';
+            k_12.style.animationPlayState='running';
+        }, 3000);
+        setTimeout(() => {
+            finish.style.display = 'inline';
+            // open(location, '_self').close();
+        }, 18200);
+        setTimeout(() => {
+            restart.style.display = 'inline';
+            end.style.display = 'inline';
+        }, 1000);
+    }
+
+    
+
+    // D라인 블럭
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_1.offsetTop && d_1.offsetTop<=600) {
+            // console.log('미르스띤');
+            // console.log(result);
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_1.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_2.offsetTop && d_2.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_2.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_3.offsetTop && d_3.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_3.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_4.offsetTop && d_4.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_4.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_5.offsetTop && d_5.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_5.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_6.offsetTop && d_6.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_6.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_7.offsetTop && d_7.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_7.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(500<=d_8.offsetTop && d_8.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_8.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_9.offsetTop && d_9.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_9.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_10.offsetTop && d_10.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_10.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_11.offsetTop && d_11.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_11.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_12.offsetTop && d_12.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_12.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_13.offsetTop && d_13.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_13.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_14.offsetTop && d_14.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_14.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_15.offsetTop && d_15.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_15.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'd') {
+        D.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            D.style.removeProperty("background-color");
+        }, 100);
+        if(450<=d_16.offsetTop && d_16.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            d_16.style.display= 'none'
+        } 
+    }
+
+    // F라인 블럭
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_1.offsetTop && f_1.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_1.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_2.offsetTop && f_2.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_2.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_3.offsetTop && f_3.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_3.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_4.offsetTop && f_4.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_4.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_5.offsetTop && f_5.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_5.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_6.offsetTop && f_6.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_6.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_7.offsetTop && f_7.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_7.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_8.offsetTop && f_8.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_8.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_9.offsetTop && f_9.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_9.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_10.offsetTop && f_10.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_10.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_11.offsetTop && f_11.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_11.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_12.offsetTop && f_12.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_12.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_13.offsetTop && f_13.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_13.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'f') {
+        F.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            F.style.removeProperty("background-color");
+        }, 100);
+        if(450<=f_14.offsetTop && f_14.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            f_14.style.display= 'none'
+        } 
+    }
+
+    // J라인 블럭
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_1.offsetTop && j_1.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_1.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_2.offsetTop && j_2.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_2.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_3.offsetTop && j_3.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_3.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_4.offsetTop && j_4.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_4.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_5.offsetTop && j_5.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_5.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_6.offsetTop && j_6.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_6.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_7.offsetTop && j_7.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_7.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_8.offsetTop && j_8.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_8.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_9.offsetTop && j_9.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_9.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_10.offsetTop && j_10.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_10.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_11.offsetTop && j_11.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_11.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_12.offsetTop && j_12.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_12.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_13.offsetTop && j_13.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_13.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'j') {
+        J.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            J.style.removeProperty("background-color");
+        }, 100);
+        if(450<=j_14.offsetTop && j_14.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            j_14.style.display= 'none'
+        } 
+    }
+
+    // K라인 블럭
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_1.offsetTop && k_1.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_1.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_2.offsetTop && k_2.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_2.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_3.offsetTop && k_3.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_3.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_4.offsetTop && k_4.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_4.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_5.offsetTop && k_5.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_5.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_6.offsetTop && k_6.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_6.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_7.offsetTop && k_7.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_7.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_8.offsetTop && k_8.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_8.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_9.offsetTop && k_9.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_9.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_10.offsetTop && k_10.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_10.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_11.offsetTop && k_11.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_11.style.display= 'none'
+        } 
+    }
+
+    if(e.key === 'k') {
+        K.style.backgroundColor= 'rgba(255,255,255,0.4)';
+        setTimeout(() => {
+            K.style.removeProperty("background-color");
+        }, 100);
+        if(450<=k_12.offsetTop && k_12.offsetTop<=600) {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            k_12.style.display= 'none'
+        } 
+    }
+});
+    </script>
+</body>
+</html>
