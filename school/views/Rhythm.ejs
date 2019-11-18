@@ -51,11 +51,6 @@ hr.line {
     border:0;
 }
 
-@keyframes lines {
-    from {top:-10%; left:0%;}
-    to {left:0%; top:100%;}
-}
-
 /* 게임 끝 화면 */
 #finish {
     color: white;
@@ -67,6 +62,24 @@ hr.line {
     padding:0;
     margin:0;
     border:0;
+}
+
+/* 게임 끝내기 버튼 */
+#end {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 20%;
+    cursor: pointer;
+}
+
+/* 게임 계속하기 버튼 */
+#restart {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 30%;
+    cursor: pointer
 }
 
 /* D */
@@ -1023,6 +1036,8 @@ hr.line {
         <hr id="line" class="line" />
         <h1 id="start"></h1>
         <h1 id="finish"></h1>
+        <input type="button" id="restart" value="다시하기" onclick="window.location.reload()">
+        <input type="button" id="end" value="끝내기" onclick="window.close()">
 
          <!-- D, F, J, K 라인 -->
         <div id="D" class="line1"><p>D</p></div>
@@ -1267,8 +1282,12 @@ body.addEventListener('keypress',(e) => {
         }, 3000);
         setTimeout(() => {
             finish.style.display = 'inline';
-            open(location, '_self').close();
+            // open(location, '_self').close();
         }, 18200);
+        setTimeout(() => {
+            restart.style.display = 'inline';
+            end.style.display = 'inline';
+        }, 1000);
     }
 
     

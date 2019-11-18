@@ -11,43 +11,14 @@ body {
     margin: 0;
 }
 
-.line1 {
-    position:fixed;
-    left:0%;
-    transform: translateX(-0%);
-    border:1px solid black;
-    height:100vh;
-    width:25%;
-}
-
-/* F라인 */
-.line2 {
+/* 세로선 */
+#line2 {
     position:fixed;
     left:50%;
     transform: translateX(-13.8%);
     border:4px solid black;
     height:100vh;
     width:0%;
-}
-
-/* J라인 */
-.line3 {
-    position:fixed;
-    left:57%;
-    transform: translateX(-27.6%);
-    border:1px solid black;
-    height:100vh;
-    width:25%;
-}
-
-/* K라인 */
-.line4 {
-    position:fixed;
-    left:85.5%;
-    transform: translateX(-41.4%);
-    border:1px solid black;
-    height:100vh;
-    width:25%;
 }
         
 img {
@@ -66,21 +37,58 @@ img {
     to {left:0%;}
 }    
 
-hr.line {
+hr.line1 {
     width: 100%;
     color: red;
     border: 4px solid black;
     position: fixed;
     top: 50%;
 }
+
+#one {
+    position: fixed;
+    font-size: 150px;
+    left: 20%;
+    top: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+#two {
+    position: fixed;
+    font-size: 150px;
+    right: 20%;
+    top: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+#three {
+    position: fixed;
+    font-size: 150px;
+    left: 20%;
+    bottom: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+#four {
+    position: fixed;
+    font-size: 150px;
+    right: 20%;
+    bottom: 10%;
+    padding: 0;
+    margin: 0;
+}
     </style>
 </head>
 <body>
-    <!-- <div id="D" class="line1"><p></p></div> -->
-    <hr id="line" class="line" />
-    <div id="F" class="line2"><p></p></div>
-    <!-- <div id="J" class="line3"><p></p></div> -->
-    <!-- <div id="K" class="line4"><p></p></div> -->
+    <hr class="line1" />
+    <div id="line2"><p></p></div>
+    <h1 id="one">1</h1>
+    <h1 id="two">2</h1>
+    <h1 id="three">3</h1>
+    <h1 id="four">4</h1>
     <img src="https://www.hushwish.com/wp-content/uploads/2018/10/cha_clash_animation-1.gif">
 
     <script>
