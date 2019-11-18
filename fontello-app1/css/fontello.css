@@ -1,11 +1,13 @@
-@font-face {
+@charset "UTF-8";
+
+ @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?22017197');
-  src: url('../font/fontello.eot?22017197#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff2?22017197') format('woff2'),
-       url('../font/fontello.woff?22017197') format('woff'),
-       url('../font/fontello.ttf?22017197') format('truetype'),
-       url('../font/fontello.svg?22017197#fontello') format('svg');
+  src: url('../font/fontello.eot?9779907');
+  src: url('../font/fontello.eot?9779907#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?9779907') format('woff2'),
+       url('../font/fontello.woff?9779907') format('woff'),
+       url('../font/fontello.ttf?9779907') format('truetype'),
+       url('../font/fontello.svg?9779907#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,29 +17,32 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?22017197#fontello') format('svg');
+    src: url('../font/fontello.svg?9779907#fontello') format('svg');
   }
 }
 */
  
-.icon-emo-angry:before {
+.icon-music:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  color:red;
-  position: fixed;
-  font-size: 0.5rem;
-  left:45%;
-  transform: translateX(-45%);
-  top:88%;
-  transform: translateY(-88%);
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
+  border:2px solid white;
+
+  background-color:black;
+  color:white;
+  font-size:2.8rem;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+
+
   /* opacity: .8; */
- 
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
@@ -51,7 +56,7 @@
  
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+  
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,28 +65,66 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-emo-thumbsup:before {
+.icon-camera:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  color:hotpink;
-  position: fixed;
-  font-size: 0.5rem;
-  left:45%;
-  transform: translateX(-45%);
-  top:88%;
-  transform: translateY(-88%);
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
  
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  background-color:black;
+  color:white;
+  border:2px solid white;
+  font-size:2.8rem;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-target:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  border:2px solid white;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  background-color:black;
+  color:rgb(236, 69, 69);
+  font-size:2.8rem;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
  
@@ -91,7 +134,7 @@
  
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+  
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,28 +143,27 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-emo-cry:before {
+.icon-delicious:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  color:blue;
-  position: fixed;
-  font-size: 0.5rem;
-  left:40%;
-  transform: translateX(-40%);
-  top:93%;
-  transform: translateY(-93%);
   display: inline-block;
   text-decoration: inherit;
+  border:2px solid white;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
- 
+  background-color:black;
+  color:white;
+  font-size:2.8rem;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
  
@@ -131,7 +173,7 @@
  
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+  
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -139,7 +181,8 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
-.icon-emo-thumbsup:before { content: '\e804'; } /* '' */
-.icon-emo-angry:before { content: '\e80d'; } /* '' */
-.icon-emo-cry:before { content: '\e80f'; } /* '' */
+ 
+.icon-music:before { content: '\e1200'; } /* '\e1200' */
+.icon-camera:before { content: '\e1201'; } /* '\e1201' */
+.icon-target:before { content: '\e1204'; } /* '\e1204' */
+.icon-delicious:before { content: '\f1203'; } /* '\f1203' */

@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+ 
+.icon-music:before { content: '󡈀'; } /* '\e1200' */
+.icon-camera:before { content: '󡈁'; } /* '\e1201' */
+.icon-target:before { content: '󡈄'; } /* '\e1204' */
+.icon-delicious:before { content: '󱈃'; } /* '\f1203' */

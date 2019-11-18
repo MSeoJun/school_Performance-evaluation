@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./fontello-243d5227/css/fontello.css">
     <link rel="stylesheet" href="./fontello-b4045e8c/css/fontello.css">
-    <link rel="stylesheet" href="./fontello-f3a7fd07/css/fontello.css">
     <title>IPHONE</title>
     <style>
         body {
@@ -19,12 +18,12 @@
             transition:background-image 1s;
         }
         @keyframes unlock {
-            from {top:100%;}
+            from {top:0%;}
             to {top:-150%;}
         }
         .back {
             position: fixed;
-            background-image: url('./iphone_lock.jpg');
+            
             width:100%;
             height:100vh;
             background-repeat: no-repeat;
@@ -213,24 +212,23 @@
             <p class="icon-comment"></p>
             <p class="title">카카오톡</p>
             <p class='time'>지금</p>
-            <p class='who'>예원이</p>
-            <p class="message">왜 연락 안 봐?</p>
+            <p class='who'>김예원</p>
+            <p class="message">뭐야 너 자꾸 왜 연락 안봐</p>
             <p class="icon-emo-angry"></p>
         </div>
         <div class="nav2">
             <p class="icon-comment"></p>
             <p class="title">카카오톡</p>
             <p class='time'>2분 전</p>
-            <p class='who'>예원이</p>
-            <p class="message">어디냐고</p>
-            <p class="icon-emo-thumbsup"></p>
+            <p class='who'>문서준</p>
+            <p class="message">보빈!! 오늘 회사에서 너무 고마워!</p>
         </div>
         <div class="nav3">
             <p class="icon-comment"></p>
             <p class="title">카카오톡</p>
             <p class='time'>12분 전</p>
-            <p class='who'>예원이</p>
-            <p class="message">어디야?</p>
+            <p class='who'>김영훈</p>
+            <p class="message">김영훈 님이 기프티콘을 선물하셨습니다.</p>
             <p class="icon-emo-cry"></p>
         </div>
     </nav>
@@ -276,15 +274,20 @@
                 top_right1.style.display='none';
                 top_right2.style.display='none';
                 top_right3.style.display='none';
+                body.style.backgroundImage="url('')";
+                back.style.backgroundImage="url('./iphone_lock.jpg')";
                 back.style.animationPlayState='running';
+                body.style.backgroundImage='url("./iphone_lock2.png")';
                 setTimeout(() => {
                     back.style.display='none';
-                    body.style.backgroundImage="url(./iphoneback.png)"
-                },500)
+                },500);
+                setTimeout(() => {
+                    back.style.display='none';
+                    body.style.backgroundImage='url("./iphoneback.png")';
+                },1300);
                 setTimeout(() => {
                     location.href="iphone_main.html";
-                },1300)
-                // location.href='./iphone_main.html';
+                },2500);
             }
         });
         var date = new Date();
