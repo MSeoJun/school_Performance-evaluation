@@ -11,10 +11,12 @@
             cursor: url(aim.png) 50 50, auto;
         }
 
+/* 테스 */
         body {
-            padding: 0;
-            margin: 0;
-            background-color: white;
+            padding:0;
+            margin:0;
+            width:100%;
+            height:100vh;
         }
 
         /* 점수 */
@@ -112,12 +114,6 @@
             left: 82.4%;
             color: black;
         }
-        body {
-            padding:0;
-            margin:0;
-            width:100%;
-            height:100vh;
-        }
     </style>
 </head>
 <body>
@@ -139,9 +135,14 @@
     <div class="icon-target2" id="target11"></div>
     <script>
         var body = document.querySelector('body');
+        // 타겟
         var target = document.getElementsByClassName('icon-target');
+        var target1 = document.getElementsByClassName('icon-target1');
+        var target2 = document.getElementsByClassName('icon-target2');
+        // 음악
         var audio = new Audio();
 
+        // 점수 표시
         const score = document.getElementById('score');
         var result = 0;
         score.innerText = `점수 : ${result}`
@@ -149,12 +150,11 @@
         audio.src ='./shotgun1.mp3';
         body.addEventListener('click',() => {
             audio.play();
+            setTimeout(() => {
+                audio.pause();
+                audio.currentTime=0;
+            },500);
         });
-
-        if() {
-            this.result = this.result + 100;
-            score.innerText = `점수 : ${this.result}`;
-        }
     </script>
 </body>
 </html>
