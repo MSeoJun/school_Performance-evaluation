@@ -157,6 +157,8 @@
     <script>
       var body = document.querySelector("body");
       var target = document.getElementsByClassName("icon-target");
+      var target1 = document.getElementsByClassName("icon-target1");
+      var target2 = document.getElementsByClassName("icon-target2");
       var audio = new Audio();
 
       const score = document.getElementById("score");
@@ -176,15 +178,42 @@
 
         document.getElementById("target" + random).onclick = function() {
           document.getElementById("target" + random).style.display = "none";
+          audio.play();
           for (let index = 1; index < 13; index++) {
             if (
               document.getElementById("target" + index).style.display === "none"
             ) {
-              window.location.reload();
+              setTimeout(() => {
+                window.location.reload();
+              }, 800);
             }
           }
         };
       }
+
+      for(i=0; i<target.length; i++) {
+            target[i].addEventListener('click',() => {
+            this.result = this.result + 100;
+            score.innerText = `점수 : ${this.result}`;
+            localStorage.score = this.result;
+            });
+        }
+
+        for(i=0; i<target1.length; i++) {
+            target1[i].addEventListener('click',() => {
+            this.result = this.result + 50;
+            score.innerText = `점수 : ${this.result}`;
+            Number(localStorage.score) += this.result;
+            });
+        }
+
+        for(i=0; i<target2.length; i++) {
+            target2[i].addEventListener('click',() => {
+            this.result = this.result + 30;
+            // score.innerText = `점수 : ${this.result}`;
+            localStorage.score += this.result;
+            });
+        }
     </script>
   </body>
 </html>
