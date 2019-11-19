@@ -13,6 +13,7 @@
             border:0;
         }
 
+        /* 제목 */
         #title {
             color: white;
             text-align: center;
@@ -25,6 +26,7 @@
             font-size: 40px;
         }
 
+        /* 중간 선 */
         #line {
             width: 70%;
             position: fixed;
@@ -34,6 +36,7 @@
             margin: 0;
         }
 
+        /* 성 */
         #last {
             position: fixed;
             top: 28%;
@@ -49,11 +52,11 @@
             padding: 5px 10px;
             margin: 0;
         }
-
         #last:focus {
             border: 3px solid #555;
         }
 
+        /* 이름 */
         #name {
             position: fixed;
             top: 28%;
@@ -69,12 +72,11 @@
             padding: 5px 10px;
             margin: 0;
         }
-
         #name:focus {
             border: 3px solid #555;
         }
 
-        
+        /* 생년월일 */
         #birth {
             position: fixed;
             top: 40%;
@@ -90,11 +92,11 @@
             padding: 5px 10px;
             margin: 0;
         }
-
         #birth:focus {
             border: 3px solid #555;
         }
 
+        /* 이메일 */
         #email {
             position: fixed;
             top: 58%;
@@ -110,11 +112,11 @@
             padding: 5px 10px;
             margin: 0;
         }
-
         #email:focus {
             border: 3px solid #555;
         }
 
+        /* 암호 */
         #pw {
             position: fixed;
             top: 69%;
@@ -130,11 +132,11 @@
             padding: 5px 10px;
             margin: 0;
         }
-
         #pw:focus {
             border: 3px solid #555;
         }
 
+        /* 암호 확인 */
         #pwok {
             position: fixed;
             top: 81.5%;
@@ -150,11 +152,11 @@
             padding: 5px 10px;
             margin: 0;
         }
-
         #pwok:focus {
             border: 3px solid #555;
         }
 
+        /* 확인 버튼 */
         #ok {
             width: 4%;
             height: 7%;
@@ -169,11 +171,11 @@
             font-size: 20px;
             border-radius: 5px;
         }
-
         #ok:hover {
             background-color: #4d4dff;
         }
 
+        /* 암호 규칙 */
         #inp {
             position: fixed;
             bottom: 17%;
@@ -182,7 +184,7 @@
     </style>
 </head>
 <body>
-        <form method="post" action="/sign_up" onsubmit="return check()">
+    <form method="post" action="/sign_up" onsubmit="return check()">
     <h1 id="title">Apple ID 생성</h1>
     <input type="text" id="last" placeholder="성" autocomplete="off" required>
     <input type="text" id="name" placeholder="이름" autocomplete="off" required>
