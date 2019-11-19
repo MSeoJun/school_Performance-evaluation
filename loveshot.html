@@ -1,139 +1,163 @@
 <!DOCTYPE html>
 <html onselectstart="return false">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="fontello-a1c81d73/css/fontello.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fontello-a1c81d73/css/fontello.css"
+    />
     <title>FPS_Game</title>
     <style>
-        html {
-            cursor: url(aim.png) 50 50, auto;
-        }
 
-/* 테스 */
-        body {
-            padding:0;
-            margin:0;
-            width:100%;
-            height:100vh;
-        }
+      html {
+        cursor: url(aim.png) 50 50, auto;
+      }
 
-        /* 점수 */
-        #score {
-            position: fixed;
-            top: 5%;
-            right: 5%;
-            padding: 0;
-            margin: 0;
-        }
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: white;
+      }
 
-        /* 작은 타겟 */
-        #target {
-            position: fixed;
-            top: 15%;
-            left: 10%;
-            color: black;
-        }
+      /* 점수 */
+      #score {
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        padding: 0;
+        margin: 0;
+      }
 
-        #target1 {
-            position: fixed;
-            top: 15%;
-            left: 35%;
-            color: black;
-        }
+      /* 작은 타겟 */
+      #target1 {
+        display: none;
+        position: fixed;
+        top: 15%;
+        left: 10%;
+        color: black;
+      }
 
-        #target2 {
-            position: fixed;
-            top: 15%;
-            left: 60%;
-            color: black;
-        }
+      #target2 {
+        position: fixed;
+        top: 15%;
+        left: 35%;
+        display: none;
+        color: black;
+      }
 
-        #target3 {
-            position: fixed;
-            top: 15%;
-            left: 85%;
-            color: black;
-        }
+      #target3 {
+        position: fixed;
+        top: 15%;
+        left: 60%;
+        display: none;
+        color: black;
+      }
 
-        /* 보통 타겟 */
-        #target4 {
-            position: fixed;
-            top: 35%;
-            left: 8.5%;
-            color: black;
-        }
+      #target4 {
+        position: fixed;
+        top: 15%;
+        left: 85%;
+        display: none;
+        color: black;
+      }
 
-        #target5 {
-            position: fixed;
-            top: 35%;
-            left: 33.5%;
-            color: black;
-        }
+      /* 보통 타겟 */
+      #target5 {
+        position: fixed;
+        top: 35%;
+        left: 8.5%;
+        display: none;
+        color: black;
+      }
 
-        #target6 {
-            position: fixed;
-            top: 35%;
-            left: 58.5%;
-            color: black;
-        }
+      #target6 {
+        position: fixed;
+        top: 35%;
+        left: 33.5%;
+        display: none;
+        color: black;
+      }
 
-        #target7 {
-            position: fixed;
-            top: 35%;
-            left: 83.5%;
-            color: black;
-        }
+      #target7 {
+        position: fixed;
+        top: 35%;
+        left: 58.5%;
+        display: none;
+        color: black;
+      }
 
-        /* 큰 타겟 */
-        #target8 {
-            position: fixed;
-            top: 60%;
-            left: 7.4%;
-            color: black;
-        }
+      #target8 {
+        position: fixed;
+        top: 35%;
+        left: 83.5%;
+        display: none;
+        color: black;
+      }
 
-        #target9 {
-            position: fixed;
-            top: 60%;
-            left: 32.4%;
-            color: black;
-        }
+      /* 큰 타겟 */
+      #target9 {
+        position: fixed;
+        top: 60%;
+        left: 7.4%;
+        display: none;
+        color: black;
+      }
 
-        #target10 {
-            position: fixed;
-            top: 60%;
-            left: 57.4%;
-            color: black;
-        }
+      #target10 {
+        position: fixed;
+        top: 60%;
+        left: 32.4%;
+        display: none;
+        color: black;
+      }
 
-        #target11 {
-            position: fixed;
-            top: 60%;
-            left: 82.4%;
-            color: black;
-        }
+      #target11 {
+        position: fixed;
+        top: 60%;
+        left: 57.4%;
+        display: none;
+        color: black;
+      }
+
+      #target12 {
+        position: fixed;
+        top: 60%;
+        left: 82.4%;
+        display: none;
+        color: black;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        /* display: block; */
+      }
+>>>>>>> 91f31b78de56191bb45fb490760f1c7c2269a525
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1 id="score"></h1>
     <!-- 작은 타겟 -->
-    <div class="icon-target" id="target"></div>
     <div class="icon-target" id="target1"></div>
     <div class="icon-target" id="target2"></div>
     <div class="icon-target" id="target3"></div>
+    <div class="icon-target" id="target4"></div>
     <!-- 보통 타겟 -->
-    <div class="icon-target1" id="target4"></div>
     <div class="icon-target1" id="target5"></div>
     <div class="icon-target1" id="target6"></div>
     <div class="icon-target1" id="target7"></div>
+    <div class="icon-target1" id="target8"></div>
     <!-- 큰 타겟 -->
-    <div class="icon-target2" id="target8"></div>
     <div class="icon-target2" id="target9"></div>
     <div class="icon-target2" id="target10"></div>
     <div class="icon-target2" id="target11"></div>
+    <div class="icon-target2" id="target12"></div>
     <script>
+<<<<<<< HEAD
         var body = document.querySelector('body');
         // 타겟
         var target = document.getElementsByClassName('icon-target');
@@ -155,6 +179,38 @@
                 audio.currentTime=0;
             },500);
         });
+=======
+      var body = document.querySelector("body");
+      var target = document.getElementsByClassName("icon-target");
+      var audio = new Audio();
+
+      const score = document.getElementById("score");
+      var result = 0;
+      score.innerText = `점수 : ${result}`;
+
+      audio.src = "./shotgun1.mp3";
+      body.addEventListener("click", () => {
+        audio.play();
+      });
+
+      re();
+
+      function re() {
+        let random = Math.floor(Math.random() * 12) + 1;
+        document.getElementById("target" + random).style.display = "block";
+
+        document.getElementById("target" + random).onclick = function() {
+          document.getElementById("target" + random).style.display = "none";
+          for (let index = 1; index < 13; index++) {
+            if (
+              document.getElementById("target" + index).style.display === "none"
+            ) {
+              window.location.reload();
+            }
+          }
+        };
+      }
+>>>>>>> 91f31b78de56191bb45fb490760f1c7c2269a525
     </script>
-</body>
+  </body>
 </html>
