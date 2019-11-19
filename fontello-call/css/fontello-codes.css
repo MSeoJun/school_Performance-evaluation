@@ -1,0 +1,8 @@
+
+.icon-clock:before { content: '\63'; } /* 'c' */
+.icon-user:before { content: '\70'; } /* 'p' */
+.icon-star:before { content: '\73'; } /* 's' */
+.icon-signal:before { content: '\e800'; } /* '' */
+.icon-tape:before { content: '\e801'; } /* '' */
+.icon-wifi:before { content: '\f1eb'; } /* '' */
+.icon-battery-2:before { content: '\f242'; } /* '' */
