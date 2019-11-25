@@ -171,11 +171,13 @@
         }
         #add_num {
             color:rgb(35, 69, 224);
-            display: none;
+            
             animation-name: no_display;
             animation-duration: .5s;
             animation-play-state: running;
             animation-fill-mode: both;
+
+            display: none;
         }
     </style>
 </head>
@@ -251,7 +253,7 @@
         // 내일 폭탄 주고받기 만들 예정 손 이미지 폭탄 이미지
         // 커맨드 입력 시 상대방에게 폭탄 전달 시간 만료 시 폭발
         body.addEventListener('keypress',() => {
-            
+
         });
         const remove2 = () => {
             var char = number.innerText;
@@ -266,13 +268,19 @@
                     remove.style.animationName="no_display";
                     remove.style.display="none";
                 },500);
-                add_num.style.display="none";
             }
         };
         const remove3 = () => {
             if(number.innerText.length >=1) {
                 remove.style.display="inline-block";
                 add_num.style.display="inline-block";
+                
+            }
+            if(number.innerText.length == 3) {
+                number.innerText = `${number.innerText}-`;    
+            }
+            if(number.innerText.length == 8) {
+                number.innerText = `${number.innerText}-`;    
             }
         };
         n0.addEventListener('click',() => {
