@@ -19,6 +19,7 @@
         padding: 0;
         margin: 0;
         background-color: white;
+        overflow: hidden;
       }
 
       /* 점수 */
@@ -142,8 +143,8 @@
       }
       .button.gray {
         color: black;
-        background-color: white;
-        border-bottom: gray 2px solid;
+        background-color: gray;
+        border-bottom: black 2px solid;
         border-top: 2px white solid;
         width: 80px;
         height: 80px;
@@ -170,6 +171,7 @@
     />
     <h1 id="score"></h1>
     <div id="ViewTimer"></div>
+    <a id="reset" onclick="window.location.reload();"></a>
     <!-- 작은 타겟 -->
     <div class="icon-target" id="target1"></div>
     <div class="icon-target" id="target2"></div>
@@ -196,6 +198,8 @@
         audio.play();
       });
 
+      localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
+
       function start() {
         document.getElementById("start").style.display = "none";
         // 타겟생성 함수 호출
@@ -211,15 +215,17 @@
         SetTime--;
         if (SetTime < 0) {
           clearInterval(tid);
-          alert("종료");
+          // alert("종료");
           for (let i = 1; i < 13; i++) {
             document.getElementById("target" + i).style.display = "none";
           }
           document.getElementById("score").style.display = "none";
+          localStorage.removeItem(score);
+          reset.innerText = `re?`;
         }
       }
       function TimerStart() {
-        tid = setInterval("msg_time()", 1000);
+        tid = setInterval("msg_time()", 900);
       }
 
       // 1~4까지의 타겟을 생성

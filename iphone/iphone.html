@@ -22,6 +22,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         transition: background-image 1s;
+        z-index: 0;
       }
       @keyframes unlock {
         from {
@@ -71,6 +72,7 @@
         font-weight: 100;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1;
       }
       #day {
         color: white;
@@ -186,9 +188,132 @@
         left: 32%;
         border-radius: 10%;
       }
+      @keyframes pass {
+        from {opacity:0;}
+        to {opacity:0.5;}
+      }
+      .cover {
+        position: fixed;
+        top:100%;
+        width:100%;
+        height:100vh;
+        z-index: 0;
+        background-color: rgba(0,0,0,1);
+        animation-name: pass;
+        animation-play-state: paused;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+      }
+      .blur {
+        position: fixed;
+        top:100%;
+        height:100vh;
+        width:100%;
+        background-image: url('../img/iphone_lock.jpg');
+        filter: blur(10px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* display: none; */
+      }
+      .password {
+        color: white;
+        display: none;
+        position: fixed;
+        font-size: 0.8rem;
+        left:25%;
+        top:10%;
+      }
+      .circle {
+        border-radius: 100%;
+        border:1px solid white;
+        width:7%;
+        height:2vh;
+        left:7%;
+        top:5%;
+        display: inline-block;
+        margin:.2rem;
+      }
+      /* 비밀번호 입력 스타일 */
+      .num {
+        background-color: rgb(255, 255, 255, 0.1);
+        position: fixed;
+        width: 20%;
+        height: 12vh;
+        border-radius: 100%;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.5rem;
+        line-height: 12vh;
+        z-index: 1;
+      }
+      .num:hover {
+        background-color: rgb(153, 152, 152);
+        cursor: pointer;
+      }
+      .num.left {
+        left: 12.5%;
+      }
+      .num.mid {
+        left: 39.5%;
+      }
+      .num.right {
+        left: 66.5%;
+      }
+      .num.firstline {
+        top: 25%;
+      }
+      .num.secondline {
+        top: 40%;
+      }
+      .num.thirdline {
+        top: 55%;
+      }
+      .num.fourthline {
+        top: 70%;
+      }
+
+      /* 후에 없앨 것 */
+      .nump {
+        font-size: 0.5rem;
+        position: fixed;
+        z-index: 2;
+        cursor: pointer;
+      }
+      /* 키패드 및 글자 */
+      .nump.left {
+        left: 17.5%;
+      }
+      .nump.mid {
+        left: 45%;
+      }
+      .nump.right {
+        left: 71%;
+      }
+      .nump.firstline {
+        top: 31%;
+      }
+      .nump.secondline {
+        top: 46%;
+      }
+      .nump.thirdline {
+        top: 61%;
+      }
+      .nump.fourthline {
+        top: 76%;
+      }
+      #number {
+        margin-top: 10%;
+        font-size: 1.2rem;
+      }
     </style>
   </head>
   <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <div class="blur">
+
+    </div>
+    <div class="cover">
+
+    </div>
     <header id="top">
       <div id="top_mid" class="topbar"></div>
       <div id="top_right" class="top_right">
@@ -241,7 +366,37 @@
       <div class="bot_border"></div>
     </footer>
     <div id="back" class="back"></div>
+    <div class="password">
+      <p>Touch ID 또는 암호 입력</p>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div id="n1" class="num left firstline">1</div>
+      <div id="n4" class="num left secondline">4</div>
+      <p id="b4" class="nump left secondline">G H I</p>
+      <div id="n7" class="num left thirdline">7</div>
+      <p id="b7" class="nump left thirdline">P Q R</p>
+      <div id="n2" class="num mid firstline">2</div>
+      <p id="b2" class="nump mid firstline">A B C</p>
+      <div id="n5" class="num mid secondline">5</div>
+      <p id="b5" class="nump mid secondline">J K L</p>
+      <div id="n8" class="num mid thirdline">8</div>
+      <p id="b8" class="nump mid thirdline">S T U</p>
+      <div id="n0" class="num mid fourthline">0</div>
+      <p id="b0" class="nump mid fourthline">Y Z +</p>
+      <div id="n3" class="num right firstline">3</div>
+      <p id="b3" class="nump right firstline">D E F</p>
+      <div id="n6" class="num right secondline">6</div>
+      <p id="b6" class="nump right secondline">M N O</p>
+      <div id="n9" class="num right thirdline">9</div>
+      <p id="b9" class="nump right thirdline">V W X</p>
+    </div>
     <script>
+      var blur = document.getElementsByClassName('blur');
+      var cover = document.getElementsByClassName('cover');
       var back = document.getElementById("back");
       var lock = document.getElementById("lock");
       var body = document.querySelector("body");
@@ -256,8 +411,12 @@
       var menu = document.getElementById("menu");
       var bot_left = document.getElementById("bot_left");
       var bot_right = document.getElementById("bot_right");
+      var password = document.getElementsByClassName('password');
+      var state = 'lock';
       body.addEventListener("keydown", e => {
         if (e.keyCode === 32) {
+          // 백그라운드 이미지만 표시
+
           bot_left.style.display = "none";
           bot_right.style.display = "none";
           clock.style.display = "none";
@@ -269,20 +428,31 @@
           top_right1.style.display = "none";
           top_right2.style.display = "none";
           top_right3.style.display = "none";
-          body.style.backgroundImage = "url('')";
-          back.style.backgroundImage = "url('../img/iphone_lock.jpg')";
-          back.style.animationPlayState = "running";
-          body.style.backgroundImage = 'url("../img/iphone_lock2.png")';
-          setTimeout(() => {
-            back.style.display = "none";
-          }, 500);
-          setTimeout(() => {
-            back.style.display = "none";
-            body.style.backgroundImage = 'url("../img/iphoneback.png")';
-          }, 1300);
-          setTimeout(() => {
-            location.href = "../iphone/iphone_main.html";
-          }, 2500);
+          //잠금화면 표시 
+          cover[0].style.top="0%";
+          cover[0].style.animationPlayState="running";
+          body.style.backgroundImage="url('')";
+          blur[0].style.display="inline-block";
+          blur[0].style.top="0%";
+          password[0].style.display="inline-block";
+
+          // 잠금해제 성공
+
+          // body.style.backgroundColor="rgba(255,255,255,0.4)";
+          // body.style.backgroundImage = "url('')";
+          // back.style.backgroundImage = "url('../img/iphone_lock.jpg')";
+          // back.style.animationPlayState = "running";
+          // body.style.backgroundImage = 'url("../img/iphone_lock2.png")';
+          // setTimeout(() => {
+          //   back.style.display = "none";
+          // }, 500);
+          // setTimeout(() => {
+          //   back.style.display = "none";
+          //   body.style.backgroundImage = 'url("../img/iphoneback.png")';
+          // }, 1300);
+          // setTimeout(() => {
+          //   location.href = "../iphone/iphone_main.html";
+          // }, 2500);
         }
       });
       var date = new Date();
