@@ -68,26 +68,18 @@ hr.line {
 #end {
     display: none;
     position: fixed;
-    font-size: 25px;
     bottom: 10%;
-    right: 17%;
+    right: 20%;
     cursor: pointer;
-    background-color: black;
-    color: gold;
-    border: 0;
 }
 
 /* 게임 계속하기 버튼 */
 #restart {
     display: none;
     position: fixed;
-    font-size: 25px;
     bottom: 10%;
-    right: 27%;
-    cursor: pointer;
-    background-color: black;
-    color: gold;
-    border: 0;
+    right: 30%;
+    cursor: pointer
 }
 
 /* D */
@@ -1128,7 +1120,7 @@ var K = document.getElementById('K');
 
 // 음악 시작
 var audio = new Audio();
-audio.src='https://raw.githubusercontent.com/MSeoJun/school_Performance-evaluation/master/canonbbak.mp3';
+audio.src='../sound/canonbbak.mp3';
 const play = document.getElementById('play');
 const timer = document.getElementById('timer');
 const start = document.getElementById('start');
@@ -1307,8 +1299,6 @@ body.addEventListener('keypress',(e) => {
             D.style.removeProperty("background-color");
         }, 100);
         if(450<=d_1.offsetTop && d_1.offsetTop<=600) {
-            // console.log('미르스띤');
-            // console.log(result);
             this.result = this.result + 100;
             score.innerText = `점수 : ${this.result}`;
             d_1.style.display= 'none'

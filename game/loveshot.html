@@ -7,12 +7,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="fontello-a1c81d73/css/fontello.css"
+      href="../fontello/fontello-a1c81d73/css/fontello.css"
     />
     <title>FPS_Game</title>
     <style>
       html {
-        cursor: url(aim.png) 50 50, auto;
+        cursor: url(../img/aim.png) 50 50, auto;
       }
 
       body {
@@ -135,10 +135,41 @@
         height: 100vh;
         /* display: block; */
       }
+      input {
+        position: fixed;
+        left: 48%;
+        top: 42%;
+      }
+      .button.gray {
+        color: black;
+        background-color: white;
+        border-bottom: gray 2px solid;
+        border-top: 2px white solid;
+        width: 80px;
+        height: 80px;
+      }
+      .button {
+        font-size: 17px;
+        border: none;
+        border-radius: 20px;
+        cursor: url(../img/aim.png) 50 50, auto;
+        outline: none;
+      }
     </style>
   </head>
   <body>
+    <!-- <button id="start" class="button gray" onclick="TimerStart(), start();">
+      시작
+    </button> -->
+    <input
+      type="button"
+      class="button gray"
+      value="시작"
+      id="start"
+      onclick="TimerStart(), start();"
+    />
     <h1 id="score"></h1>
+    <div id="ViewTimer"></div>
     <!-- 작은 타겟 -->
     <div class="icon-target" id="target1"></div>
     <div class="icon-target" id="target2"></div>
@@ -160,56 +191,102 @@
       var target1 = document.getElementsByClassName("icon-target1");
       var target2 = document.getElementsByClassName("icon-target2");
       var audio = new Audio();
-
-      const score = document.getElementById("score");
-      var result = 0;
-      score.innerText = `점수 : ${Number(localStorage.score)}`;
-
-      audio.src = "./shotgun1.mp3";
+      audio.src = "../sound/shotgun1.mp3";
       body.addEventListener("click", () => {
         audio.play();
       });
 
-      re();
+      function start() {
+        document.getElementById("start").style.display = "none";
+        // 타겟생성 함수 호출
+        re();
+        re1();
+        re2();
+      }
+      var SetTime = 29;
+      function msg_time() {
+        m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
+        var msg = "현재 남은 시간은 <font color='red'>" + m + "</font> 입니다.";
+        document.all.ViewTimer.innerHTML = msg;
+        SetTime--;
+        if (SetTime < 0) {
+          clearInterval(tid);
+          alert("종료");
+          for (let i = 1; i < 13; i++) {
+            document.getElementById("target" + i).style.display = "none";
+          }
+          document.getElementById("score").style.display = "none";
+        }
+      }
+      function TimerStart() {
+        tid = setInterval("msg_time()", 1000);
+      }
 
+      // 1~4까지의 타겟을 생성
       function re() {
-        let random = Math.floor(Math.random() * 12) + 1;
+        score.innerText = `점수 : ${localStorage.getItem(score)}`;
+
+        let random = Math.floor(Math.random() * 4) + 1;
         document.getElementById("target" + random).style.display = "block";
-              // setTimeout(() => {
-              //   window.location.reload();
-              // }, 1500);
+
         document.getElementById("target" + random).onclick = function() {
           document.getElementById("target" + random).style.display = "none";
-          audio.play();
-          for (let index = 1; index < 13; index++) {
-            if (
-              document.getElementById("target" + index).style.display === "none"
-            ) {
-              setTimeout(() => {
-                window.location.reload();
-              }, 800);
-            }
+          if (random <= 4) {
+            localStorage.setItem(
+              score,
+              Number(localStorage.getItem(score)) + 100
+            );
           }
+          audio.play();
+          setTimeout(() => {
+            re();
+          }, 400);
         };
       }
 
-      for(i=0; i<target.length; i++) {
-            target[i].addEventListener('click',() => {
-            localStorage.score = Number(localStorage.score) + 100;
-            });
-        }
+      // 5~8까지의 타겟을 생성
+      function re1() {
+        score.innerText = `점수 : ${localStorage.getItem(score)}`;
 
-        for(i=0; i<target1.length; i++) {
-            target1[i].addEventListener('click',() => {
-              localStorage.score =Number(localStorage.score) + 50;
-            });
-        }
+        let random1 = Math.floor(Math.random() * 4) + 5;
+        document.getElementById("target" + random1).style.display = "block";
 
-        for(i=0; i<target2.length; i++) {
-            target2[i].addEventListener('click',() => {
-              localStorage.score =Number(localStorage.score) + 30;
-            });
-        }
+        document.getElementById("target" + random1).onclick = function() {
+          document.getElementById("target" + random1).style.display = "none";
+          if (random1 > 4 && random1 <= 8) {
+            localStorage.setItem(
+              score,
+              Number(localStorage.getItem(score)) + 50
+            );
+          }
+          audio.play();
+          setTimeout(() => {
+            re1();
+          }, 400);
+        };
+      }
+
+      // 8~12까지의 타겟을 생성
+      function re2() {
+        score.innerText = `점수 : ${localStorage.getItem(score)}`;
+
+        let random2 = Math.floor(Math.random() * 4) + 9;
+        document.getElementById("target" + random2).style.display = "block";
+
+        document.getElementById("target" + random2).onclick = function() {
+          document.getElementById("target" + random2).style.display = "none";
+          if (random2 > 8 && random2 <= 12) {
+            localStorage.setItem(
+              score,
+              Number(localStorage.getItem(score)) + 30
+            );
+          }
+          audio.play();
+          setTimeout(() => {
+            re2();
+          }, 400);
+        };
+      }
     </script>
   </body>
 </html>
