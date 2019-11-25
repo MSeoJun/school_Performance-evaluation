@@ -147,6 +147,36 @@
             font-size: 2rem;
             color:white;
         }
+        @keyframes display {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+        @keyframes no_display {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        #remove {
+            /* animation-name: display;
+            animation-duration: 1s;
+            animation-play-state: paused;
+            animation-fill-mode: both; */
+
+            animation-name: no_display;
+            animation-duration: .5s;
+            animation-play-state: running;
+            animation-fill-mode: both;
+
+
+            display:none;
+        }
+        #add_num {
+            color:rgb(35, 69, 224);
+            display: none;
+            animation-name: no_display;
+            animation-duration: .5s;
+            animation-play-state: running;
+            animation-fill-mode: both;
+        }
     </style>
 </head>
 <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
@@ -163,6 +193,7 @@
     <nav>
         <center>
             <p id="number"></p>
+            <p id="add_num">번호 추가</p>
         </center>
     </nav>
     <article>
@@ -188,13 +219,12 @@
         <div id="n9" class="num right thirdline">9</div>
         <p id="b9" class="nump right thirdline">V W X</p>
         <div id="special2" class="num right fourthline">#</div>
-        <div id="remove"></div>
+        <div id="remove" onclick="remove2()" class="num right fifthline remove"><<</div>
     </article>
     <script>
-        var remove = document.createElement('div');
-        remove.innerHTML= `
-            <div onclick="remove2()" class="num right fifthline remove"><<</div>
-        `;
+        var body = document.querySelector('body');
+        var add_num = document.getElementById('add_num');
+        var remove = document.getElementById('remove');
         var number = document.getElementById('number');
         var n0 = document.getElementById('n0');
         var n1 = document.getElementById('n1');
@@ -217,92 +247,85 @@
         var b9 = document.getElementById('b9');
         var special1 = document.getElementById('special1');
         var special2 = document.getElementById('special2');
+        // 빠져나가게 할 때 사용할 이벤트리스너
+        // 내일 폭탄 주고받기 만들 예정 손 이미지 폭탄 이미지
+        // 커맨드 입력 시 상대방에게 폭탄 전달 시간 만료 시 폭발
+        body.addEventListener('keypress',() => {
+            
+        });
         const remove2 = () => {
-            if(number.innerText.length <= 1 ) {
-                document.getElementById('remove').removeChild(remove);
-            }
             var char = number.innerText;
             var char2 = char.slice(0,-1);
             number.innerText = char2;
-
+            if(number.innerText.length == 0) {
+                remove.style.animationName="display";
+                add_num.style.animationName="display";
+                setTimeout(() => {
+                    add_num.style.animationName="no_display";
+                    add_num.style.display="none";
+                    remove.style.animationName="no_display";
+                    remove.style.display="none";
+                },500);
+                add_num.style.display="none";
+            }
+        };
+        const remove3 = () => {
+            if(number.innerText.length >=1) {
+                remove.style.display="inline-block";
+                add_num.style.display="inline-block";
+            }
         };
         n0.addEventListener('click',() => {
             number.innerText = `${number.innerText}0`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-            }
+            remove3();
         });
         n1.addEventListener('click',() => {
             number.innerText = `${number.innerText}1`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n2.addEventListener('click',() => {
             number.innerText = `${number.innerText}2`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n3.addEventListener('click',() => {
             number.innerText = `${number.innerText}3`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n4.addEventListener('click',() => {
             number.innerText = `${number.innerText}4`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n5.addEventListener('click',() => {
             number.innerText = `${number.innerText}5`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n6.addEventListener('click',() => {
             number.innerText = `${number.innerText}6`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n7.addEventListener('click',() => {
             number.innerText = `${number.innerText}7`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n8.addEventListener('click',() => {
             number.innerText = `${number.innerText}8`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         n9.addEventListener('click',() => {
             number.innerText = `${number.innerText}9`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         special1.addEventListener('click',() => {
             number.innerText = `${number.innerText}*`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         special2.addEventListener('click',() => {
             number.innerText = `${number.innerText}#`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         b0.addEventListener('click',() => {
             number.innerText = `${number.innerText}0`;
-            if(number.innerText.length >= 1) {
-            document.getElementById('remove').appendChild(remove);    
-        }
+            remove3();
         });
         var time = document.getElementById('time');
         var date = new Date();
