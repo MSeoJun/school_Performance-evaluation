@@ -171,7 +171,7 @@
     />
     <h1 id="score"></h1>
     <div id="ViewTimer"></div>
-    <h2 id="reset"></h2>
+    <a id="reset" onclick="window.location.reload();"></a>
     <!-- 작은 타겟 -->
     <div class="icon-target" id="target1"></div>
     <div class="icon-target" id="target2"></div>
@@ -207,7 +207,7 @@
         re1();
         re2();
       }
-      var SetTime = 4;
+      var SetTime = 29;
       function msg_time() {
         m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
         var msg = "현재 남은 시간은 <font color='red'>" + m + "</font> 입니다.";
@@ -221,11 +221,11 @@
           }
           document.getElementById("score").style.display = "none";
           localStorage.removeItem(score);
-          // reset.innerText = `re?`;
+          reset.innerText = `re?`;
         }
       }
       function TimerStart() {
-        tid = setInterval("msg_time()", 1000);
+        tid = setInterval("msg_time()", 900);
       }
 
       // 1~4까지의 타겟을 생성
