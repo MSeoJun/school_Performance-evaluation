@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?78492364');
-  src: url('../font/fontello.eot?78492364#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff2?78492364') format('woff2'),
-       url('../font/fontello.woff?78492364') format('woff'),
-       url('../font/fontello.ttf?78492364') format('truetype'),
-       url('../font/fontello.svg?78492364#fontello') format('svg');
+  src: url('../font/fontello.eot?26494583');
+  src: url('../font/fontello.eot?26494583#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?26494583') format('woff2'),
+       url('../font/fontello.woff?26494583') format('woff'),
+       url('../font/fontello.ttf?26494583') format('truetype'),
+       url('../font/fontello.svg?26494583#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?78492364#fontello') format('svg');
+    src: url('../font/fontello.svg?26494583#fontello') format('svg');
   }
 }
 */
@@ -24,7 +24,6 @@
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  speak: none;
  
   display: inline-block;
   text-decoration: inherit;
@@ -55,10 +54,11 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-clock:before { content: '\63'; } /* 'c' */
-.icon-user:before { content: '\70'; } /* 'p' */
-.icon-star:before { content: '\73'; } /* 's' */
-.icon-signal:before { content: '\e800'; } /* '' */
-.icon-tape:before { content: '\e801'; } /* '' */
-.icon-wifi:before { content: '\f1eb'; } /* '' */
-.icon-battery-2:before { content: '\f242'; } /* '' */
+.icon-star:before { content: '\31'; } /* '1' */
+.icon-clock:before { content: '\32'; } /* '2' */
+.icon-user:before { content: '\33'; } /* '3' */
+.icon-signal:before { content: '\34'; } /* '4' */
+.icon-wifi:before { content: '\35'; } /* '5' */
+.icon-battery-2:before { content: '\36'; } /* '6' */
+.icon-tape:before { content: '\37'; } /* '7' */
+.icon-phone:before { content: '\38'; } /* '8' */
