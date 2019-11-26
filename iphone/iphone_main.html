@@ -189,11 +189,11 @@
         left: 81%;
       }
       .cover {
-        position:fixed;
-        top:0;
-        width:100%;
-        height:100vh;
-        background-color:rgba(255,255,255,0);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0);
       }
       
       .back {
@@ -239,7 +239,7 @@
           onclick="target_location()"
           class="app icon-target"
         ></div>
-        <p class="app_title target">총쏘기</p>
+        <p class="app_title target">사격게임</p>
         <div
           id="delicious"
           onclick="delicious_location()"
@@ -265,7 +265,9 @@
           <a href="http://youtube.co.kr"><p class="icon-youtube-play"></p></a>
         </div>
         <div class="box3">
-          <a href="http://facebook.com"><p class="icon-facebook-squared"></p></a>
+          <a href="http://facebook.com"
+            ><p class="icon-facebook-squared"></p
+          ></a>
         </div>
         <div class="box4">
           <a href="http://developers.kakao.com"><p class="icon-comment"></p></a>
@@ -273,9 +275,11 @@
       </div>
     </footer>
     <script>
+
       var back  = document.getElementsByClassName('back');
       var cover = document.getElementsByClassName('cover');
       var body = document.querySelector('body');
+
       var time = document.getElementById("time");
       var date = new Date();
       var music = document.getElementById("music");
@@ -286,22 +290,22 @@
         music.addEventListener("click", () => {
           // console.log("hello");
           // window.open("../game/Rhythm.html", "Rhythm");
-          location.href="../game/Rhythm.html";
+          location.href = "../game/Rhythm.html";
         });
       };
       var camera_location = () => {
         camera.addEventListener("click", () => {
-          location.href="../game/capture.html";
+          location.href = "../game/capture.html";
         });
       };
       var target_location = () => {
         target.addEventListener("click", () => {
-          location.href="../game/loveshot.html";
+          location.href = "../game/loveshot.html";
         });
       };
       var delicious_location = () => {
         delicious.addEventListener("click", () => {
-          location.href="../game/colorgame.html";
+          location.href = "../game/colorgame.html";
         });
       };
       setTimeout(() => {

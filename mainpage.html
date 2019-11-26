@@ -144,7 +144,7 @@
 <body>
     <h1 id="title">게임세상</h1>
     <article>
-        <p>게시판</p>
+        <p onclick="popup1()">게시판</p>
     </article>
     <nav>
         <h2 id="login">로그인</h2>
@@ -172,6 +172,13 @@
         const popup = () => {
             const url = './iphone/iphone.html';
             const name = 'IPHONE';
+            const option = 'width = 300, height = 500 , top = 100 , left = 100 , scrollbars = no , location = 0 , toolbars = 0 , status = no,menubar=no ,resizable=0';
+            window.open(url,name,option);
+        };
+
+        const popup1 = () => {
+            const url = './calculator.html';
+            const name = 'calculator';
             const option = 'width = 300, height = 500 , top = 100 , left = 100 , scrollbars = no , location = 0 , toolbars = 0 , status = no,menubar=no ,resizable=0';
             window.open(url,name,option);
         };
