@@ -183,12 +183,29 @@
         animation-duration: 0.5s;
         animation-play-state: running;
         animation-fill-mode: both;
-
+        position: fixed;
         display: none;
+        left:38%;
+        top:11.5%;
+      }
+      .back {
+        width:100%;
+        height:100vh;
+        background-color: white;
+        position: fixed;
+        top:0%;
+        z-index: 100;
+        animation-name: display;
+        animation-play-state: running;
+        animation-duration: 1s;
+        animation-fill-mode: both;
       }
     </style>
   </head>
   <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <div class="back">
+
+    </div>
     <header>
       <p class="top icon-signal"></p>
       <p class="top team">SKT</p>
@@ -233,6 +250,9 @@
       </div>
     </article>
     <script>
+      var press_call = new Audio();
+      press_call.src = '../sound/call_board.mp3';
+      var back = document.getElementsByClassName('back');
       var body = document.querySelector("body");
       var add_num = document.getElementById("add_num");
       var remove = document.getElementById("remove");
@@ -258,6 +278,9 @@
       var b9 = document.getElementById("b9");
       var special1 = document.getElementById("special1");
       var special2 = document.getElementById("special2");
+      setTimeout(() => {
+        back[0].style.display="none";
+      },1000)
       // 빠져나가게 할 때 사용할 이벤트리스너
       body.addEventListener("keypress", () => {});
       const remove2 = () => {
@@ -290,54 +313,67 @@
       n0.addEventListener("click", () => {
         number.innerText = `${number.innerText}0`;
         remove3();
+        this.press_call.play();
       });
       n1.addEventListener("click", () => {
         number.innerText = `${number.innerText}1`;
         remove3();
+        this.press_call.play();
       });
       n2.addEventListener("click", () => {
         number.innerText = `${number.innerText}2`;
         remove3();
+        this.press_call.play();
       });
       n3.addEventListener("click", () => {
         number.innerText = `${number.innerText}3`;
         remove3();
+        this.press_call.play();
       });
       n4.addEventListener("click", () => {
         number.innerText = `${number.innerText}4`;
         remove3();
+        this.press_call.play();
       });
       n5.addEventListener("click", () => {
         number.innerText = `${number.innerText}5`;
         remove3();
+        this.press_call.play();
       });
       n6.addEventListener("click", () => {
         number.innerText = `${number.innerText}6`;
         remove3();
+        this.press_call.play();
       });
       n7.addEventListener("click", () => {
         number.innerText = `${number.innerText}7`;
         remove3();
+        this.press_call.play();
       });
       n8.addEventListener("click", () => {
         number.innerText = `${number.innerText}8`;
         remove3();
+        this.press_call.play();
       });
       n9.addEventListener("click", () => {
         number.innerText = `${number.innerText}9`;
         remove3();
+        this.press_call.play();
       });
       special1.addEventListener("click", () => {
         number.innerText = `${number.innerText}*`;
         remove3();
+        this.press_call.play();
       });
       special2.addEventListener("click", () => {
         number.innerText = `${number.innerText}#`;
         remove3();
+        this.press_call.play();
       });
       b0.addEventListener("click", () => {
         number.innerText = `${number.innerText}0`;
         remove3();
+        this.press_call.play();
       });
       var time = document.getElementById("time");
       var date = new Date();
