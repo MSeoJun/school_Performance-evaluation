@@ -124,23 +124,10 @@
       #ViewTimer {
         font-size: 12px;
       }
-
-      .back {
-        position: fixed;
-        background-color: white;
-        width: 100%;
-        height: 100vh;
-        top: 0%;
-        z-index: 100;
-        animation-name: display;
-        animation-duration: 1s;
-        animation-play-state: running;
-        animation-fill-mode: both;
-      }
     </style>
   </head>
   <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <div class="back"></div>
+    <!-- <div class="back"></div> -->
     <!-- 시간 -->
     <div id="ViewTimer"></div>
 
@@ -225,12 +212,14 @@
         for (let i = 1; i < 13; i++) {
           document.getElementById("target" + i).style.display = "none";
         }
-        score1.innerText = localStorage.getItem(score);
+        score1.innerText = "총 점수 : " + localStorage.getItem(score);
         reset.innerText = `다시하기`;
         document.getElementById("end").style.display = "block";
-        localStorage.removeItem(score);
         document.getElementById("score").style.display = "none";
         document.getElementById("ViewTimer").style.display = "none";
+        setTimeout(() => {
+          localStorage.removeItem(score);
+        }, 1000);
       }
     }
     function TimerStart() {
@@ -239,7 +228,7 @@
 
     // 1~4까지의 타겟을 생성
     function re() {
-      if (SetTime === 0) {
+      if (SetTime <= 0) {
         msg_time();
       } else {
         score.innerText = `점수 : ${localStorage.getItem(score)}`;
@@ -265,7 +254,7 @@
 
     // 5~8까지의 타겟을 생성
     function re1() {
-      if (SetTime === 0) {
+      if (SetTime <= 0) {
         msg_time();
       } else {
         score.innerText = `점수 : ${localStorage.getItem(score)}`;
@@ -291,7 +280,7 @@
 
     // 8~12까지의 타겟을 생성
     function re2() {
-      if (SetTime === 0) {
+      if (SetTime <= 0) {
         msg_time();
       } else {
         score.innerText = `점수 : ${localStorage.getItem(score)}`;
