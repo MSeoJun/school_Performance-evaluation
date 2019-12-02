@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../fontello/fontello-youtube/css/fontello.css"/>
+    <title>YouTube</title>
+    <style>
+        /* 기본 초기화 */
+        body {
+            padding:0;
+            margin:0;
+        }
+        p {
+            margin:0;
+            padding:0;
+        }
+        /* 처음 실행시 유튜브 로고 */
+        @keyframes display {
+            from {
+            opacity: 1;
+            }
+            to {
+            opacity: 0;
+            }
+        }
+        .youtube {
+            padding:0;
+            margin:0;
+        }
+        .back {
+            width:100%;
+            height:100vh;
+            background-color: white;
+            position: fixed;
+            top:0%;
+            z-index: 100;
+            animation-name: display;
+            animation-play-state: running;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in;
+        }
+        /* 가장 윗 라인의 상태 */
+        .top_state {
+            display:inline-block;
+            position: fixed;
+        }
+        .top_font {
+            font-size: .7rem;
+        }
+        .skt {
+            left:9%;
+            top:.5%;
+        }
+        .time {
+            top:.5%;
+            left:42%;
+        }
+        .percent {
+            top:.5%;
+            left:83%;
+        }
+        .top_line {
+            background-color: gray;
+            position: fixed;
+            width:100%;
+            height:4vh;
+        }
+        /* 탑 메뉴 */
+        .top_menu {
+            width:100%;
+            position:fixed;
+            height:7vh;
+            top:5%;
+            background-color: rgba(255,255,255,0.52);
+        }
+        header {
+            width:100%;
+            height:12vh;
+        }
+        #home {
+            position: fixed;
+            left:10%;
+            top:5%;
+        }
+        /* 비디오 및 인트로 제목 등 */
+        .video {
+            width:100%;
+            height:30vh;
+        }
+        .first {
+            background-image: url('../img/woobin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .red_gray {
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 처음 실행시 유튜브 로고 -->
+    <div class="back">
+        <center>
+            <p class="back youtube icon-youtube-play"></p>
+        </center>
+    </div>
+    <!-- 가장 윗 라인의 상태 -->
+    <header>
+        <center>
+            <div class="top_line">
+                <p class="top_state state icon-signal"></p>
+                <p class="top_state top_font state skt">SKT</p>
+                <p class="top_state state icon-wifi"></p>
+                <p class="top_state top_font clock time"></p>
+                <p class="top_state top_font battery percent">13%</p>
+                <p class="top_state battery icon-battery-1"></p>
+            </div>
+        </center>
+        <div class="top_menu">
+            <p id="home">YouTube</p>
+            <p class="red_gray icon-videocam"></p>
+            <p class="red_gray icon-search"></p>
+        </div>
+    </header>
+    <!-- 비디오 및 제목 인트로 -->
+    <article>
+        <div class="video first"></div>
+    </article>
+    <script>
+        // 처음 실행했을 때 유튜브 인트로
+        var back = document.getElementsByClassName('back');
+        setTimeout(() => {
+            back[0].style.display = "none";
+        },2000);
+        // 가장 윗 라인 시간 스크립트
+        var time = document.getElementsByClassName('time');
+        var date = new Date();
+        if (Number(date.getHours()) > 12) {
+            var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+            var hour = `오전${Number(date.getHours())}:`;
+        }
+        if (Number(date.getMinutes()) < 10) {
+            var minute = `0${date.getMinutes()}`;
+        } else {
+            var minute = date.getMinutes();
+        }
+        time[0].innerHTML = `${hour}${minute}`;
+    </script>
+</body>
+</html>

@@ -6,7 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="capture.css">
     <title>Let's Cap</title>
-    <style>body {
+    <style>
+    @keyframes display {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }  
+    .back {
+        width:100%;
+        height:100vh;
+        background-color: white;
+        position: fixed;
+        top:0%;
+        z-index: 100;
+        animation-name: display;
+        animation-play-state: running;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }      
+    body {
         padding:0;
         margin:0;
         border:0;
@@ -19,23 +40,27 @@
         color:indianred;
     }
     #desc {
-        left:30%;
+        left:2.5%;
         transform: translateX(-30%);
         position: fixed;
-        top:50%;
+        top:20%;
         display: inline-block;
         transform: translateY(-50%);
-        font-size: 1rem;
+        font-size: .8rem;
+        white-space: nowrap;
     }
     #best {
-        left:38%;
+        left:7%;
         transform: translateX(-40%);
         position: fixed;
         top:70%;
+        font-size: .9rem;
         transform: translateY(-70%);
+        white-space: nowrap;
     }</style>
 </head>
 <body>
+    <div class="back"></div>
     <h1 id="desc"></h1>
     <h2 id='best'></h2>
     <script>
