@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!-- (false 기준) oncontextmenu는 우클릭이 안되게 하는거고, onselectstart는 드래그가 안되게 하는거다.-->
 <html oncontextmenu="return false" onselectstart="return false">
+
 <head>
     <meta charset="utf-8">
     <title>아이폰 계산기</title>
+
     <head>
         <style>
             body {
@@ -14,12 +16,13 @@
 
             #result1 {
                 position: fixed;
-                top: 10%;
-                left: 80%;
+                right: 9%;
+                top: 13%;
                 background-color: black;
                 color: white;
                 border: 0;
                 font-size: 60px;
+                text-align: right;
             }
 
             #remove {
@@ -36,6 +39,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #remove:hover {
                 background-color: rgb(211, 206, 206);
             }
@@ -54,6 +58,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #pm:hover {
                 background-color: rgb(211, 206, 206);
             }
@@ -72,6 +77,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #percent:hover {
                 background-color: rgb(211, 206, 206);
             }
@@ -91,6 +97,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #division:hover {
                 background-color: rgba(255, 255, 255, 1);
                 color: rgb(226, 148, 3);
@@ -111,6 +118,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #multiply:hover {
                 background-color: rgba(255, 255, 255, 1);
                 color: rgb(226, 148, 3);
@@ -131,6 +139,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #minus:hover {
                 background-color: rgba(255, 255, 255, 1);
                 color: rgb(226, 148, 3);
@@ -151,6 +160,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #plus:hover {
                 background-color: rgba(255, 255, 255, 1);
                 color: rgb(226, 148, 3);
@@ -171,13 +181,14 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #result:hover {
                 background-color: rgba(255, 255, 255, 1);
                 color: rgb(226, 148, 3);
             }
 
             #one {
-                position:fixed;
+                position: fixed;
                 top: 70%;
                 left: 5%;
                 background-color: rgb(54, 54, 54);
@@ -191,12 +202,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #one:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #two {
-                position:fixed;
+                position: fixed;
                 top: 70%;
                 left: 28%;
                 background-color: rgb(54, 54, 54);
@@ -210,12 +222,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #two:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #three {
-                position:fixed;
+                position: fixed;
                 top: 70%;
                 left: 51%;
                 background-color: rgb(54, 54, 54);
@@ -229,12 +242,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #three:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #four {
-                position:fixed;
+                position: fixed;
                 top: 56.5%;
                 left: 5%;
                 background-color: rgb(54, 54, 54);
@@ -248,12 +262,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #four:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #five {
-                position:fixed;
+                position: fixed;
                 top: 56.5%;
                 left: 28%;
                 background-color: rgb(54, 54, 54);
@@ -267,12 +282,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #five:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #six {
-                position:fixed;
+                position: fixed;
                 top: 56.5%;
                 left: 51%;
                 background-color: rgb(54, 54, 54);
@@ -286,12 +302,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #six:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #seven {
-                position:fixed;
+                position: fixed;
                 top: 43%;
                 left: 5%;
                 background-color: rgb(54, 54, 54);
@@ -305,12 +322,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #seven:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #eight {
-                position:fixed;
+                position: fixed;
                 top: 43%;
                 left: 28%;
                 background-color: rgb(54, 54, 54);
@@ -324,12 +342,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #eight:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #nine {
-                position:fixed;
+                position: fixed;
                 top: 43%;
                 left: 51%;
                 background-color: rgb(54, 54, 54);
@@ -343,12 +362,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #nine:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #zero {
-                position:fixed;
+                position: fixed;
                 top: 84%;
                 left: 5%;
                 text-align: left;
@@ -363,12 +383,13 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #zero:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
 
             #point {
-                position:fixed;
+                position: fixed;
                 top: 84%;
                 left: 51%;
                 background-color: rgb(54, 54, 54);
@@ -382,51 +403,71 @@
                 cursor: pointer;
                 outline: none;
             }
+
             #point:hover {
                 background-color: rgba(255, 255, 255, 0.3);
             }
         </style>
     </head>
-    <body>
-            <input class="result1" id="result1" value="0" disabled>
-            <input type="button" id="remove" value="AC" onclick="clean()">
-        <div>
-            <input type="button" id="pm" value="<" onclick="back()">
-        </div>
-            <input type="button" id="percent" value="%">
-            <input type="button" id="division" value="÷">
-            <input type="button" id="multiply" value="×">
-            <input type="button" id="minus" value="-">
-            <input type="button" id="plus" value="+">
-            <input type="button" id="result" value="=">
-            <input type="button" id="one" value="1" onclick="insert(1)">
-            <input type="button" id="two" value="2" onclick="insert(2)">
-            <input type="button" id="three" value="3" onclick="insert(3)">
-            <input type="button" id="four" value="4" onclick="insert(4)">
-            <input type="button" id="five" value="5" onclick="insert(5)">
-            <input type="button" id="six" value="6" onclick="insert(6)">
-            <input type="button" id="seven" value="7" onclick="insert(7)">
-            <input type="button" id="eight" value="8" onclick="insert(8)">
-            <input type="button" id="nine" value="9" onclick="insert(9)">
-            <input type="button" id="zero" value="0">
-            <input type="button" id="point" value=".">
 
-            <script>
-            // 숫자를 클릭하여 입력
-            function insert(num){
-                result1.value = result1.value+num
+<body>
+    <!-- <input class="result1" id="result1" value="0"> -->
+    <p class="result1" id="result1"></p>
+    <input type="button" id="remove" value="AC" onclick="clean()">
+    <input type="button" id="pm" value="<" onclick="back()">
+    <input type="button" id="percent" value="%">
+    <input type="button" id="division" value="÷">
+    <input type="button" id="multiply" value="×">
+    <input type="button" id="minus" value="-">
+    <input type="button" id="plus" value="+">
+    <input type="button" id="result" value="=">
+    <input type="button" id="one" value="1" onclick="insert(1)">
+    <input type="button" id="two" value="2" onclick="insert(2)">
+    <input type="button" id="three" value="3" onclick="insert(3)">
+    <input type="button" id="four" value="4" onclick="insert(4)">
+    <input type="button" id="five" value="5" onclick="insert(5)">
+    <input type="button" id="six" value="6" onclick="insert(6)">
+    <input type="button" id="seven" value="7" onclick="insert(7)">
+    <input type="button" id="eight" value="8" onclick="insert(8)">
+    <input type="button" id="nine" value="9" onclick="insert(9)">
+    <input type="button" id="zero" value="0">
+    <input type="button" id="point" value=".">
+
+    <script>
+        var all = '';
+        var result1 = document.getElementById('result1');
+
+        // 숫자를 클릭하여 입력
+        function insert(num) {
+            if (result1.innerText.length < 9) {
+                if (result1.innerText.length === 2 || result1.innerText.length === 6) {
+                    // all = all + ',' + num;
+                    all = result1.innerText;
+                    result1.innerText = `${all}${num},`;
+                } else {
+                    // all = all + num;
+                    all = result1.innerText;
+                    result1.innerText = all + num;
+                }
             }
 
-            // 한 숫자씩 지우기
-            function back(){
-                var exp = result1.value;
-                result1.value = exp.substring(0,exp.length-1);
-            }
+            // result1.value = all;
+            console.log(result1.innerText);
+        }
 
-            // 전체 지우기
-            function clean(){
-                result1.value = "0";
-            }
-            </script>
-    </body>
+        // 한 숫자씩 지우기
+        function back() {
+            var exp = result1.innerText;
+            result1.innerText = exp.slice(0, -1);
+            // console.log(result1.innerText);
+        }
+
+        // 전체 지우기
+        function clean() {
+            all = "";
+            result1.value = "0";
+        }
+    </script>
+</body>
+
 </html>

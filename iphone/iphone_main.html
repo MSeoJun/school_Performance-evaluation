@@ -195,13 +195,13 @@
         height: 100vh;
         background-color: rgba(255, 255, 255, 0);
       }
-      
+
       .back {
         position: fixed;
         background-color: white;
-        width:100%;
-        height:100vh;
-        top:0%;
+        width: 100%;
+        height: 100vh;
+        top: 0%;
         z-index: 100;
         animation-name: display;
         animation-duration: 1s;
@@ -211,9 +211,7 @@
     </style>
   </head>
   <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <div class="back">
-
-    </div>
+    <div class="back"></div>
     <header>
       <p class="icon-signal"></p>
       <p class="team">SKT</p>
@@ -275,10 +273,9 @@
       </div>
     </footer>
     <script>
-
-      var back  = document.getElementsByClassName('back');
-      var cover = document.getElementsByClassName('cover');
-      var body = document.querySelector('body');
+      var back = document.getElementsByClassName("back");
+      var cover = document.getElementsByClassName("cover");
+      var body = document.querySelector("body");
 
       var time = document.getElementById("time");
       var date = new Date();
@@ -309,8 +306,8 @@
         });
       };
       setTimeout(() => {
-        back[0].style.display="none";
-      },1000)
+        back[0].style.display = "none";
+      }, 1000);
       if (Number(date.getHours()) > 12) {
         var hour = `오후${Number(date.getHours()) - 12}:`;
       } else {

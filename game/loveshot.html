@@ -14,222 +14,223 @@
       html {
         cursor: url(../img/aim.png) 50 50, auto;
       }
-
       body {
-        padding: 0;
-        margin: 0;
         background-color: white;
         overflow: hidden;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
       }
 
       /* 점수 */
       #score {
         position: fixed;
-        top: 5%;
-        right: 5%;
+        top: 2%;
+        right: 7%;
         padding: 0;
         margin: 0;
+        font-size: 15px;
       }
 
       /* 작은 타겟 */
+      .icon-target {
+        display: none;
+        position: fixed;
+        top: 15%;
+        color: black;
+      }
       #target1 {
-        display: none;
-        position: fixed;
-        top: 15%;
-        left: 10%;
-        color: black;
+        left: 13%;
       }
-
       #target2 {
-        position: fixed;
-        top: 15%;
         left: 35%;
-        display: none;
-        color: black;
       }
-
       #target3 {
-        position: fixed;
-        top: 15%;
-        left: 60%;
-        display: none;
-        color: black;
+        left: 57%;
       }
-
       #target4 {
-        position: fixed;
-        top: 15%;
-        left: 85%;
-        display: none;
-        color: black;
+        left: 79%;
       }
 
       /* 보통 타겟 */
+      .icon-target1 {
+        display: none;
+        position: fixed;
+        top: 35%;
+        color: black;
+      }
       #target5 {
-        position: fixed;
-        top: 35%;
-        left: 8.5%;
-        display: none;
-        color: black;
+        left: 9.5%;
       }
-
       #target6 {
-        position: fixed;
-        top: 35%;
-        left: 33.5%;
-        display: none;
-        color: black;
+        left: 31.5%;
       }
-
       #target7 {
-        position: fixed;
-        top: 35%;
-        left: 58.5%;
-        display: none;
-        color: black;
+        left: 53.5%;
       }
-
       #target8 {
-        position: fixed;
-        top: 35%;
-        left: 83.5%;
-        display: none;
-        color: black;
+        left: 75.5%;
       }
 
       /* 큰 타겟 */
+      .icon-target2 {
+        display: none;
+        position: fixed;
+        top: 60%;
+        color: black;
+      }
       #target9 {
-        position: fixed;
-        top: 60%;
-        left: 7.4%;
-        display: none;
-        color: black;
+        left: 4.5%;
       }
-
       #target10 {
-        position: fixed;
-        top: 60%;
-        left: 32.4%;
-        display: none;
-        color: black;
+        left: 27.2%;
       }
-
       #target11 {
-        position: fixed;
-        top: 60%;
-        left: 57.4%;
-        display: none;
-        color: black;
+        left: 48.5%;
+      }
+      #target12 {
+        left: 70.3%;
       }
 
-      #target12 {
-        position: fixed;
-        top: 60%;
-        left: 82.4%;
-        display: none;
-        color: black;
-      }
-      body {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-        /* display: block; */
-      }
       input {
         position: fixed;
         left: 48%;
         top: 42%;
       }
-      .button.gray {
-        color: black;
-        background-color: gray;
-        border-bottom: black 2px solid;
-        border-top: 2px white solid;
-        width: 80px;
-        height: 80px;
+      center {
+        padding-top: 170px;
       }
-      .button {
-        font-size: 17px;
-        border: none;
-        border-radius: 20px;
+      a {
+        text-decoration: none;
+      }
+
+      .font {
+        text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px gray;
+        font-weight: bold;
+        color: black;
+        font-size: 24px;
         cursor: url(../img/aim.png) 50 50, auto;
-        outline: none;
+      }
+
+      .font:hover {
+        text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px gray;
+        font-weight: bold;
+        color: red;
+        font-size: 24px;
+        cursor: url(../img/aim.png) 50 50, auto;
+      }
+
+      #ViewTimer {
+        font-size: 12px;
       }
     </style>
   </head>
-  <body>
-    <!-- <button id="start" class="button gray" onclick="TimerStart(), start();">
-      시작
-    </button> -->
-    <input
-      type="button"
-      class="button gray"
-      value="시작"
-      id="start"
-      onclick="TimerStart(), start();"
-    />
-    <h1 id="score"></h1>
+  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <!-- <div class="back"></div> -->
+    <!-- 시간 -->
     <div id="ViewTimer"></div>
-    <a id="reset" onclick="window.location.reload();"></a>
+
+    <center>
+      <!-- 시간초과후 나오는 총 점수 -->
+      <a id="score1"></a>
+      <br /><br />
+
+      <!-- 시간초과후 나오는 리셋 -->
+      <a class="font" id="reset" onclick="window.location.reload();"></a>
+
+      <!-- 시작 첫 화면 -->
+      <a class="font" id="start" onclick="TimerStart(), start();">시작하기</a>
+      <br /><br />
+      <a class="font" id="end" href="../iphone/iphone_main.html">끝내기</a>
+    </center>
+
+    <!-- 점수 -->
+    <h1 id="score"></h1>
+
     <!-- 작은 타겟 -->
     <div class="icon-target" id="target1"></div>
     <div class="icon-target" id="target2"></div>
     <div class="icon-target" id="target3"></div>
     <div class="icon-target" id="target4"></div>
+
     <!-- 보통 타겟 -->
     <div class="icon-target1" id="target5"></div>
     <div class="icon-target1" id="target6"></div>
     <div class="icon-target1" id="target7"></div>
     <div class="icon-target1" id="target8"></div>
+
     <!-- 큰 타겟 -->
     <div class="icon-target2" id="target9"></div>
     <div class="icon-target2" id="target10"></div>
     <div class="icon-target2" id="target11"></div>
     <div class="icon-target2" id="target12"></div>
-    <script>
-      var body = document.querySelector("body");
-      var target = document.getElementsByClassName("icon-target");
-      var target1 = document.getElementsByClassName("icon-target1");
-      var target2 = document.getElementsByClassName("icon-target2");
-      var audio = new Audio();
-      audio.src = "../sound/shotgun1.mp3";
-      body.addEventListener("click", () => {
-        audio.play();
-      });
+  </body>
+  <script>
+    var body = document.querySelector("body");
+    var target = document.getElementsByClassName("icon-target");
+    var target1 = document.getElementsByClassName("icon-target1");
+    var target2 = document.getElementsByClassName("icon-target2");
+    var audio = new Audio();
+    audio.src = "../sound/shotgun1.mp3";
+    body.addEventListener("click", () => {
+      audio.play();
+    });
 
-      localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
+    localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
 
-      function start() {
-        document.getElementById("start").style.display = "none";
-        // 타겟생성 함수 호출
+    if (SetTime < 0) {
+      for (let i = 1; i < 13; i++) {
+        document.getElementById("target" + i).style.display = "none";
+      }
+    }
+    function start() {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("end").style.display = "none";
+      // 타겟생성 함수 호출
+      setTimeout(() => {
         re();
+      }, 1000);
+      setTimeout(() => {
         re1();
+      }, 1000);
+      setTimeout(() => {
         re2();
-      }
-      var SetTime = 29;
-      function msg_time() {
-        m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
-        var msg = "현재 남은 시간은 <font color='red'>" + m + "</font> 입니다.";
-        document.all.ViewTimer.innerHTML = msg;
-        SetTime--;
-        if (SetTime < 0) {
-          clearInterval(tid);
-          // alert("종료");
-          for (let i = 1; i < 13; i++) {
-            document.getElementById("target" + i).style.display = "none";
-          }
-          document.getElementById("score").style.display = "none";
-          localStorage.removeItem(score);
-          reset.innerText = `re?`;
+      }, 1000);
+    }
+    var SetTime = 3;
+    function msg_time() {
+      m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
+      var msg =
+        "<font color='black'>남은 시간 : </font> <font color='red'>" +
+        m +
+        "</font>";
+      document.all.ViewTimer.innerHTML = msg;
+      SetTime--;
+      if (SetTime < 0) {
+        clearInterval(tid);
+        for (let i = 1; i < 13; i++) {
+          document.getElementById("target" + i).style.display = "none";
         }
+        score1.innerText = "총 점수 : " + localStorage.getItem(score);
+        reset.innerText = `다시하기`;
+        document.getElementById("end").style.display = "block";
+        document.getElementById("score").style.display = "none";
+        document.getElementById("ViewTimer").style.display = "none";
+        setTimeout(() => {
+          localStorage.removeItem(score);
+        }, 1000);
       }
-      function TimerStart() {
-        tid = setInterval("msg_time()", 900);
-      }
+    }
+    function TimerStart() {
+      tid = setInterval("msg_time()", 1000);
+    }
 
-      // 1~4까지의 타겟을 생성
-      function re() {
+    // 1~4까지의 타겟을 생성
+    function re() {
+      if (SetTime <= 0) {
+        msg_time();
+      } else {
         score.innerText = `점수 : ${localStorage.getItem(score)}`;
 
         let random = Math.floor(Math.random() * 4) + 1;
@@ -249,9 +250,13 @@
           }, 400);
         };
       }
+    }
 
-      // 5~8까지의 타겟을 생성
-      function re1() {
+    // 5~8까지의 타겟을 생성
+    function re1() {
+      if (SetTime <= 0) {
+        msg_time();
+      } else {
         score.innerText = `점수 : ${localStorage.getItem(score)}`;
 
         let random1 = Math.floor(Math.random() * 4) + 5;
@@ -271,9 +276,13 @@
           }, 400);
         };
       }
+    }
 
-      // 8~12까지의 타겟을 생성
-      function re2() {
+    // 8~12까지의 타겟을 생성
+    function re2() {
+      if (SetTime <= 0) {
+        msg_time();
+      } else {
         score.innerText = `점수 : ${localStorage.getItem(score)}`;
 
         let random2 = Math.floor(Math.random() * 4) + 9;
@@ -293,6 +302,6 @@
           }, 400);
         };
       }
-    </script>
-  </body>
+    }
+  </script>
 </html>
