@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html onselectstart="return false">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,16 @@
         /* 제목 */
         #title {
             position: fixed;
-            top: 1%;
-            left: 45.5%;
+            top: 0%;
+            left: 25%;
         }
 
         /* 이메일 입력 */
         #ID {
             position: fixed;
-            top: 16%;
-            left: 39%;
-            width: 20%;
+            top: 17%;
+            left: 15%;
+            width: 59%;
             height: 6%;
             border: 3px solid #ccc;
             border-radius: 10px;
@@ -30,6 +31,7 @@
             padding: 5px 10px;
             margin: 0;
         }
+
         #ID:focus {
             border: 3px solid #555;
         }
@@ -37,9 +39,9 @@
         /* 암호 입력 */
         #PW {
             position: fixed;
-            top: 26%;
-            left: 39%;
-            width: 20%;
+            top: 28%;
+            left: 15%;
+            width: 59%;
             height: 6%;
             border: 3px solid #ccc;
             border-radius: 10px;
@@ -50,15 +52,16 @@
             padding: 5px 10px;
             margin: 0;
         }
+
         #PW:focus {
             border: 3px solid #555;
         }
-       
+
         /* 로그인 버튼 */
         #login {
             position: fixed;
-            top: 37%;
-            left: 39%;
+            top: 40%;
+            left: 37%;
             width: 21.6%;
             height: 7%;
             border: 0;
@@ -69,6 +72,7 @@
             font-size: 15px;
             border-radius: 5px;
         }
+
         #login:hover {
             background-color: #4d4dff;
         }
@@ -76,25 +80,31 @@
         /* 회원가입 이동 버튼 */
         #sign_up {
             position: fixed;
-            top: 45%;
-            left: 40%;
+            top: 47%;
+            left: 23%;
+            font-size: 14px;
         }
+
         a {
             text-decoration: none;
             color: blue;
+            position: fixed;
+            top: 54%;
+            left: 28%;
         }
     </style>
 </head>
+
 <body>
-    <form method="post" action="/sign_in" onsubmit="return check()">
     <h1 id="title">Apple ID</h1>
     <input type="text" id="ID" placeholder="Apple ID" autocomplete="off" required>
-    <input type="text" id="PW" placeholder="암호" autocomplete="off" required>
-    <input type="submit" id="login" value="로그인">
-    <p id="sign_up">Apple ID가 없으시다면 <a href="register">여기를 눌러주세요.</a></p>
+    <input type="password" id="PW" placeholder="암호" autocomplete="off" required>
+    <a href="../iphone/iphone.html"><input type="submit" id="login" value="로그인"></a>
+    <p id="sign_up">Apple ID가 없으시다면 <br> <a href="register.html">여기를 눌러주세요.</a></p>
     </form>
 
     <script>
     </script>
 </body>
+
 </html>
