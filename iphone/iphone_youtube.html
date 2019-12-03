@@ -262,7 +262,6 @@
             var minute = date.getMinutes();
         }
         time[0].innerHTML = `${hour}${minute}`;
-        console.log(scrollState);
         // window 에서의 이벤트 제어
         window.addEventListener('scroll',(e) => {
             if(window.scrollY >= 20) {
