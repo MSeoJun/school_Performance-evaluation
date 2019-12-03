@@ -122,9 +122,10 @@
   -moz-osx-font-smoothing: grayscale;
   position: fixed;
   top:5.5%;
-  right:20%;
+  right:25%;
   padding-right:1rem;
   padding-left:1rem;
+  z-index: 2;
 }
 
 .icon-search:before {
@@ -147,14 +148,8 @@
   -moz-osx-font-smoothing: grayscale;
   position: fixed;
   top:5.3%;
-  right:5%;
-  padding-right:1rem;
-  padding-left:1rem;
-  background-color: gray;
-}
-
-.icon-search:hover {
-  background-color:gray;
+  right:18%;
+  z-index: 3;
 }
  
 .icon-videocam:before { content: '\31'; } /* '1' */
