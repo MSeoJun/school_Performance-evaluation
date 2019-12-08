@@ -1,146 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../fontello/fontello-facebook/css/fontello.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="../fontello/fontello-facebook/css/fontello.css"
+    />
     <title>FaceBook</title>
     <style>
-        /* 등장 부드럽게 해주는 애니메이션 */
-        @keyframes enter {
-            from {opacity: 0;}
-            to {opacity: 1;}
+      /* 등장 부드럽게 해주는 애니메이션 */
+      @keyframes enter {
+        from {
+          opacity: 0;
         }
-        /* 기본 element 값 초기화 */
-        body {
-            animation-name: enter;
-            animation-play-state: running;
-            animation-duration: 2s;
-            /* animation-fill-mode: both;
+        to {
+          opacity: 1;
+        }
+      }
+      /* 기본 element 값 초기화 */
+      body {
+        animation-name: enter;
+        animation-play-state: running;
+        animation-duration: 2s;
+        /* animation-fill-mode: both;
             animation-timing-function: ease-in; */
-            margin:0;
-            padding:0;
-        }
-        p {
-            padding:0;
-            margin:0;
-            display: inline-block;
-        }
-        /* 맨위 상태표시줄 */
-        .top_state {
-            display:inline-block;
-            position: fixed;
-        }
-        .top_font {
-            font-size: .7rem;
-        }
-        .skt {
-            left:9%;
-            top:.5%;
-        }
-        .time {
-            top:.5%;
-            left:42%;
-        }
-        .percent {
-            top:.5%;
-            left:83%;
-        }
-        .top_line {
-            width:100%;
-            height:3.5vh;
-            background-color: white;
-            border:1px solid green;
-        }
-        /* 최상단 라인 관리 */
-        .top-line {
-            margin-top: .8rem;
-            margin-left: .8rem;
-        }
-        .main {
-            font-size: 1.5rem;
-            color:rgb(70, 80, 230);
-            font-weight: bold;
-        }
-        .gray_back {
-            border-radius: 100%;
-            background-color: rgb(185, 185, 185);
-            width:11%;
-            height:7vh;
-            display: inline-block;
-            text-align: center;
-            line-height: 1px;
-        }
-        .sup {
-            float:right;
-            padding:5px;
-            background-color: rgba(0,0,0,0.1);
-            border-radius: 100%;
-        }
-        .sup:hover {
-            background-color: rgba(0,0,0,0.2);
-        }
-        #right {
-            margin-right: 1rem;
-        }
-        .facebook_top {
-            border:1px solid green;
-            width:100%;
-            height:12vh;
-        }
-        /* 상단 프로필 */
-        .profile {
-            border:1px solid green;
-            width:100%;
-            height:9vh; 
-        }
-        .user {
-            background-image: url('../img/pengsu.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:10%;
-            height:6vh;
-            border-radius: 100%;
-            margin-left: 1rem;
-            transform: translateY(20%);
-        }
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+      }
+      /* 맨위 상태표시줄 */
+      .top_state {
+        display: inline-block;
+        position: fixed;
+      }
+      .top_font {
+        font-size: 0.7rem;
+      }
+      .skt {
+        left: 9%;
+        top: 0.5%;
+      }
+      .time {
+        top: 0.5%;
+        left: 42%;
+      }
+      .percent {
+        top: 0.5%;
+        left: 83%;
+      }
+      .top_line {
+        width: 100%;
+        height: 3.5vh;
+        background-color: white;
+        border: 1px solid green;
+      }
+      /* 최상단 라인 관리 */
+      .top-line {
+        margin-top: 0.8rem;
+        margin-left: 0.8rem;
+      }
+      .main {
+        font-size: 1.5rem;
+        color: rgb(70, 80, 230);
+        font-weight: bold;
+      }
+      .gray_back {
+        border-radius: 100%;
+        background-color: rgb(185, 185, 185);
+        width: 11%;
+        height: 7vh;
+        display: inline-block;
+        text-align: center;
+        line-height: 1px;
+      }
+      .sup {
+        float: right;
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 100%;
+      }
+      .sup:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      #right {
+        margin-right: 1rem;
+      }
+      .facebook_top {
+        border: 1px solid green;
+        width: 100%;
+        height: 12vh;
+      }
+      /* 상단 프로필 */
+      .profile {
+        border: 1px solid green;
+        width: 100%;
+        height: 9vh;
+      }
+      .user {
+        background-image: url("../img/pengsu.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 10%;
+        height: 6vh;
+        border-radius: 100%;
+        margin-left: 1rem;
+        transform: translateY(20%);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
     <center>
-        <div class="top_line">
-            <p class="top_state state icon-signal"></p>
-            <p class="top_state top_font state skt">SKT</p>
-            <p class="top_state state icon-wifi"></p>
-            <p class="top_state top_font clock time"></p>
-            <p class="top_state top_font battery percent">0%</p>
-            <p class="top_state battery icon-battery-0"></p>
-        </div>
+      <div class="top_line">
+        <p class="top_state state icon-signal"></p>
+        <p class="top_state top_font state skt">SKT</p>
+        <p class="top_state state icon-wifi"></p>
+        <p class="top_state top_font clock time"></p>
+        <p class="top_state top_font battery percent">0%</p>
+        <p class="top_state battery icon-battery-0"></p>
+      </div>
     </center>
     <div class="facebook_top">
-        <p class="top-line main">facebook</p>
-        <p id="right" class="top-line sup icon-comment"></p>
-        <p class="top-line sup icon-search"></p>
+      <p class="top-line main">facebook</p>
+      <p id="right" class="top-line sup icon-comment"></p>
+      <p class="top-line sup icon-search"></p>
     </div>
     <div class="profile">
-        <div class="profile_use user"></div>
+      <div class="profile_use user"></div>
     </div>
-<script>
-    // 가장 윗 라인 시간 스크립트
-    var time = document.getElementsByClassName('time');
-    var date = new Date();
-    if (Number(date.getHours()) > 12) {
+    <script>
+      // 가장 윗 라인 시간 스크립트
+      var time = document.getElementsByClassName("time");
+      var date = new Date();
+      if (Number(date.getHours()) > 12) {
         var hour = `오후${Number(date.getHours()) - 12}:`;
-    } else {
+      } else {
         var hour = `오전${Number(date.getHours())}:`;
-    }
-    if (Number(date.getMinutes()) < 10) {
+      }
+      if (Number(date.getMinutes()) < 10) {
         var minute = `0${date.getMinutes()}`;
-    } else {
+      } else {
         var minute = date.getMinutes();
-    }
-    time[0].innerHTML = `${hour}${minute}`;
-</script>
-</body>
+      }
+      time[0].innerHTML = `${hour}${minute}`;
+    </script>
+  </body>
 </html>
