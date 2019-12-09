@@ -48,6 +48,7 @@
   let result1 = result;
   let num;
   let num1;
+
   num = result.slice(0, 1);
   num1 = result.slice(2, 3);
   result1 = result.slice(0, -1);
@@ -59,8 +60,11 @@
     Math.floor(Math.random() * 0xf).toString(16) +
     result1 +
     Math.floor(Math.random() * 0xf).toString(16);
+
   let bcolor = "#" + result;
   let bcolor1 = "#" + result1;
+
+
 
   for (i = 1; i < 5; i++) {
     document.getElementById("Rcolor" + i).style.backgroundColor = bcolor;
