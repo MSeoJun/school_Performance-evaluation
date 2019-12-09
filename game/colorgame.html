@@ -1,88 +1,86 @@
 <!DOCTYPE html>
 <html onselectstart="return false">
+  <head>
+    <meta charset="UTF-8" />
+    <title>game</title>
+    <style>
+      body {
+        padding: 10px;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <title>game</title>
-  <style>
-    body {
-      padding: 10px;
+      .pad {
+        padding: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h2 id="bestscore"></h2>
+      <h2 id="score"></h2>
+      <table>
+        <tr>
+          <td><button class="pad" id="Rcolor1" onclick="clc(1);" /></td>
+          <td><button class="pad" id="Rcolor2" onclick="clc(2);" /></td>
+        </tr>
+        <tr>
+          <td><button class="pad" id="Rcolor3" onclick="clc(3);" /></td>
+          <td><button class="pad" id="Rcolor4" onclick="clc(4);" /></td>
+        </tr>
+      </table>
+    </center>
+  </body>
+  <script>
+    const result = Math.floor(Math.random() * 0xffffff).toString(16);
+    let result1 = result;
+    let num;
+    let num1;
+    num = result.slice(0, 1);
+    num1 = result.slice(2, 3);
+    result1 = result.slice(0, -1);
+    result1 = result1.slice(4);
+    result1 =
+      num +
+      Math.floor(Math.random() * 0xf).toString(16) +
+      num1 +
+      Math.floor(Math.random() * 0xf).toString(16) +
+      result1 +
+      Math.floor(Math.random() * 0xf).toString(16);
+    let bcolor = "#" + result;
+    let bcolor1 = "#" + result1;
+
+    for (i = 1; i < 5; i++) {
+      document.getElementById("Rcolor" + i).style.backgroundColor = bcolor;
     }
 
-    .pad {
-      padding: 50px;
+    let random = Math.floor(Math.random() * 4) + 1;
+    document.getElementById("Rcolor" + random).style.backgroundColor = bcolor1;
+
+    var score = document.getElementById("score");
+    var bestscore = document.getElementById("bestscore");
+
+    if (localStorage.score === undefined) {
+      localStorage.score = 0;
     }
-  </style>
-</head>
 
-<body>
-  <center>
-    <h2 id="bestscore"></h2>
-    <h2 id="score"></h2>
-    <table>
-      <tr>
-        <td><button class="pad" id="Rcolor1" onclick="clc(1);" /></td>
-        <td><button class="pad" id="Rcolor2" onclick="clc(2);" /></td>
-      </tr>
-      <tr>
-        <td><button class="pad" id="Rcolor3" onclick="clc(3);" /></td>
-        <td><button class="pad" id="Rcolor4" onclick="clc(4);" /></td>
-      </tr>
-    </table>
-  </center>
-</body>
-<script>
-  const result = Math.floor(Math.random() * 0xffffff).toString(16);
-  let result1 = result;
-  let num;
-  let num1;
-  num = result.slice(0, 1);
-  num1 = result.slice(2, 3);
-  result1 = result.slice(0, -1);
-  result1 = result1.slice(4);
-  result1 =
-    num +
-    Math.floor(Math.random() * 0xf).toString(16) +
-    num1 +
-    Math.floor(Math.random() * 0xf).toString(16) +
-    result1 +
-    Math.floor(Math.random() * 0xf).toString(16);
-  let bcolor = "#" + result;
-  let bcolor1 = "#" + result1;
-
-  for (i = 1; i < 5; i++) {
-    document.getElementById("Rcolor" + i).style.backgroundColor = bcolor;
-  }
-
-  let random = Math.floor(Math.random() * 4) + 1;
-  document.getElementById("Rcolor" + random).style.backgroundColor = bcolor1;
-
-  var score = document.getElementById("score");
-  var bestscore = document.getElementById("bestscore");
-
-  if (localStorage.score === undefined) {
-    localStorage.score = 0;
-  }
-
-  if (localStorage.bestscore === undefined) {
-    localStorage.bestscore = 0;
-  }
-
-  var result4 = localStorage.score;
-  score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
-
-  function clc(e) {
-    if (random === e) {
-      localStorage.score++;
-      score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
-      window.location.reload();
-    } else {
-      alert("실패");
-      localStorage.bestscore = localStorage.score;
-      localStorage.clear();
-      window.location.reload();
+    if (localStorage.bestscore === undefined) {
+      localStorage.bestscore = 0;
     }
-  }
-</script>
 
+    var result4 = localStorage.score;
+    score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
+
+    function clc(e) {
+      if (random === e) {
+        localStorage.score++;
+        score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
+        window.location.reload();
+      } else {
+        alert("실패");
+        localStorage.bestscore = localStorage.score;
+        localStorage.clear();
+        window.location.reload();
+      }
+    }
+  </script>
 </html>
