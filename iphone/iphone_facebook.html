@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../fontello/fontello-facebook/css/fontello.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="../fontello/fontello-facebook/css/fontello.css"
+    />
     <title>FaceBook</title>
     <style>
         /* 등장 부드럽게 해주는 애니메이션 */
@@ -227,23 +230,24 @@
 <body>
     <!-- 최상단 상태 라인 -->
     <center>
-        <div class="top_line">
-            <p class="top_state state icon-signal"></p>
-            <p class="top_state top_font state skt">SKT</p>
-            <p class="top_state state icon-wifi"></p>
-            <p class="top_state top_font clock time"></p>
-            <p class="top_state top_font battery percent">0%</p>
-            <p class="top_state battery icon-battery-0"></p>
-        </div>
+      <div class="top_line">
+        <p class="top_state state icon-signal"></p>
+        <p class="top_state top_font state skt">SKT</p>
+        <p class="top_state state icon-wifi"></p>
+        <p class="top_state top_font clock time"></p>
+        <p class="top_state top_font battery percent">0%</p>
+        <p class="top_state battery icon-battery-0"></p>
+      </div>
     </center>
     <!-- 페이스북 로고 및 검색 대화 창 -->
     <div class="facebook_top">
-        <p class="top-line main">facebook</p>
-        <p id="right" class="top-line sup icon-comment"></p>
-        <p class="top-line sup icon-search"></p>
+      <p class="top-line main">facebook</p>
+      <p id="right" class="top-line sup icon-comment"></p>
+      <p class="top-line sup icon-search"></p>
     </div>
     <!-- 프로필 과 나의 상태 -->
     <div class="profile">
+<<<<<<< HEAD
         <div class="profile_use user"></div>
         <p class="profile_use what">무슨 생각을 하고 계신가요?</p>
     </div>
@@ -282,22 +286,25 @@
     </div>
     <div class="bottom_menu">
 
+=======
+      <div class="profile_use user"></div>
+>>>>>>> b05bc1695ef61daf10fc11321b01eba29c451acf
     </div>
-<script>
-    // 가장 윗 라인 시간 스크립트
-    var time = document.getElementsByClassName('time');
-    var date = new Date();
-    if (Number(date.getHours()) > 12) {
+    <script>
+      // 가장 윗 라인 시간 스크립트
+      var time = document.getElementsByClassName("time");
+      var date = new Date();
+      if (Number(date.getHours()) > 12) {
         var hour = `오후${Number(date.getHours()) - 12}:`;
-    } else {
+      } else {
         var hour = `오전${Number(date.getHours())}:`;
-    }
-    if (Number(date.getMinutes()) < 10) {
+      }
+      if (Number(date.getMinutes()) < 10) {
         var minute = `0${date.getMinutes()}`;
-    } else {
+      } else {
         var minute = date.getMinutes();
-    }
-    time[0].innerHTML = `${hour}${minute}`;
-</script>
-</body>
+      }
+      time[0].innerHTML = `${hour}${minute}`;
+    </script>
+  </body>
 </html>
