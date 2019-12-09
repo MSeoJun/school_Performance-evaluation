@@ -11,12 +11,20 @@
 
     .pad {
       padding: 50px;
+      outline: none;
+    }
+
+    #end {
+      position: fixed;
+      left: 41.5%;
+      top: 85%;
     }
   </style>
 </head>
 
 <body>
   <center>
+    <div class="back"></div>
     <h2 id="bestscore"></h2>
     <h2 id="score"></h2>
     <table>
@@ -29,10 +37,14 @@
         <td><button class="pad" id="Rcolor4" onclick="clc(4);" /></td>
       </tr>
     </table>
+    <div id="fail"></div>
+    <a class="font" id="end" href="../iphone/iphone_main.html">끝내기</a>
   </center>
 </body>
 <script>
+  const fail = document.getElementById("fail");
   const result = Math.floor(Math.random() * 0xffffff).toString(16);
+  var back = document.getElementsByClassName("back");
   let result1 = result;
   let num;
   let num1;
@@ -77,10 +89,13 @@
       score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
       window.location.reload();
     } else {
-      alert("실패");
+      // alert("실패");
+      fail.innerText = "실패하셨습니다.";
       localStorage.bestscore = localStorage.score;
       localStorage.clear();
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     }
   }
 </script>

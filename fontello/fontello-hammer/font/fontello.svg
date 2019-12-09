@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="hammer" unicode="&#xe801;" d="M988-7q0-30-20-50l-60-61q-22-20-51-20-29 0-50 20l-203 204q-21 20-21 50 0 29 24 53l-143 143-70-70q-8-8-19-8t-19 8q1-1 7-7t7-7 6-6 5-8 4-8 3-9 0-10q0-21-15-38-2-1-9-10t-11-11-10-9-13-9-12-5-14-3q-23 0-38 16l-228 228q-16 15-16 38 0 7 3 14t5 12 9 13 9 10 11 11 10 9q17 15 38 15 6 0 10 0t9-3 8-4 8-5 6-6 7-7 7-7q-8 8-8 19t8 19l194 194q8 8 19 8t19-8q-1 1-7 7t-7 7-6 7-5 7-3 8-4 9 0 10q0 21 15 38 2 2 9 10t11 11 10 10 13 8 12 5 14 3q23 0 38-16l228-228q16-15 16-38 0-7-3-14t-5-12-8-13-10-10-11-11-10-9q-17-15-38-15-6 0-10 0t-9 4-8 3-7 5-7 6-7 7-7 7q8-8 8-19t-8-19l-70-70 143-143q24 24 53 24 29 0 51-21l203-202q20-22 20-51z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

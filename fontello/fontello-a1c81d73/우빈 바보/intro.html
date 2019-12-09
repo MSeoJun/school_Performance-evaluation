@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fontello/css/fontello.css">
+    <title>See You</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        .article{
+            background-repeat: no-repeat;
+            height:100vh;
+            background-size: cover;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+        .article.s1{
+            background-image: url('welcome.png');
+        }
+        .article.s2{
+            background-image: url('./html.png');
+        }
+        .article.s3{
+            background-image: url('./understand.png');
+        }
+        .article.s4{
+            background-image: url('./sad.png');
+        }
+        .article.s5{
+            background-image: url('./ladder.png');
+        }
+        .article.s6{
+            background-image: url('./climb.png');
+        }
+        .article.s7{
+            background-image: url('./thank.png');
+        }
+        .article.s1 p{
+            background-color:rgba(0,0,0,0.6);
+            color: white;
+            display:inline-block;
+            padding:0.5rem;
+            position:fixed;
+            top:3%;
+            transform: translateY(-3%);
+            left:50%;
+            transform: translateX(-50%);
+            font-weight: 200;
+            font-size: 1.5rem;
+        }
+        .menu{
+            position:fixed;
+            bottom:0;
+            background-color:rgba(0,0,0,0.4);
+            width:100%;
+        }
+        .menu li{
+            float:left;
+            margin-left:1.5rem;
+        }
+        .menu ul {
+            list-style:none;
+        }
+        .menu p{
+            text-decoration: none;
+            color:white;
+            font-weight:200;
+        }
+        .menu p:hover{
+            color:red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div class="article s1">
+            <p id="first">지금부터 발표를 시작하겠습니다~! 작품을 발표하기 전에 간단한 인트로를 해볼게요!</p>
+        </div>
+        <div class="article s2">
+
+        </div>
+        <div class="article s3">
+
+        </div>
+        <div class="article s4">
+
+        </div>
+        <div class="article s5">
+
+        </div>
+        <div class="article s6">
+
+        </div>
+        <div class="article s7">
+
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                 <p id="play" onClick="audio.play();" class="icon-play-circle2">Play</p>
+                </li>
+                <li>
+                 <p href="" id="pause" onClick="audio.pause();" class="icon-stop">Pause</p>
+                </li>
+            </ul>
+        </div>
+    </article>
+    <script>
+        var s2 = document.getElementsByClassName('article s2');
+        var first = document.getElementById('first');
+        var body = document.querySelector('body');
+        var count = 0;
+        body.addEventListener('keypress',() => {
+            count++;
+            if(count === 1) {
+                first.innerText = '우리들은 모두 처음에 HTML 코드로 시작했습니다.'
+                s2.scrollIntoView();
+            } else if(count === 2) {
+                first.innerText = '같은 출발선상에서 시작하니 이해되지 않거나 답답했던 부분도 많았을거에요.'
+            } else if(count === 3) {
+                first.innerText = '그럴 때 힘들고 지치면서 화도 많이 낫겠죠.'
+            } else if(count === 4) {
+                first.innerText = '그렇게 저희는 막연하게 보였던 사다리를 열심히 탔습니다.'
+            } else if(count === 5) {
+                first.innerText = '2학년이 끝날 때 쯤 보니 정말 값진 시간이였어요.'
+            } else if(count === 6) {
+                first.innerText = '다들 열심히 해주시느라 너무 수고 많았고 감사합니다!!~'
+            }
+        })
+        var audio = new Audio();
+        audio.src='./StillNeedYou.mp3';
+    </script>
+</body>
+</html>
