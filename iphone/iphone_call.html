@@ -185,15 +185,15 @@
         animation-fill-mode: both;
         position: fixed;
         display: none;
-        left:38%;
-        top:11.5%;
+        left: 38%;
+        top: 11.5%;
       }
       .back {
-        width:100%;
-        height:100vh;
+        width: 100%;
+        height: 100vh;
         background-color: white;
         position: fixed;
-        top:0%;
+        top: 0%;
         z-index: 100;
         animation-name: display;
         animation-play-state: running;
@@ -203,9 +203,7 @@
     </style>
   </head>
   <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <div class="back">
-
-    </div>
+    <div class="back"></div>
     <header>
       <p class="top icon-signal"></p>
       <p class="top team">SKT</p>
@@ -251,8 +249,8 @@
     </article>
     <script>
       var press_call = new Audio();
-      press_call.src = '../sound/call_board.mp3';
-      var back = document.getElementsByClassName('back');
+      press_call.src = "../sound/call_board.mp3";
+      var back = document.getElementsByClassName("back");
       var body = document.querySelector("body");
       var add_num = document.getElementById("add_num");
       var remove = document.getElementById("remove");
@@ -279,8 +277,8 @@
       var special1 = document.getElementById("special1");
       var special2 = document.getElementById("special2");
       setTimeout(() => {
-        back[0].style.display="none";
-      },1000)
+        back[0].style.display = "none";
+      }, 1000);
       // 빠져나가게 할 때 사용할 이벤트리스너
       body.addEventListener("keypress", () => {});
       const remove2 = () => {
