@@ -17,7 +17,7 @@
             #result1 {
                 position: fixed;
                 right: 9%;
-                top: 13%;
+                top: 1%;
                 background-color: black;
                 color: white;
                 border: 0;
@@ -439,20 +439,8 @@
 
         // 숫자를 클릭하여 입력
         function insert(num) {
-            if (result1.innerText.length < 9) {
-                if (result1.innerText.length === 2 || result1.innerText.length === 6) {
-                    // all = all + ',' + num;
-                    all = result1.innerText;
-                    result1.innerText = `${all}${num},`;
-                } else {
-                    // all = all + num;
-                    all = result1.innerText;
-                    result1.innerText = all + num;
-                }
-            }
-
-            // result1.value = all;
-            console.log(result1.innerText);
+            var result1 = document.getElementById('result1');
+            result1.value = result1.value + num;
         }
 
         // 한 숫자씩 지우기

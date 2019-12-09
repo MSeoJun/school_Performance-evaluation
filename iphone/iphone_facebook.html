@@ -10,111 +10,225 @@
     />
     <title>FaceBook</title>
     <style>
-      /* 등장 부드럽게 해주는 애니메이션 */
-      @keyframes enter {
-        from {
-          opacity: 0;
+        /* 등장 부드럽게 해주는 애니메이션 */
+        @keyframes enter {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
-        to {
-          opacity: 1;
+        /* 기본 element 값 초기화 */
+        ::-webkit-scrollbar {
+            display:none;
         }
-      }
-      /* 기본 element 값 초기화 */
-      body {
-        animation-name: enter;
-        animation-play-state: running;
-        animation-duration: 2s;
-        /* animation-fill-mode: both;
+        body {
+            animation-name: enter;
+            animation-play-state: running;
+            animation-duration: 2s;
+            /* animation-fill-mode: both;
             animation-timing-function: ease-in; */
-        margin: 0;
-        padding: 0;
-      }
-      p {
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-      }
-      /* 맨위 상태표시줄 */
-      .top_state {
-        display: inline-block;
-        position: fixed;
-      }
-      .top_font {
-        font-size: 0.7rem;
-      }
-      .skt {
-        left: 9%;
-        top: 0.5%;
-      }
-      .time {
-        top: 0.5%;
-        left: 42%;
-      }
-      .percent {
-        top: 0.5%;
-        left: 83%;
-      }
-      .top_line {
-        width: 100%;
-        height: 3.5vh;
-        background-color: white;
-        border: 1px solid green;
-      }
-      /* 최상단 라인 관리 */
-      .top-line {
-        margin-top: 0.8rem;
-        margin-left: 0.8rem;
-      }
-      .main {
-        font-size: 1.5rem;
-        color: rgb(70, 80, 230);
-        font-weight: bold;
-      }
-      .gray_back {
-        border-radius: 100%;
-        background-color: rgb(185, 185, 185);
-        width: 11%;
-        height: 7vh;
-        display: inline-block;
-        text-align: center;
-        line-height: 1px;
-      }
-      .sup {
-        float: right;
-        padding: 5px;
-        background-color: rgba(0, 0, 0, 0.1);
-        border-radius: 100%;
-      }
-      .sup:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-      #right {
-        margin-right: 1rem;
-      }
-      .facebook_top {
-        border: 1px solid green;
-        width: 100%;
-        height: 12vh;
-      }
-      /* 상단 프로필 */
-      .profile {
-        border: 1px solid green;
-        width: 100%;
-        height: 9vh;
-      }
-      .user {
-        background-image: url("../img/pengsu.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 10%;
-        height: 6vh;
-        border-radius: 100%;
-        margin-left: 1rem;
-        transform: translateY(20%);
-      }
+            margin:0;
+            padding:0;
+        }
+        p {
+            padding:0;
+            margin:0;
+            display: inline-block;
+        }
+        /* 맨위 상태표시줄 */
+        .top_state {
+            display:inline-block;
+            position: fixed;
+        }
+        .top_font {
+            font-size: .7rem;
+        }
+        .skt {
+            left:9%;
+            top:.5%;
+        }
+        .time {
+            top:.5%;
+            left:42%;
+        }
+        .percent {
+            top:.5%;
+            left:83%;
+        }
+        .top_line {
+            width:100%;
+            height:3.5vh;
+            background-color: white;
+            /* border:1px solid green; */
+        }
+        /* 최상단 라인 관리 */
+        .top-line {
+            margin-top: .8rem;
+            margin-left: .8rem;
+        }
+        .main {
+            font-size: 1.5rem;
+            color:rgb(70, 80, 230);
+            font-weight: bold;
+        }
+        .gray_back {
+            border-radius: 100%;
+            background-color: rgb(185, 185, 185);
+            width:11%;
+            height:7vh;
+            display: inline-block;
+            text-align: center;
+            line-height: 1px;
+        }
+        .sup {
+            float:right;
+            padding:5px;
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 100%;
+        }
+        .sup:hover {
+            background-color: rgba(0,0,0,0.2);
+        }
+        #right {
+            margin-right: 1rem;
+        }
+        .facebook_top {
+            /* border:1px solid green; */
+            width:100%;
+            height:12vh;
+        }
+        /* 상단 프로필 */
+        .profile {
+            border-bottom:.5px solid rgba(0,0,0,0.3);
+            width:100%;
+            height:9vh; 
+        }
+        .user {
+            background-image: url('../img/pengsu.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:10%;
+            height:6vh;
+            border-radius: 100%;
+            margin-left: 1rem;
+            transform: translateY(20%);
+        }
+        .profile_use {
+            display: inline-block;
+        }
+        .what {
+            font-size: .7rem;
+            transform: translateY(-20%);
+        }
+        /* 윗 라인 부가메뉴 */
+        .top_sub {
+            width:100%;
+            height:5vh;
+            /* border:1px solid green; */
+        }
+        .live , .pic , .check_in {
+            /* border:1px solid green; */
+            width:32.5%;
+            height:5vh;
+            float: left;
+            text-align: center;
+        }
+        .live , .pic {
+            border-right:1px solid rgba(0,0,0,0.1);
+        }
+        .sub_p {
+            font-size: 3px;
+        }
+        .sub_p:hover {
+            padding-right: 15px;
+            padding-left:15px;
+            padding-top:2.7px;
+            padding-bottom: 2.7px;
+            border-top-right-radius: 10%;
+            border-top-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            border-bottom-left-radius: 10%;
+            background-color: rgba(0,0,0,0.2);
+        }
+        /* 시작 라인 */
+        .line_start {
+            width:100%;
+            height:1vh;
+            background-color: rgba(0,0,0,0.3);
+        }
+        /* 스토리 */
+        .story {
+            width:100%;
+            height:30vh;
+            white-space:nowrap;
+            overflow: auto;
+        }
+        .sidescroll {
+            width:30%;
+            height:27vh;
+            background-color: rgba(0,0,0,0.2);
+            margin-left:.5rem;
+            transform: translateY(.5rem);
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+            border-bottom-right-radius: 10%;
+            border-bottom-left-radius: 10%;
+            display:inline-block;
+        }
+        .story_profile {
+            background-color:black;
+            width:30%;
+            height:5vh;
+            border-radius: 100%;
+            border:3px solid rgb(71, 71, 255);
+            margin-top:.5rem;
+            margin-left:.5rem;
+        }
+        .user1 {
+            background-image: url('../img/yunghoon.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .user2 {
+            background-image: url('../img/seojun.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .user3 {
+            background-image: url('../img/pengsu.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box2 {
+            background-image: url('../img/yunghoon_intro.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box3 {
+            background-image: url('../img/seojun_intro.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box4 {
+            background-image: url('../img/hyunjun.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 포스트 */
+        .posting {
+            width:100%;
+            height:80vh;
+            border:1px solid green;
+        }
+        .bottom_menu {
+            position: fixed;
+            width:100%;
+            height:8vh;
+            border-top:1px solid rgba(0,0,0,0.1);
+            bottom:0%;
+        }
     </style>
-  </head>
-  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+</head>
+<body>
+    <!-- 최상단 상태 라인 -->
     <center>
       <div class="top_line">
         <p class="top_state state icon-signal"></p>
@@ -125,13 +239,52 @@
         <p class="top_state battery icon-battery-0"></p>
       </div>
     </center>
+    <!-- 페이스북 로고 및 검색 대화 창 -->
     <div class="facebook_top">
       <p class="top-line main">facebook</p>
       <p id="right" class="top-line sup icon-comment"></p>
       <p class="top-line sup icon-search"></p>
     </div>
+    <!-- 프로필 과 나의 상태 -->
     <div class="profile">
-      <div class="profile_use user"></div>
+        <div class="profile_use user"></div>
+        <p class="profile_use what">무슨 생각을 하고 계신가요?</p>
+    </div>
+    <!-- 라이브 , 사진 , 체크인 -->
+    <div class="top_sub">
+        <div class="live"><p class="icon-videocam sub_p">라이브</p></div>
+        <div class="pic"><p class="icon-picture sub_p">사진</p></div>
+        <div class="check_in"><p class="icon-location sub_p">체크인</p></div>
+    </div>
+    <!-- 회색 라인 -->
+    <div class="line_start">
+        <br>
+    </div>
+    <!-- 스토리 -->
+    <div class="story">
+            <div class="sidescroll box1">
+                <div class="story_profile main_user"></div>
+            </div>
+            <div class="sidescroll box2">
+                <div class="story_profile user1"></div>
+            </div>
+            <div class="sidescroll box3">
+                <div class="story_profile user2"></div>
+            </div>
+            <div class="sidescroll box4">
+                <div class="story_profile user3"></div>
+            </div>
+    </div>
+    <!-- 회색 라인 -->
+    <div class="line_start">
+        <br>
+    </div>
+    <!-- 포스팅 -->
+    <div class="posting">
+
+    </div>
+    <div class="bottom_menu">
+
     </div>
     <script>
       // 가장 윗 라인 시간 스크립트

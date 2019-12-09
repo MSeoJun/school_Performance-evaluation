@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rhythm</title>
+    <style>
+        body {
+            border:0;
+            margin:0;
+            padding:0;
+        }
+        .background {
+            background-color:white;
+            height:100vh;
+            width:100%;
+        }
+        .char {
+            background-color:blue;
+            height:5vh;
+            width:5%;
+            border-radius: 100%;
+            display: inline-block;
+            position: fixed;
+            transform: translateY(-50%);
+            top:50%;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .char2 {
+            background-color:red;
+            height:5vh;
+            width:5%;
+            border-radius: 100%;
+            display: inline-block;
+            position: fixed;
+            transform: translateY(-42%);
+            top:42%;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .whole {
+            border:1px solid green;
+            width:20%;
+            height:15vh;
+            position: fixed;
+            top:40%;
+            left:40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="whole">
+            <div class="char"></div>
+            <div class="char2"></div>
+        </div>
+    </div>
+</body>
+</html>

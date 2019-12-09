@@ -131,7 +131,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
- 
+.icon-videocam:before {
+  color:red;
+  font-size: 1rem;
+}
+
+.icon-picture:before {
+  color:green;
+  font-size: 1rem;
+}
+
+.icon-location:before {
+  color:red;
+  font-size: 1rem;
+}
+
 .icon-signal:before { content: '\e800'; } /* '' */
 .icon-search:before { content: '\f001'; } /* '' */
 .icon-comment:before { content: '\f002'; } /* '' */
