@@ -536,6 +536,8 @@
       var date = new Date();
       if (date.getHours() > 12) {
         var timeH = Number(date.getHours()) - 12;
+      } else if (date.getHours() === 0){
+        var timeH = 12;
       } else {
         var timeH = date.getHours();
       }
@@ -558,7 +560,7 @@
         var getdate = "금";
       } else if (date.getDay() === 6) {
         var getdate = "토";
-      } else if (date.getDay() === 7) {
+      } else if (date.getDay() === 0) {
         var getdate = "일";
       }
       var now = `${date.getMonth() + 1}월 ${date.getDate()}일 ${getdate}요일`;

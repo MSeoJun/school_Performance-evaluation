@@ -57,7 +57,8 @@
             width:100%;
             height:3.5vh;
             background-color: white;
-            /* border:1px solid green; */
+            z-index: 0;
+            position: fixed;
         }
         /* 최상단 라인 관리 */
         .top-line {
@@ -182,6 +183,27 @@
             margin-top:.5rem;
             margin-left:.5rem;
         }
+        .story_plus {
+            width:30%;
+            height:5vh;
+            border-radius: 100%;
+            background-color:white;
+            border:3px solid white;
+            margin-top:.5rem;
+            margin-left:.5rem;
+        }
+        .plus {
+            color:rgb(46, 46, 245);
+            font-size:2rem; 
+            font-weight: bold;
+            line-height: 3.5vh;
+        }
+        .story_name {
+            color:white;
+            margin-top:4.5rem;
+            font-size:.7rem;
+            margin-left:.4rem;
+        }
         .user1 {
             background-image: url('../img/yunghoon.jpg');
             background-size: cover;
@@ -194,6 +216,11 @@
         }
         .user3 {
             background-image: url('../img/pengsu.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box1 {
+            background-image: url('../img/woobin.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -215,8 +242,9 @@
         /* 포스트 */
         .posting {
             width:100%;
-            height:80vh;
+            height:87vh;
             border:1px solid green;
+            float: left;
         }
         .bottom_menu {
             position: fixed;
@@ -225,9 +253,56 @@
             border-top:1px solid rgba(0,0,0,0.1);
             bottom:0%;
         }
+        .posting_profile {
+            width:15%;
+            height:8vh;
+            border-radius: 100%;
+            margin-left: 1rem;
+            transform: translateY(40%);
+            display: inline-block;
+        }
+        .posting_name {
+            font-weight: bold;
+            font-size: .8rem;
+            transform: translateY(-60%);
+        }
+        .posting_time {
+            font-size: .3rem;
+            transform: translate(-220%,50%);
+        }
+        .posting_menu {
+            
+            float:right;
+            width:8%;
+            height:3vh;
+            margin-top: 1.5rem;
+            margin-right: 1rem;
+            line-height: 2vh;
+        }
+        .posting_circle {
+            width:15%;
+            height:1vh;
+            border-radius: 100%;
+            background-color: rgba(0,0,0,0.3);
+            display: inline-block;
+            margin:0px;
+            padding:0;
+        }
+        .posting_article {
+            height:65vh;
+            margin-top: 1rem;
+        }
+        .red {
+            color:red;
+        }
+        .posting_good {
+            width:100%;
+            height:10vh;
+            border:1px solid green;
+        }
     </style>
 </head>
-<body>
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
     <!-- 최상단 상태 라인 -->
     <center>
       <div class="top_line">
@@ -263,16 +338,24 @@
     <!-- 스토리 -->
     <div class="story">
             <div class="sidescroll box1">
-                <div class="story_profile main_user"></div>
+                <div class="story_plus main_user">
+                    <center>
+                        <p class="plus">+</p>
+                    </center>
+                </div>
+                <p class="story_name">스토리에 추가</p>
             </div>
             <div class="sidescroll box2">
                 <div class="story_profile user1"></div>
+                <p class="story_name">김영훈</p>
             </div>
             <div class="sidescroll box3">
                 <div class="story_profile user2"></div>
+                <p class="story_name">문서준</p>
             </div>
             <div class="sidescroll box4">
                 <div class="story_profile user3"></div>
+                <p class="story_name">김현준</p>
             </div>
     </div>
     <!-- 회색 라인 -->
@@ -281,12 +364,43 @@
     </div>
     <!-- 포스팅 -->
     <div class="posting">
+        <div class="posting_profile user2"></div>
+        <p class="posting_name">마초서준</p>
+        <p class="posting_time">1시간</p>
+        <div class="posting_menu">
+            <center>
+                <div class="posting_circle"></div>
+                <div class="posting_circle"></div>
+                <div class="posting_circle"></div>
+            </center>
+        </div>
+        <div class="posting_article">
+            <p>황혼보다 <span class="red">어두운 자여</span> 
+                <br><br>
+                내 몸에 흐르는 피보다 더 <span class="red">붉은 자여</span>
+                <br><br>
+                시간의 흐름 속에 파묻힌 <span class="red">위대한 그대의 이름</span>을 걸고
+                <br><br>
+                나 여기서 <span class="red">어둠에 맹세</span>하노라
+                <br><br>
+                우리 앞을 가로막고 있는 모든 <span class="red">어리석은 자</span>들에게
+                <br><br>
+                나와 그대의 힘을
+                <br><br>
+                <span class="red">위대한 파멸의 힘</span>을 보여줄 것을
+            </p>
+        </div>
+        <div class="posting_good">
 
+        </div>
     </div>
+    <!-- 하단 메뉴 -->
     <div class="bottom_menu">
 
     </div>
     <script>
+        // 스토리 사이드 스크롤 시 변화
+
       // 가장 윗 라인 시간 스크립트
       var time = document.getElementsByClassName("time");
       var date = new Date();
