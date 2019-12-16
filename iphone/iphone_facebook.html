@@ -33,6 +33,10 @@
             margin:0;
             display: inline-block;
         }
+        div {
+            margin:0;
+            padding:0;
+        }
         /* 맨위 상태표시줄 */
         .top_state {
             display:inline-block;
@@ -243,11 +247,11 @@
         .posting {
             width:100%;
             height:87vh;
-            border:1px solid green;
             float: left;
         }
         .bottom_menu {
             position: fixed;
+            background-color: white;
             width:100%;
             height:8vh;
             border-top:1px solid rgba(0,0,0,0.1);
@@ -287,6 +291,7 @@
             display: inline-block;
             margin:0px;
             padding:0;
+            margin-left: 10%;
         }
         .posting_article {
             height:65vh;
@@ -295,10 +300,69 @@
         .red {
             color:red;
         }
+        /* 포스팅 감정표현 */
         .posting_good {
             width:100%;
             height:10vh;
-            border:1px solid green;
+        }
+        .posting_good.nice {
+            margin-left: 4%;
+            background-color: rgb(52, 52, 253);
+        }
+        .posting_good.heart {
+            background-color: rgb(251, 43, 78);
+        }
+        .posting_good.fun {
+            background-color: rgb(247, 251, 43);
+        }
+        .posting_emoticon {
+            width:3.5%;
+            height:2vh;
+            border-radius: 100%;
+            display: inline-block;
+        }
+        .posting_comment {
+            font-size: .5rem;
+            display: inline-block;
+            margin-left: 50%;
+        }
+        .emoticon_add {
+            font-size: .5rem;
+        }
+        .posting_grayline {
+            width:90%;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            height:2px;
+        }
+        .posting_test {
+            padding-left: .4rem;
+            padding-right: .4rem;
+        }
+        .posting_test:hover {
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            background-color: rgba(0,0,0,0.1);
+        }
+        /* 하단 공백 */
+        .bottom_blank {
+            width:100%;
+            height:8vh;
+            bottom:0%;
+        }
+        /* 하단 부가메뉴들 6개 */
+        .bottom_object {
+            width:16.6%;
+            height:8vh;
+            float:left;
+        }
+        .bottom_active {
+            width:16.6%;
+            height:8vh;
+            float:left;
+            border-top:1px solid rgb(85, 85, 250);
+            color:rgb(85, 85, 250);
         }
     </style>
 </head>
@@ -369,9 +433,7 @@
         <p class="posting_time">1시간</p>
         <div class="posting_menu">
             <center>
-                <div class="posting_circle"></div>
-                <div class="posting_circle"></div>
-                <div class="posting_circle"></div>
+                <div class="posting_circle"></div><div class="posting_circle"></div><div class="posting_circle"></div>
             </center>
         </div>
         <div class="posting_article">
@@ -391,12 +453,78 @@
             </p>
         </div>
         <div class="posting_good">
-
+            <div class="posting_good posting_emoticon nice"></div><div class="posting_good posting_emoticon heart"></div><div class="posting_good posting_emoticon fun"></div><p class="emoticon_add">352개</p>
+            <div class="posting_comment">댓글 2개</div>
+            <center>
+                <div class="posting_grayline">
+            
+                </div>
+                <p class="posting_test">좋아요</p>
+                <p class="posting_test">댓글 달기</p>
+                <p class="posting_test">공유하기</p>
+            </center>
         </div>
+        
+        
+    </div>
+    
+    <div class="posting">
+        <!-- 회색 라인 -->
+        <div class="line_start">
+            <br>
+        </div>
+        <div class="posting_profile user2"></div>
+        <p class="posting_name">마초서준</p>
+        <p class="posting_time">1시간</p>
+        <div class="posting_menu">
+            <center>
+                <div class="posting_circle"></div><div class="posting_circle"></div><div class="posting_circle"></div>
+            </center>
+        </div>
+        <div class="posting_article">
+            <p>황혼보다 <span class="red">어두운 자여</span> 
+                <br><br>
+                내 몸에 흐르는 피보다 더 <span class="red">붉은 자여</span>
+                <br><br>
+                시간의 흐름 속에 파묻힌 <span class="red">위대한 그대의 이름</span>을 걸고
+                <br><br>
+                나 여기서 <span class="red">어둠에 맹세</span>하노라
+                <br><br>
+                우리 앞을 가로막고 있는 모든 <span class="red">어리석은 자</span>들에게
+                <br><br>
+                나와 그대의 힘을
+                <br><br>
+                <span class="red">위대한 파멸의 힘</span>을 보여줄 것을
+            </p>
+        </div>
+        <!-- 좋아요 및 댓글 -->
+        <div class="posting_good">
+            <div class="posting_good posting_emoticon nice"></div><div class="posting_good posting_emoticon heart"></div><div class="posting_good posting_emoticon fun"></div><p class="emoticon_add">352개</p>
+            <div class="posting_comment">댓글 2개</div>
+            <center>
+                <div class="posting_grayline">
+            
+                </div>
+                <p class="posting_test">좋아요</p>
+                <p class="posting_test">댓글 달기</p>
+                <p class="posting_test">공유하기</p>
+            </center>
+        </div>
+        
+        
     </div>
     <!-- 하단 메뉴 -->
     <div class="bottom_menu">
-
+        <div class="bottom_active"><p class="icon-home"></p></div>
+        <div class="bottom_object"><p class="icon-youtube-play"></p></div>
+        <div class="bottom_object"><p class="icon-user"></p></div>
+        <div class="bottom_object"><p class="icon-group"></p></div>
+        <div class="bottom_object"><p class="icon-bell"></p></div>
+        <div class="bottom_object"><p class="icon-menu"></p></div>
+    </div>
+    <!-- fixed 되어있는 하단 메뉴를 보기 위한 div -->
+    <div class="bottom_blank">
+        1
     </div>
     <script>
         // 스토리 사이드 스크롤 시 변화
@@ -415,6 +543,11 @@
         var minute = date.getMinutes();
       }
       time[0].innerHTML = `${hour}${minute}`;
+      //   클래스 및 아이디 변수
+      var bottom_object = document.getElementsByClassName('bottom_object');
+      for(var i =0; i<bottom_object.length; i++) {
+        console.log(bottom_object[i] , i);
+      };
     </script>
   </body>
 </html>
