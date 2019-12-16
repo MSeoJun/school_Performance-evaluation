@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?95212132');
-  src: url('../font/fontello.eot?95212132#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff2?95212132') format('woff2'),
-       url('../font/fontello.woff?95212132') format('woff'),
-       url('../font/fontello.ttf?95212132') format('truetype'),
-       url('../font/fontello.svg?95212132#fontello') format('svg');
+  src: url('../font/fontello.eot?57609488');
+  src: url('../font/fontello.eot?57609488#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?57609488') format('woff2'),
+       url('../font/fontello.woff?57609488') format('woff'),
+       url('../font/fontello.ttf?57609488') format('truetype'),
+       url('../font/fontello.svg?57609488#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,45 +15,38 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?95212132#fontello') format('svg');
+    src: url('../font/fontello.svg?57609488#fontello') format('svg');
   }
 }
 */
  
-.icon-hammer:before {
+.icon-apple:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
+  font-size: 50px;
+ 
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
-  position: fixed;
-  left: 0%;
-  top: 9%;
   /* opacity: .8; */
+ 
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
  
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
-  background-color:black;
-  color:white;
-  border:2px solid white;
-  font-size:2.8rem;
-  border-top-left-radius: 20%;
-  border-top-right-radius: 20%;
-  border-bottom-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+ 
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
  
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
-  
+ 
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,4 +55,4 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-hammer:before { content: '\e801'; } /* '' */
+.icon-apple:before { content: '\f179'; } /* '' */
