@@ -1,0 +1,82 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "d407a4707f719b042ed2ad28d2619d7e",
+      "css": "signal",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "52177c3387cdac48d6ed18bebe84c34a",
+      "css": "headphones",
+      "code": 59395,
+      "src": "iconic"
+    },
+    {
+      "uid": "47a1f80457068fbeab69fdb83d7d0817",
+      "css": "youtube-play",
+      "code": 61802,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "69bd9dfe950d07d910f39c6988364e49",
+      "css": "battery-4",
+      "code": 62016,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9a0873ae5167deefbf38061b7cddbe34",
+      "css": "bluetooth-b",
+      "code": 62100,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4743b088aa95d6f3b6b990e770d3b647",
+      "css": "facebook-squared",
+      "code": 62216,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "51fb22f9ff9d7f60c95ef31e4c59502d",
+      "css": "comment",
+      "code": 62636,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "c91098f07ff0df45b3f8666b72b75801",
+      "css": "phone",
+      "code": 59396,
+      "src": "elusive"
+    },
+    {
+      "uid": "cf772d9d1eca484c9772a98045dd39d6",
+      "css": "target-1",
+      "code": 59398,
+      "src": "elusive"
+    },
+    {
+      "uid": "69253046b55214b42caada5c226801f2",
+      "css": "camera",
+      "code": 59399,
+      "src": "iconic"
+    },
+    {
+      "uid": "39e2e6682c28e1e3b5f49825a19717c4",
+      "css": "note",
+      "code": 59400,
+      "src": "entypo"
+    },
+    {
+      "uid": "6975c4c656d41a0283d9c52516bf38ed",
+      "css": "delicious",
+      "code": 61861,
+      "src": "fontawesome"
+    }
+  ]
+}

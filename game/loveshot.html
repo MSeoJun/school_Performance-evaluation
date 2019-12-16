@@ -1,307 +1,321 @@
 <!DOCTYPE html>
 <html onselectstart="return false">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../fontello/fontello-a1c81d73/css/fontello.css"
-    />
-    <title>FPS_Game</title>
-    <style>
-      html {
-        cursor: url(../img/aim.png) 50 50, auto;
-      }
-      body {
-        background-color: white;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-      }
 
-      /* 점수 */
-      #score {
-        position: fixed;
-        top: 2%;
-        right: 7%;
-        padding: 0;
-        margin: 0;
-        font-size: 15px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="../fontello/fontello-target/css/fontello.css" />
+  <title>FPS_Game</title>
+  <style>
+    html {
+      cursor: url(../img/aim.png) 50 50, auto;
+    }
 
-      /* 작은 타겟 */
-      .icon-target {
-        display: none;
-        position: fixed;
-        top: 15%;
-        color: black;
-      }
-      #target1 {
-        left: 13%;
-      }
-      #target2 {
-        left: 35%;
-      }
-      #target3 {
-        left: 57%;
-      }
-      #target4 {
-        left: 79%;
-      }
+    body {
+      background-color: white;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100vh;
+    }
 
-      /* 보통 타겟 */
-      .icon-target1 {
-        display: none;
-        position: fixed;
-        top: 35%;
-        color: black;
-      }
-      #target5 {
-        left: 9.5%;
-      }
-      #target6 {
-        left: 31.5%;
-      }
-      #target7 {
-        left: 53.5%;
-      }
-      #target8 {
-        left: 75.5%;
-      }
+    /* 점수 */
+    #score {
+      position: fixed;
+      top: 2%;
+      right: 7%;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+    }
 
-      /* 큰 타겟 */
-      .icon-target2 {
-        display: none;
-        position: fixed;
-        top: 60%;
-        color: black;
-      }
-      #target9 {
-        left: 4.5%;
-      }
-      #target10 {
-        left: 27.2%;
-      }
-      #target11 {
-        left: 48.5%;
-      }
-      #target12 {
-        left: 70.3%;
-      }
+    /* 작은 타겟 */
+    .icon-target1 {
+      display: none;
+      position: fixed;
+      top: 15%;
+      color: black;
+    }
 
-      input {
-        position: fixed;
-        left: 48%;
-        top: 42%;
-      }
-      center {
-        padding-top: 170px;
-      }
-      a {
-        text-decoration: none;
-      }
+    #target1 {
+      left: 13%;
+    }
 
-      .font {
-        text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px gray;
-        font-weight: bold;
-        color: black;
-        font-size: 24px;
-        cursor: url(../img/aim.png) 50 50, auto;
-      }
+    #target2 {
+      left: 35%;
+    }
 
-      .font:hover {
-        text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px gray;
-        font-weight: bold;
-        color: red;
-        font-size: 24px;
-        cursor: url(../img/aim.png) 50 50, auto;
-      }
+    #target3 {
+      left: 57%;
+    }
 
-      #ViewTimer {
-        font-size: 12px;
-      }
-    </style>
-  </head>
-  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <!-- <div class="back"></div> -->
-    <!-- 시간 -->
-    <div id="ViewTimer"></div>
+    #target4 {
+      left: 79%;
+    }
 
-    <center>
-      <!-- 시간초과후 나오는 총 점수 -->
-      <a id="score1"></a>
-      <br /><br />
+    /* 보통 타겟 */
+    .icon-target2 {
+      display: none;
+      position: fixed;
+      top: 35%;
+      color: black;
+    }
 
-      <!-- 시간초과후 나오는 리셋 -->
-      <a class="font" id="reset" onclick="window.location.reload();"></a>
+    #target5 {
+      left: 9.5%;
+    }
 
-      <!-- 시작 첫 화면 -->
-      <a class="font" id="start" onclick="TimerStart(), start();">시작하기</a>
-      <br /><br />
-      <a class="font" id="end" href="../iphone/iphone_main.html">끝내기</a>
-    </center>
+    #target6 {
+      left: 31.5%;
+    }
 
-    <!-- 점수 -->
-    <h1 id="score"></h1>
+    #target7 {
+      left: 53.5%;
+    }
 
-    <!-- 작은 타겟 -->
-    <div class="icon-target" id="target1"></div>
-    <div class="icon-target" id="target2"></div>
-    <div class="icon-target" id="target3"></div>
-    <div class="icon-target" id="target4"></div>
+    #target8 {
+      left: 75.5%;
+    }
 
-    <!-- 보통 타겟 -->
-    <div class="icon-target1" id="target5"></div>
-    <div class="icon-target1" id="target6"></div>
-    <div class="icon-target1" id="target7"></div>
-    <div class="icon-target1" id="target8"></div>
+    /* 큰 타겟 */
+    .icon-target3 {
+      display: none;
+      position: fixed;
+      top: 60%;
+      color: black;
+    }
 
-    <!-- 큰 타겟 -->
-    <div class="icon-target2" id="target9"></div>
-    <div class="icon-target2" id="target10"></div>
-    <div class="icon-target2" id="target11"></div>
-    <div class="icon-target2" id="target12"></div>
-  </body>
-  <script>
-    var body = document.querySelector("body");
-    var target = document.getElementsByClassName("icon-target");
-    var target1 = document.getElementsByClassName("icon-target1");
-    var target2 = document.getElementsByClassName("icon-target2");
-    var audio = new Audio();
-    audio.src = "../sound/shotgun1.mp3";
-    body.addEventListener("click", () => {
-      audio.play();
-    });
+    #target9 {
+      left: 4.5%;
+    }
 
-    localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
+    #target10 {
+      left: 27.2%;
+    }
 
+    #target11 {
+      left: 48.5%;
+    }
+
+    #target12 {
+      left: 70.3%;
+    }
+
+    input {
+      position: fixed;
+      left: 48%;
+      top: 42%;
+    }
+
+    center {
+      padding-top: 170px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .font {
+      text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px gray;
+      font-weight: bold;
+      color: black;
+      font-size: 24px;
+      cursor: url(../img/aim.png) 50 50, auto;
+    }
+
+    .font:hover {
+      text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px gray;
+      font-weight: bold;
+      color: red;
+      font-size: 24px;
+      cursor: url(../img/aim.png) 50 50, auto;
+    }
+
+    #ViewTimer {
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+  <!-- <div class="back"></div> -->
+  <!-- 시간 -->
+  <div id="ViewTimer"></div>
+
+  <center>
+    <!-- 시간초과후 나오는 총 점수 -->
+    <a id="score1"></a>
+    <br /><br />
+
+    <!-- 시간초과후 나오는 리셋 -->
+    <a class="font" id="reset" onclick="window.location.reload();"></a>
+
+    <!-- 시작 첫 화면 -->
+    <a class="font" id="start" onclick="TimerStart(), start();">시작하기</a>
+    <br /><br />
+    <a class="font" id="end" href="../iphone/iphone_main.html">끝내기</a>
+  </center>
+
+  <!-- 점수 -->
+  <h1 id="score"></h1>
+
+  <!-- 작은 타겟 -->
+  <div class="icon-target1" id="target1"></div>
+  <div class="icon-target1" id="target2"></div>
+  <div class="icon-target1" id="target3"></div>
+  <div class="icon-target1" id="target4"></div>
+
+  <!-- 보통 타겟 -->
+  <div class="icon-target2" id="target5"></div>
+  <div class="icon-target2" id="target6"></div>
+  <div class="icon-target2" id="target7"></div>
+  <div class="icon-target2" id="target8"></div>
+
+  <!-- 큰 타겟 -->
+  <div class="icon-target3" id="target9"></div>
+  <div class="icon-target3" id="target10"></div>
+  <div class="icon-target3" id="target11"></div>
+  <div class="icon-target3" id="target12"></div>
+</body>
+<script>
+  var body = document.querySelector("body");
+  var target1 = document.getElementsByClassName("icon-target1");
+  var target2 = document.getElementsByClassName("icon-target2");
+  var target3 = document.getElementsByClassName("icon-target3");
+  var audio = new Audio();
+  audio.src = "../sound/shotgun1.mp3";
+  body.addEventListener("click", () => {
+    audio.play();
+  });
+
+  localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
+
+  if (SetTime < 0) {
+    for (let i = 1; i < 13; i++) {
+      document.getElementById("target" + i).style.display = "none";
+    }
+  }
+  function start() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("end").style.display = "none";
+    // 타겟생성 함수 호출
+    setTimeout(() => {
+      re();
+    }, 1000);
+    setTimeout(() => {
+      re1();
+    }, 1000);
+    setTimeout(() => {
+      re2();
+    }, 1000);
+  }
+  var SetTime = 10;
+  function msg_time() {
+    m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
+    var msg =
+      "<font color='black'>남은 시간 : </font> <font color='red'>" +
+      m +
+      "</font>";
+    document.all.ViewTimer.innerHTML = msg;
+    SetTime--;
     if (SetTime < 0) {
+      clearInterval(tid);
       for (let i = 1; i < 13; i++) {
         document.getElementById("target" + i).style.display = "none";
       }
-    }
-    function start() {
-      document.getElementById("start").style.display = "none";
-      document.getElementById("end").style.display = "none";
-      // 타겟생성 함수 호출
+      score1.innerText = "총 점수 : " + localStorage.getItem(score);
+      reset.innerText = `다시하기`;
+      document.getElementById("end").style.display = "block";
+      document.getElementById("score").style.display = "none";
+      document.getElementById("ViewTimer").style.display = "none";
       setTimeout(() => {
-        re();
-      }, 1000);
-      setTimeout(() => {
-        re1();
-      }, 1000);
-      setTimeout(() => {
-        re2();
+        localStorage.removeItem(score);
       }, 1000);
     }
-    var SetTime = 3;
-    function msg_time() {
-      m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
-      var msg =
-        "<font color='black'>남은 시간 : </font> <font color='red'>" +
-        m +
-        "</font>";
-      document.all.ViewTimer.innerHTML = msg;
-      SetTime--;
-      if (SetTime < 0) {
-        clearInterval(tid);
-        for (let i = 1; i < 13; i++) {
-          document.getElementById("target" + i).style.display = "none";
+  }
+  function TimerStart() {
+    tid = setInterval("msg_time()", 1000);
+  }
+
+  // 1~4까지의 타겟을 생성
+  function re() {
+    if (SetTime <= 0) {
+      msg_time();
+    } else {
+      score.innerText = `점수 : ${localStorage.getItem(score)}`;
+
+      let random = Math.floor(Math.random() * 4) + 1;
+      document.getElementById("target" + random).style.display = "block";
+
+      document.getElementById("target" + random).onclick = function () {
+        document.getElementById("target" + random).style.display = "none";
+        if (random <= 4) {
+          localStorage.setItem(
+            score,
+            Number(localStorage.getItem(score)) + 100
+          );
         }
-        score1.innerText = "총 점수 : " + localStorage.getItem(score);
-        reset.innerText = `다시하기`;
-        document.getElementById("end").style.display = "block";
-        document.getElementById("score").style.display = "none";
-        document.getElementById("ViewTimer").style.display = "none";
+        audio.play();
         setTimeout(() => {
-          localStorage.removeItem(score);
-        }, 1000);
-      }
+          re();
+        }, 400);
+      };
     }
-    function TimerStart() {
-      tid = setInterval("msg_time()", 1000);
+  }
+
+  // 5~8까지의 타겟을 생성
+  function re1() {
+    if (SetTime <= 0) {
+      msg_time();
+    } else {
+      score.innerText = `점수 : ${localStorage.getItem(score)}`;
+
+      let random1 = Math.floor(Math.random() * 4) + 5;
+      document.getElementById("target" + random1).style.display = "block";
+
+      document.getElementById("target" + random1).onclick = function () {
+        document.getElementById("target" + random1).style.display = "none";
+        if (random1 > 4 && random1 <= 8) {
+          localStorage.setItem(
+            score,
+            Number(localStorage.getItem(score)) + 50
+          );
+        }
+        audio.play();
+        setTimeout(() => {
+          re1();
+        }, 400);
+      };
     }
+  }
 
-    // 1~4까지의 타겟을 생성
-    function re() {
-      if (SetTime <= 0) {
-        msg_time();
-      } else {
-        score.innerText = `점수 : ${localStorage.getItem(score)}`;
+  // 8~12까지의 타겟을 생성
+  function re2() {
+    if (SetTime <= 0) {
+      msg_time();
+    } else {
+      score.innerText = `점수 : ${localStorage.getItem(score)}`;
 
-        let random = Math.floor(Math.random() * 4) + 1;
-        document.getElementById("target" + random).style.display = "block";
+      let random2 = Math.floor(Math.random() * 4) + 9;
+      document.getElementById("target" + random2).style.display = "block";
 
-        document.getElementById("target" + random).onclick = function() {
-          document.getElementById("target" + random).style.display = "none";
-          if (random <= 4) {
-            localStorage.setItem(
-              score,
-              Number(localStorage.getItem(score)) + 100
-            );
-          }
-          audio.play();
-          setTimeout(() => {
-            re();
-          }, 400);
-        };
-      }
+      document.getElementById("target" + random2).onclick = function () {
+        document.getElementById("target" + random2).style.display = "none";
+        if (random2 > 8 && random2 <= 12) {
+          localStorage.setItem(
+            score,
+            Number(localStorage.getItem(score)) + 30
+          );
+        }
+        audio.play();
+        setTimeout(() => {
+          re2();
+        }, 400);
+      };
     }
+  }
+</script>
 
-    // 5~8까지의 타겟을 생성
-    function re1() {
-      if (SetTime <= 0) {
-        msg_time();
-      } else {
-        score.innerText = `점수 : ${localStorage.getItem(score)}`;
-
-        let random1 = Math.floor(Math.random() * 4) + 5;
-        document.getElementById("target" + random1).style.display = "block";
-
-        document.getElementById("target" + random1).onclick = function() {
-          document.getElementById("target" + random1).style.display = "none";
-          if (random1 > 4 && random1 <= 8) {
-            localStorage.setItem(
-              score,
-              Number(localStorage.getItem(score)) + 50
-            );
-          }
-          audio.play();
-          setTimeout(() => {
-            re1();
-          }, 400);
-        };
-      }
-    }
-
-    // 8~12까지의 타겟을 생성
-    function re2() {
-      if (SetTime <= 0) {
-        msg_time();
-      } else {
-        score.innerText = `점수 : ${localStorage.getItem(score)}`;
-
-        let random2 = Math.floor(Math.random() * 4) + 9;
-        document.getElementById("target" + random2).style.display = "block";
-
-        document.getElementById("target" + random2).onclick = function() {
-          document.getElementById("target" + random2).style.display = "none";
-          if (random2 > 8 && random2 <= 12) {
-            localStorage.setItem(
-              score,
-              Number(localStorage.getItem(score)) + 30
-            );
-          }
-          audio.play();
-          setTimeout(() => {
-            re2();
-          }, 400);
-        };
-      }
-    }
-  </script>
 </html>

@@ -1,0 +1,5 @@
+
+.icon-signal { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
+.icon-headphones { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe803;&nbsp;'); }
+.icon-battery-4 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf240;&nbsp;'); }
+.icon-bluetooth-b { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf294;&nbsp;'); }
