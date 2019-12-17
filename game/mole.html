@@ -14,6 +14,9 @@
 
       /* 제목 */
       h1 {
+        position: fixed;
+        top: 0%;
+        left: 27%;
         text-align: center;
         color: white;
         font-size: 20px;
@@ -101,6 +104,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole1 {
         position: fixed;
         top: 23%;
@@ -109,6 +113,7 @@
         height: 60px;
         display: none;
       }
+
       #hole2 {
         position: fixed;
         top: 23%;
@@ -119,6 +124,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole2 {
         position: fixed;
         top: 23%;
@@ -138,6 +144,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole3 {
         position: fixed;
         top: 23%;
@@ -146,6 +153,7 @@
         height: 60px;
         display: none;
       }
+
       #hole4 {
         position: fixed;
         top: 40%;
@@ -156,6 +164,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole4 {
         position: fixed;
         top: 40%;
@@ -164,6 +173,7 @@
         height: 60px;
         display: none;
       }
+
       #hole5 {
         position: fixed;
         top: 40%;
@@ -174,6 +184,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole5 {
         position: fixed;
         top: 40%;
@@ -182,6 +193,7 @@
         height: 60px;
         display: none;
       }
+
       #hole6 {
         position: fixed;
         top: 40%;
@@ -192,6 +204,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole6 {
         position: fixed;
         top: 40%;
@@ -200,6 +213,7 @@
         height: 60px;
         display: none;
       }
+
       #hole7 {
         position: fixed;
         top: 57%;
@@ -210,6 +224,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole7 {
         position: fixed;
         top: 57%;
@@ -218,6 +233,7 @@
         height: 60px;
         display: none;
       }
+
       #hole8 {
         position: fixed;
         top: 57%;
@@ -228,6 +244,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole8 {
         position: fixed;
         top: 57%;
@@ -236,6 +253,7 @@
         height: 60px;
         display: none;
       }
+
       #hole9 {
         position: fixed;
         top: 57%;
@@ -246,6 +264,7 @@
         background-color: black;
         cursor: pointer;
       }
+
       #mole9 {
         position: fixed;
         top: 57%;
@@ -254,48 +273,90 @@
         height: 60px;
         display: none;
       }
+
       #timer {
         position: fixed;
-        top: 14%;
-        left: 40%;
+        top: 13%;
+        left: 70%;
         display: none;
+      }
+
+      #total {
+        position: fixed;
+        top: 11%;
+        left: 10%;
+        font-size: 14px;
+      }
+
+      #totalscore {
+        position: fixed;
+        top: 11%;
+        left: 36%;
+        font-size: 14px;
+      }
+
+      #end {
+        position: fixed;
+        top: 0%;
+        left: 6%;
+        font-size: 12px;
+      }
+
+      a:link {
+        color: red;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: red;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: red;
+        text-decoration: underline;
       }
     </style>
   </head>
 
   <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
     <h1>Welcome<br />Catch The Mole</h1>
-    <div id="timer" style="color: white;"><div id="count"></div></div>
+    <p id="end"><a href="../iphone/iphone_main2.html">끝내기</a></p>
+    <p id="total" style="color: white;">최고 점수 :</p>
+    <p id="totalscore" style="color: yellow;"></p>
+    <div id="timer" style="color: white;">
+      <div id="count"></div>
+    </div>
 
     <!-- 두더지가 나오는 곳 -->
     <div id="ground"></div>
     <div class="hole">
       <div id="hole1">
-        <img class="mole" id="mole1" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole1" src="../img/mole.png" />
       </div>
       <div id="hole2">
-        <img class="mole" id="mole2" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole2" src="../img/mole.png" />
       </div>
       <div id="hole3">
-        <img class="mole" id="mole3" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole3" src="../img/mole.png" />
       </div>
       <div id="hole4">
-        <img class="mole" id="mole4" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole4" src="../img/mole.png" />
       </div>
       <div id="hole5">
-        <img class="mole" id="mole5" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole5" src="../img/mole.png" />
       </div>
       <div id="hole6">
-        <img class="mole" id="mole6" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole6" src="../img/mole.png" />
       </div>
       <div id="hole7">
-        <img class="mole" id="mole7" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole7" src="../img/mole.png" />
       </div>
       <div id="hole8">
-        <img class="mole" id="mole8" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole8" src="../img/mole.png" />
       </div>
       <div id="hole9">
-        <img class="mole" id="mole9" src="C:/Users/pc/Desktop/mole.png" />
+        <img class="mole" id="mole9" src="../img/mole.png" />
       </div>
     </div>
     <!-- 점수 -->
@@ -337,6 +398,19 @@
         score.innerText = `${point}`;
       }, 100);
 
+      let total = 0;
+      const totalpoint = document.getElementById("totalscore");
+      if (total <= point) {
+        total = point;
+        setInterval(() => {
+          totalpoint.innerText = `${total}`;
+        }, 100);
+      } else {
+        setInterval(() => {
+          totalpoint.innerText = `${total}`;
+        }, 100);
+      }
+
       localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
       // 두더지가 나오는 함수
       function start() {
@@ -346,7 +420,6 @@
       }
       document.getElementById("timer").style.display = "block";
 
-      var SetTime = 5;
       var count = document.getElementById("count");
       function msg_time() {
         m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
@@ -360,38 +433,31 @@
           for (let i = 1; i < 10; i++) {
             document.getElementById("mole" + i).style.display = "none";
           }
+          document.querySelector("h1").style.display = "block";
+          if (total <= point) {
+            total = point;
+          }
         }
-        document.querySelector("h1").style.display = "block";
       }
 
       function TimerStart() {
+        point = 0;
+        SetTime = 20;
         tid = setInterval("msg_time()", 1000);
+        document.getElementById("count").style.display = "block";
       }
 
-      var prenum;
-      var destroy = 1.5;
-
-      function cut() {
-        destroy = destroy - 1;
-      }
       function mole() {
         let random = Math.floor(Math.random() * 9) + 1;
         document.getElementById("mole" + random).style.display = "block";
         setTimeout(() => {
           document.getElementById("mole" + random).style.display = "none";
-        }, 1500);
+        }, 1800);
 
         document.getElementById("mole" + random).onclick = function() {
           document.getElementById("mole" + random).style.display = "none";
           point = point + 10;
         };
-        setInterval(() => {
-          cut();
-        }, 1000);
-
-        if (destroy <= 0) {
-          clearInterval;
-        }
         if (SetTime <= 0) {
           clearInterval(() => {
             mole();
