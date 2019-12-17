@@ -124,6 +124,21 @@
             display: inline-block;
             color:gray;
         }
+        /* 상단 스토리 */
+        .top_story {
+            width:100%;
+            height:20vh;
+            border:1px solid red;
+            line-height: 20vh;
+        }
+        /* 상단 스토리 프로필 */
+        .story_profile {
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 100%;
+            height:1px;
+            display: inline-block;
+        }
+        /* 스토리 p태그 공백없애기 */
     </style>
 
 </head>
@@ -154,6 +169,10 @@
             </div>
         </div>
     </center>
+    <!-- 상단 스토리 -->
+    <div class="top_story">
+        <p class="story_profile story_p">+</p>
+    </div>
     <script>
         // 가장 윗 라인 시간 스크립트
         var time = document.getElementsByClassName("time");
