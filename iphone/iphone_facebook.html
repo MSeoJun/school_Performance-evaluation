@@ -515,19 +515,24 @@
     </div>
     <!-- 하단 메뉴 -->
     <div class="bottom_menu">
-        <div class="bottom_active"><p class="icon-home"></p></div>
+        <div class="bottom_object"><p class="icon-home"></p></div i>
         <div class="bottom_object"><p class="icon-youtube-play"></p></div>
         <div class="bottom_object"><p class="icon-user"></p></div>
         <div class="bottom_object"><p class="icon-group"></p></div>
         <div class="bottom_object"><p class="icon-bell"></p></div>
         <div class="bottom_object"><p class="icon-menu"></p></div>
-    </div>
-    <!-- fixed 되어있는 하단 메뉴를 보기 위한 div -->
+    </dived 되어있는 하단 메뉴를 보기 위한 div -->
     <div class="bottom_blank">
+        1
         1
     </div>
     <script>
-        // 스토리 사이드 스크롤 시 변화
+      //   하단 메뉴 활성화 / 비활성화
+      var active = document.getElementsByClassName('bottom_active');
+      //   클래스 및 아이디 변수
+      var bottom_object = document.getElementsByClassName('bottom_object');
+        // 시작하며 클래스 변경
+        bottom_object[0].className = 'bottom_active'; 
 
       // 가장 윗 라인 시간 스크립트
       var time = document.getElementsByClassName("time");
@@ -543,11 +548,20 @@
         var minute = date.getMinutes();
       }
       time[0].innerHTML = `${hour}${minute}`;
-      //   클래스 및 아이디 변수
-      var bottom_object = document.getElementsByClassName('bottom_object');
+      
       for(var i =0; i<bottom_object.length; i++) {
-        console.log(bottom_object[i] , i);
+        bottom_object[i].addEventListener('click',() => {
+            console.log(i);
+            
+            for(var i =0; i<bottom_object.length; i++) {
+                // console.log(i);
+                // bottom_object[i].className = 'bottom_active';
+            }
+        });
       };
+      
+      
+
     </script>
   </body>
 </html>
