@@ -7,52 +7,34 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "25b34dea4784f72c710454f32ff8fa2b",
-      "css": "star",
-      "code": 49,
-      "src": "entypo"
-    },
-    {
-      "uid": "598a5f2bcf3521d1615de8e1881ccd17",
-      "css": "clock",
-      "code": 50,
+      "uid": "d407a4707f719b042ed2ad28d2619d7e",
+      "css": "signal",
+      "code": 59394,
       "src": "fontawesome"
     },
     {
-      "uid": "86ee1fc7ff57e9c9c60d8a5e57183776",
-      "css": "user",
-      "code": 51,
+      "uid": "52177c3387cdac48d6ed18bebe84c34a",
+      "css": "headphones",
+      "code": 59395,
       "src": "iconic"
     },
     {
-      "uid": "d407a4707f719b042ed2ad28d2619d7e",
-      "css": "signal",
-      "code": 52,
+      "uid": "9a0873ae5167deefbf38061b7cddbe34",
+      "css": "bluetooth-b",
+      "code": 62100,
       "src": "fontawesome"
     },
     {
-      "uid": "cd4bfdae4dc89b175ff49330ce29611a",
-      "css": "wifi",
-      "code": 53,
+      "uid": "7ab4ec24078133effbc4e923b65ef835",
+      "css": "battery-3",
+      "code": 62017,
       "src": "fontawesome"
     },
     {
-      "uid": "e430a168b45ba40aa988ca1a5034a553",
-      "css": "battery-2",
-      "code": 54,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "ed62f5f10b256b0a959e6c847ed8f4a6",
-      "css": "tape",
-      "code": 55,
-      "src": "entypo"
-    },
-    {
-      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
+      "uid": "c91098f07ff0df45b3f8666b72b75801",
       "css": "phone",
-      "code": 56,
-      "src": "fontawesome"
+      "code": 59396,
+      "src": "elusive"
     }
   ]
 }

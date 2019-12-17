@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="calculator" unicode="&#xe800;" d="M573-119l-417 0q-65 0-110 46t-46 111l0 625q0 65 46 110t110 46l417 0q65 0 110-46t46-110l0-625q0-65-46-111t-110-46z m-417 834q-21 0-37-15t-15-37l0-625q0-21 15-37t37-16l417 0q21 0 36 16t16 37l0 625q0 21-16 37t-36 15l-417 0z m0-312q0 51 53 51 51 0 51-51 0-53-51-53-53 0-53 53z m157 0q0 51 52 51 51 0 51-51 0-53-51-53-52 0-52 53z m156 0q0 51 52 51 52 0 52-51 0-53-52-53-52 0-52 53z m-313-156q0 51 53 51 51 0 51-51 0-53-51-53-53 0-53 53z m157 0q0 51 52 51 51 0 51-51 0-53-51-53-52 0-52 53z m156 0q0 51 52 51 52 0 52-51 0-53-52-53-52 0-52 53z m-313-157q0 52 53 52 51 0 51-52 0-52-51-52-53 0-53 52z m157 0q0 52 52 52 51 0 51-52 0-52-51-52-52 0-52 52z m156 0q0 52 52 52 52 0 52-52 0-52-52-52-52 0-52 52z m52 520l-312 0 0-51 312 0 0 51z m52 53l0-156-417 0 0 156 417 0z" horiz-adv-x="729" />
+</font>
+</defs>
+</svg>

@@ -1,6 +1,15 @@
 Font license info
 
 
+## Entypo
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    Daniel Bruce
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.entypo.com
+
+
 ## Font Awesome
 
    Copyright (C) 2016 by Dave Gandy
@@ -10,21 +19,12 @@ Font license info
    Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
-## MFG Labs
+## Iconic
 
-   Copyright (C) 2012 by Daniel Bruce
+   Copyright (C) 2012 by P.J. Onori
 
-   Author:    MFG Labs
+   Author:    P.J. Onori
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.mfglabs.com/
-
-
-## Entypo
-
-   Copyright (C) 2012 by Daniel Bruce
-
-   Author:    Daniel Bruce
-   License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.entypo.com
+   Homepage:  http://somerandomdude.com/work/iconic/
 
 

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../fontello/fontello-main2/css/fontello.css" />>
+    <title>Iphone_main</title>
+    <style>
+        body {
+            background-image: url("../img/iphoneback.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0;
+            margin: 0;
+        }
+
+        .team {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.8rem;
+            left: 8%;
+            top: 0.5%;
+        }
+
+        .dater {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.8rem;
+            left: 17%;
+            top: 0.5%;
+        }
+
+        .time {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.8rem;
+            left: 40%;
+            top: 0.5%;
+        }
+
+        .percent {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.7rem;
+            right: 11%;
+            top: 0.7%;
+        }
+
+        .white_box {
+            background-color: rgba(255, 255, 255, 0.4);
+            top: 100%;
+            transform: translateY(-100%);
+            position: fixed;
+            width: 100%;
+            height: 17vh;
+        }
+
+        .box1 {
+            position: fixed;
+            top: 12.5%;
+            left: 3%;
+            width: 22%;
+            height: 13vh;
+            background: linear-gradient(170deg,
+                    rgb(166, 230, 103) 0%,
+                    rgb(95, 180, 10) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+            cursor: pointer;
+        }
+
+        .box2 {
+            position: fixed;
+            top: 12.5%;
+            left: 28%;
+            width: 22%;
+            height: 13vh;
+            background: linear-gradient(170deg,
+                    rgb(233, 10, 10) 0%,
+                    rgba(180, 10, 10, 0.63) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+            cursor: pointer;
+        }
+
+        .box3 {
+            position: fixed;
+            top: 12.5%;
+            left: 52%;
+            width: 22%;
+            height: 13vh;
+            background: linear-gradient(170deg,
+                    rgb(70, 79, 206) 0%,
+                    rgb(34, 32, 187) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+            cursor: pointer;
+        }
+
+        .box4 {
+            position: fixed;
+            top: 12.5%;
+            left: 76%;
+            width: 22%;
+            height: 13vh;
+            background: linear-gradient(170deg,
+                    rgb(241, 253, 73) 0%,
+                    rgba(206, 209, 3, 300) 100%);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+            cursor: pointer;
+        }
+
+        .circle {
+            width: 2.5%;
+            height: 1.5vh;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 1px;
+            margin-left: 1px;
+            margin-top: 110%;
+        }
+
+        .circle.four {
+            background-color: white;
+        }
+
+        /* 게임 아이콘 스타일 */
+        .app {
+            display: inline-block;
+            margin-top: 10%;
+        }
+
+        .app:hover {
+            cursor: pointer;
+        }
+
+        /* 게임 제목 스타일 */
+        .app_title {
+            position: fixed;
+            color: white;
+            font-size: 0.1rem;
+        }
+
+        .app_title.mole {
+            top: 20%;
+            left: 5%;
+        }
+
+        .cover {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .back {
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            height: 100vh;
+            top: 0%;
+            z-index: 100;
+            animation-name: display;
+            animation-duration: 1s;
+            animation-play-state: running;
+            animation-fill-mode: both;
+        }
+
+        @keyframes display {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .left {
+            display: none;
+            position: fixed;
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+            top: 0%;
+            z-index: 100;
+            animation-name: ll;
+            animation-duration: 1s;
+            animation-play-state: running;
+            animation-fill-mode: both;
+        }
+
+        @keyframes ll {
+            from {
+                top: 0%;
+                left: 0%;
+            }
+
+            to {
+                left: 100%;
+                top: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <div class="back"></div>
+    <div class="left"></div>
+    <header>
+        <p class="icon-signal"></p>
+        <p class="team">SKT</p>
+        <p class="dater">LTE</p>
+        <p id="time" class="time"></p>
+        <p class="icon-bluetooth-b"></p>
+        <p class="icon-headphones"></p>
+        <p class="percent">98%</p>
+        <p class="icon-battery-4"></p>
+    </header>
+    <article>
+        <center>
+            <div id="mole" onclick="mole_location()" class="app icon-hammer"></div>
+            <p class="app_title mole">캐치 두더지</p>
+        </center>
+    </article>
+    <nav>
+        <center>
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+            <div class="circle three"></div>
+            <div class="circle four"></div>
+        </center>
+    </nav>
+    <footer>
+        <div class="white_box">
+            <div onclick="location.href='../iphone/iphone_call.html'" class="box1">
+                <p class="icon-phone"></p>
+            </div>
+            <div class="box2">
+                <p onclick="location.href='./iphone_youtube.html'" class="icon-youtube-play"></p>
+            </div>
+            <div class="box3">
+                <p onclick="location.href='./iphone_facebook.html'" class="icon-facebook-squared"></p>
+            </div>
+            <div class="box4">
+                <a href="http://developers.kakao.com">
+                    <p class="icon-comment"></p>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var body = document.querySelector("body");
+
+        // 배경 하얀색으로 깜빡
+        var back = document.getElementsByClassName("back");
+        setTimeout(() => {
+            back[0].style.display = "none";
+        }, 1000);
+
+        // 화면 옆으로 넘어가는거
+        var left = document.getElementsByClassName("left");
+
+        // 화면 넘어갈때 아이콘들 없애기
+        var mole = document.getElementById("mole");
+        var title_mole = document.getElementsByClassName("app_title mole");
+        var circle_one = document.getElementsByClassName("circle one");
+        var circle_two = document.getElementsByClassName("circle two");
+        var circle_three = document.getElementsByClassName("circle three");
+        var circle_four = document.getElementsByClassName("circle four");
+        var cover = document.getElementsByClassName("cover");
+        var dater = document.getElementsByClassName("dater");
+        var signal = document.getElementsByClassName("icon-signal");
+        var team = document.getElementsByClassName("team");
+        var headphones = document.getElementsByClassName("icon-headphones");
+        var percent = document.getElementsByClassName("percent");
+        var battery = document.getElementsByClassName("icon-battery-4");
+        var bluetooth = document.getElementsByClassName("icon-bluetooth-b");
+
+        body.addEventListener("keydown", e => {
+            if (e.keyCode === 32) {
+                mole.style.display = "none";
+                time.style.display = "none";
+                title_mole[0].style.display = "none";
+                circle_one[0].style.display = "none";
+                circle_two[0].style.display = "none";
+                circle_three[0].style.display = "none";
+                circle_four[0].style.display = "none";
+                headphones[0].style.display = "none";
+                dater[0].style.display = "none";
+                percent[0].style.display = "none";
+                battery[0].style.display = "none";
+                signal[0].style.display = "none";
+                team[0].style.display = "none";
+                bluetooth[0].style.display = "none";
+                left[0].style.display = "inline";
+                setTimeout(() => {
+                    location.href = "../iphone/iphone_main.html";
+                }, 1000);
+            }
+        });
+
+        // 시간
+        var time = document.getElementById("time");
+        var date = new Date();
+
+        // 두더지 게임으로 이동
+        var mole = document.getElementById("mole");
+        var mole_location = () => {
+            mole.addEventListener("click", () => {
+                location.href = "../game/mole.html";
+            });
+        };
+
+        // 시간 나타내기
+        if (Number(date.getHours()) > 12) {
+            var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+            var hour = `오전${Number(date.getHours())}:`;
+        }
+        if (Number(date.getMinutes()) < 10) {
+            var minute = `0${date.getMinutes()}`;
+        } else {
+            var minute = date.getMinutes();
+        }
+        time.innerHTML = `${hour}${minute}`;
+        // body.addEventListener('keypress', (e) => {
+        //     if (e.keyCode === 32) {
+        //         cover[0].style.backgroundColor = "rgba(255,255,255,0.8)";
+        //     }
+        // });
+    </script>
+</body>
+
+</html>

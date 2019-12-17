@@ -1,9 +1,6 @@
 
-.icon-star:before { content: '\31'; } /* '1' */
-.icon-clock:before { content: '\32'; } /* '2' */
-.icon-user:before { content: '\33'; } /* '3' */
-.icon-signal:before { content: '\34'; } /* '4' */
-.icon-wifi:before { content: '\35'; } /* '5' */
-.icon-battery-2:before { content: '\36'; } /* '6' */
-.icon-tape:before { content: '\37'; } /* '7' */
-.icon-phone:before { content: '\38'; } /* '8' */
+.icon-signal:before { content: '\e802'; } /* '' */
+.icon-headphones:before { content: '\e803'; } /* '' */
+.icon-phone:before { content: '\e804'; } /* '' */
+.icon-battery-3:before { content: '\f241'; } /* '' */
+.icon-bluetooth-b:before { content: '\f294'; } /* '' */

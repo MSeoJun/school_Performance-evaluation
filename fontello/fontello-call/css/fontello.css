@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?26494583');
-  src: url('../font/fontello.eot?26494583#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff2?26494583') format('woff2'),
-       url('../font/fontello.woff?26494583') format('woff'),
-       url('../font/fontello.ttf?26494583') format('truetype'),
-       url('../font/fontello.svg?26494583#fontello') format('svg');
+  src: url('../font/fontello.eot?19080434');
+  src: url('../font/fontello.eot?19080434#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?19080434') format('woff2'),
+       url('../font/fontello.woff?19080434') format('woff'),
+       url('../font/fontello.ttf?19080434') format('truetype'),
+       url('../font/fontello.svg?19080434#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,21 +15,25 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?26494583#fontello') format('svg');
+    src: url('../font/fontello.svg?19080434#fontello') format('svg');
   }
 }
 */
  
- [class^="icon-"]:before, [class*=" icon-"]:before {
+.icon-signal:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
- 
+  color:black;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
+  position: fixed;
+  left: 1%;
+  top:0.5%;
+  font-size: 0.7rem;
   /* opacity: .8; */
  
   /* For safety - reset parent styles, that can break glyph codes*/
@@ -53,12 +57,164 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
+
+.icon-bluetooth-b:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color:black;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  position: fixed;
+  right:20%;
+  top:0.7%;
+  font-size: 0.6rem;
+  /* opacity: .8; */
  
-.icon-star:before { content: '\31'; } /* '1' */
-.icon-clock:before { content: '\32'; } /* '2' */
-.icon-user:before { content: '\33'; } /* '3' */
-.icon-signal:before { content: '\34'; } /* '4' */
-.icon-wifi:before { content: '\35'; } /* '5' */
-.icon-battery-2:before { content: '\36'; } /* '6' */
-.icon-tape:before { content: '\37'; } /* '7' */
-.icon-phone:before { content: '\38'; } /* '8' */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-headphones:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color:black;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  position: fixed;
+  right:16.5%;
+  top:0.7%;
+  font-size: 0.6rem;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-battery-3:before {
+  font-size:0.8rem;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  background-size: cover;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  position: fixed;
+  right:2.5%;
+  transform: translateX(-92%);
+  top:0.2%;
+  transform: translateY(-1%);
+  color:black;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-phone:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  color:white;
+  font-weight:100;
+  font-size:2.2rem;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  position: fixed;
+  left:41%;
+  top:82%;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-signal:before { content: '\e802'; } /* '' */
+.icon-headphones:before { content: '\e803'; } /* '' */
+.icon-phone:before { content: '\e804'; } /* '' */
+.icon-battery-3:before { content: '\f241'; } /* '' */
+.icon-bluetooth-b:before { content: '\f294'; } /* '' */

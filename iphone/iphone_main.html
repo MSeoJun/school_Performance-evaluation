@@ -4,9 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../fontello/fontello-115bbf6b/css/fontello.css" />
-  <link rel="stylesheet" href="../fontello/fontello-main/css/fontello.css" />
-  <link rel="stylesheet" href="../fontello/fontello-app1/css/fontello.css" />
+  <link rel="stylesheet" href="../fontello/fontello-main1/css/fontello.css" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Iphone_main</title>
   <style>
@@ -153,7 +151,7 @@
       display: inline-block;
       margin-right: 1px;
       margin-left: 1px;
-      margin-top: 100%;
+      margin-top: 102%;
     }
 
     .circle.three {
@@ -176,23 +174,23 @@
     }
 
     .app_title.music {
-      top: 18%;
-      left: 3%;
+      top: 20%;
+      left: 5%;
     }
 
     .app_title.camera {
-      top: 18%;
-      left: 31%;
+      top: 20%;
+      left: 32%;
     }
 
     .app_title.target {
-      top: 18%;
-      left: 57.5%;
+      top: 20%;
+      left: 57%;
     }
 
     .app_title.delicious {
-      top: 18%;
-      left: 81%;
+      top: 20%;
+      left: 82%;
     }
 
     .cover {
@@ -215,11 +213,38 @@
       animation-play-state: running;
       animation-fill-mode: both;
     }
+
+    .right {
+      display: none;
+      position: fixed;
+      background-color: black;
+      width: 100%;
+      height: 100vh;
+      top: 0%;
+      z-index: 100;
+      animation-name: rr;
+      animation-duration: 1s;
+      animation-play-state: running;
+      animation-fill-mode: both;
+    }
+
+    @keyframes rr {
+      from {
+        top: 0%;
+        left: 100%;
+      }
+
+      to {
+        left: 0%;
+        top: 0%;
+      }
+    }
   </style>
 </head>
 
 <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
   <div class="back"></div>
+  <div class="right"></div>
   <header>
     <p class="icon-signal"></p>
     <p class="team">SKT</p>
@@ -227,12 +252,12 @@
     <p id="time" class="time"></p>
     <p class="icon-bluetooth-b"></p>
     <p class="icon-headphones"></p>
-    <p class="percent">69%</p>
-    <p class="icon-battery-2"></p>
+    <p class="percent">98%</p>
+    <p class="icon-battery-4"></p>
   </header>
   <article>
     <center>
-      <div id="music" onclick="music_location()" class="app icon-music"></div>
+      <div id="music" onclick="music_location()" class="app icon-note"></div>
       <p class="app_title music">리듬히어로</p>
       <div id="camera" onclick="camera_location()" class="app icon-camera"></div>
       <p class="app_title camera">반응속도</p>
@@ -269,20 +294,24 @@
     </div>
   </footer>
   <script>
-    var back = document.getElementsByClassName("back");
-    var cover = document.getElementsByClassName("cover");
     var body = document.querySelector("body");
 
+    // 화면 하얀색으로 깜빡
+    var back = document.getElementsByClassName("back");
+    var cover = document.getElementsByClassName("cover");
+
+    // 시간
     var time = document.getElementById("time");
     var date = new Date();
+
+    // 게임 이동하기
     var music = document.getElementById("music");
     var camera = document.getElementById("camera");
     var target = document.getElementById("target");
     var delicious = document.getElementById("delicious");
+
     var music_location = () => {
       music.addEventListener("click", () => {
-        // console.log("hello");
-        // window.open("../game/Rhythm.html", "Rhythm");
         location.href = "../game/Rhythm.html";
       });
     };
@@ -301,6 +330,60 @@
         location.href = "../game/colorgame.html";
       });
     };
+
+    // 화면 이동하기
+    var right = document.getElementsByClassName("right");
+
+    // 화면 이동할떄 아이콘들 없애기
+    var music = document.getElementById("music");
+    var camera = document.getElementById("camera");
+    var target = document.getElementById("target");
+    var delicious = document.getElementById("delicious");
+    var title_music = document.getElementsByClassName("app_title music");
+    var title_camera = document.getElementsByClassName("app_title camera");
+    var title_target = document.getElementsByClassName("app_title target");
+    var title_delicious = document.getElementsByClassName("app_title delicious");
+    var circle_one = document.getElementsByClassName("circle one");
+    var circle_two = document.getElementsByClassName("circle two");
+    var circle_three = document.getElementsByClassName("circle three");
+    var circle_four = document.getElementsByClassName("circle four");
+    var cover = document.getElementsByClassName("cover");
+    var dater = document.getElementsByClassName("dater");
+    var signal = document.getElementsByClassName("icon-signal");
+    var team = document.getElementsByClassName("team");
+    var headphones = document.getElementsByClassName("icon-headphones");
+    var percent = document.getElementsByClassName("percent");
+    var battery = document.getElementsByClassName("icon-battery-4");
+    var bluetooth = document.getElementsByClassName("icon-bluetooth-b");
+
+    body.addEventListener("keydown", e => {
+      if (e.keyCode === 32) {
+        music.style.display = "none";
+        camera.style.display = "none";
+        target.style.display = "none";
+        delicious.style.display = "none";
+        time.style.display = "none";
+        title_music[0].style.display = "none";
+        title_camera[0].style.display = "none";
+        title_target[0].style.display = "none";
+        title_delicious[0].style.display = "none";
+        circle_one[0].style.display = "none";
+        circle_two[0].style.display = "none";
+        circle_three[0].style.display = "none";
+        circle_four[0].style.display = "none";
+        headphones[0].style.display = "none";
+        dater[0].style.display = "none";
+        percent[0].style.display = "none";
+        battery[0].style.display = "none";
+        signal[0].style.display = "none";
+        team[0].style.display = "none";
+        bluetooth[0].style.display = "none";
+        right[0].style.display = "inline";
+        setTimeout(() => {
+          location.href = "../iphone/iphone_main2.html";
+        }, 1000);
+      }
+    });
     setTimeout(() => {
       back[0].style.display = "none";
     }, 1000);
@@ -315,11 +398,11 @@
       var minute = date.getMinutes();
     }
     time.innerHTML = `${hour}${minute}`;
-      // body.addEventListener('keypress',(e) => {
-      //   if(e.keyCode === 32) {
-      //     cover[0].style.backgroundColor="rgba(255,255,255,0.8)";
-      //   }
-      // });
+    // body.addEventListener('keypress',(e) => {
+    //   if(e.keyCode === 32) {
+    //     cover[0].style.backgroundColor="rgba(255,255,255,0.8)";
+    //   }
+    // });
   </script>
 </body>
 
