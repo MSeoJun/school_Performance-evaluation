@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../fontello/fontello-messenger/css/s.css">
+    <title>Messenger</title>
+    <style>
+        /* 처음 깜빡이는 모션 */
+        @keyframes display {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        /* body 설정 초기화 */
+        body {
+            padding:0;
+            margin:0;
+        }
+        
+        /* p 설정 초기화 */
+        p {
+            padding:0;
+            margin:0;
+        }
+        /* 처음 등장하며 깜빡이고 사라지는 백그라운드 */
+        .start {
+            width:100%;
+            height:100vh;
+            background-color: white;
+            animation-name: display;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+            animation-play-state: running;
+        }
+        /* 상태표시줄 */
+        .top_state {
+            position:fixed;
+            top:0%;
+            width:100%;
+            height:3vh;
+            text-align: center;
+            line-height: 3vh;
+        }
+        /* 상태표시줄 아이콘 */
+        .top_line_p {
+            font-size: .8rem;
+            display: inline-block;
+            top:0%;
+        }
+        /* 폰트를 노랑색으로(배터리) */
+        .yellow {
+            color:rgb(211, 195, 53);
+            margin-right: .5rem;
+        }
+        /* 왼쪽 정렬 */
+        .float_left {
+            float:left;
+        }
+        /* 오른쪽 정렬 */
+        .float_right {
+            float:right;
+        }
+        /* 프로필 사진촬영 및 채팅방생성 */
+        .top_menu {
+            position: fixed;
+            top:3%;
+            width:100%;
+            height:7vh;
+            line-height: 7vh;
+        }
+        /* 프로필 div */
+        .top_menu_profile {
+            transform:translate(50%,10%);
+            width:10%;
+            height:6vh;
+            background-image: url('../img/pengsu.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 100%;
+        }
+        /* 채팅글자 */
+        .top_menu_chat {
+            display: inline-block;
+            font-size: 1.7rem;
+            font-weight: bold;
+            transform: translate(30%,0%);
+        }
+        /* top_menu 의 아이콘 */
+        .top_menu_p {
+            display:inline-block;
+            padding-right:.3rem;
+            padding-left:.3rem;
+            background-color:rgba(0,0,0,0.1);
+            margin-right: .5rem;
+            border-radius: 100%;
+        }
+        /* 상단 fixed 공백 채우기 */
+        .top_blank {
+            width:100%;
+            height:10vh;
+        }
+        /* 상단 검색창 */
+        .top_search {
+            width:100%;
+            height:8vh;
+        }
+        /* 검색 바 */
+        .search_bar {
+            width:90%;
+            background-color: rgba(0,0,0,0.05);
+            height:6vh;
+            transform: translate(0%,15%);
+            border-radius: 5px;
+            line-height: 6vh;
+        }
+        /* 검색 바 안쪽 아이콘과 p태그 */
+        .searching {
+            display: inline-block;
+            color:gray;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 처음 등장하며 깜빡이고 사라지는 백그라운드 -->
+    <div class="start">
+
+    </div>
+    <!-- 최상단 상태 -->
+    <div class="top_state">
+        <!-- 상태표시줄 아이콘 -->
+        <p class="top_line_p float_left icon-signal"></p><p class="top_line_p float_left">SKT</p><p class="top_line_p float_left icon-wifi"></p><p class="top_line_p time"></p><p class="top_line_p float_right yellow icon-battery"></p><p class="top_line_p float_right">42%</p>
+    </div>
+    <!-- 프로필 사진촬영 및 채팅방생성 -->
+    <div class="top_menu">
+        <!-- 프로필 div -->
+        <div style="display: inline-block;" class="top_menu_profile"></div><p class="top_menu_chat">채팅</p><p class="top_menu_p float_right icon-edit"></p><p class="top_menu_p float_right icon-camera"></p>
+    </div>
+    <!-- 상단 공백채우기 -->
+    <div class="top_blank">
+
+    </div>
+    <!-- 상단 검색창 -->
+    <center>
+        <div class="top_search">
+            <div class="search_bar">
+                <p class="searching icon-search float_left"></p><p class="searching float_left">검색</p>
+            </div>
+        </div>
+    </center>
+    <script>
+        // 가장 윗 라인 시간 스크립트
+        var time = document.getElementsByClassName("time");
+        var date = new Date();
+        if (Number(date.getHours()) > 12) {
+            var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+            var hour = `오전${Number(date.getHours())}:`;
+        }
+        if (Number(date.getMinutes()) < 10) {
+            var minute = `0${date.getMinutes()}`;
+        } else {
+            var minute = date.getMinutes();
+        }
+        time[0].innerHTML = `${hour}${minute}`;
+        // 처음 화면깜빡임
+        var start = document.getElementsByClassName("start");
+        setTimeout(() => {
+            start[0].style.display = "none";
+        }, 1000);
+    </script>
+</body>
+</html>
