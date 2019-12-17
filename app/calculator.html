@@ -1,461 +1,394 @@
 <!DOCTYPE html>
 <!-- (false 기준) oncontextmenu는 우클릭이 안되게 하는거고, onselectstart는 드래그가 안되게 하는거다.-->
 <html oncontextmenu="return false" onselectstart="return false">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>아이폰 계산기</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+      }
 
-    <head>
-        <style>
-            body {
-                padding: 0;
-                margin: 0;
-                background-color: black;
-            }
+      .display {
+        position: fixed;
+        right: 9%;
+        top: 1%;
+        background-color: black;
+        color: white;
+        border: 0;
+        font-size: 60px;
+        text-align: right;
+      }
 
-            #result1 {
-                position: fixed;
-                right: 9%;
-                top: 1%;
-                background-color: black;
-                color: white;
-                border: 0;
-                font-size: 60px;
-                text-align: right;
-            }
+      #remove {
+        position: fixed;
+        top: 30%;
+        left: 5%;
+        background-color: rgb(175, 170, 170);
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 20px;
+        padding: 15px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #remove {
-                position: fixed;
-                top: 30%;
-                left: 5%;
-                background-color: rgb(175, 170, 170);
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 20px;
-                padding: 15px;
-                cursor: pointer;
-                outline: none;
-            }
+      #remove:hover {
+        background-color: rgb(211, 206, 206);
+      }
 
-            #remove:hover {
-                background-color: rgb(211, 206, 206);
-            }
+      #pm {
+        position: fixed;
+        top: 30%;
+        left: 28%;
+        background-color: rgb(175, 170, 170);
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 20px;
+        padding: 15px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #pm {
-                position: fixed;
-                top: 30%;
-                left: 28%;
-                background-color: rgb(175, 170, 170);
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 20px;
-                padding: 15px;
-                cursor: pointer;
-                outline: none;
-            }
+      #pm:hover {
+        background-color: rgb(211, 206, 206);
+      }
 
-            #pm:hover {
-                background-color: rgb(211, 206, 206);
-            }
+      #percent {
+        position: fixed;
+        top: 30%;
+        left: 51%;
+        background-color: rgb(175, 170, 170);
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 20px;
+        padding: 15px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #percent {
-                position: fixed;
-                top: 30%;
-                left: 51%;
-                background-color: rgb(175, 170, 170);
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 20px;
-                padding: 15px;
-                cursor: pointer;
-                outline: none;
-            }
+      #percent:hover {
+        background-color: rgb(211, 206, 206);
+      }
 
-            #percent:hover {
-                background-color: rgb(211, 206, 206);
-            }
+      #division {
+        position: fixed;
+        top: 30%;
+        left: 75%;
+        background-color: rgb(226, 148, 3);
+        color: white;
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 35px;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #division {
-                position: fixed;
-                top: 30%;
-                left: 75%;
-                background-color: rgb(226, 148, 3);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 35px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #division:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
 
-            #division:hover {
-                background-color: rgba(255, 255, 255, 1);
-                color: rgb(226, 148, 3);
-            }
+      #multiply {
+        position: fixed;
+        top: 43%;
+        left: 75%;
+        background-color: rgb(226, 148, 3);
+        color: white;
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 35px;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #multiply {
-                position: fixed;
-                top: 43%;
-                left: 75%;
-                background-color: rgb(226, 148, 3);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 35px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #multiply:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
 
-            #multiply:hover {
-                background-color: rgba(255, 255, 255, 1);
-                color: rgb(226, 148, 3);
-            }
+      #minus {
+        position: fixed;
+        top: 56.5%;
+        left: 75%;
+        background-color: rgb(226, 148, 3);
+        color: white;
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 35px;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #minus {
-                position: fixed;
-                top: 56.5%;
-                left: 75%;
-                background-color: rgb(226, 148, 3);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 35px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #minus:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
 
-            #minus:hover {
-                background-color: rgba(255, 255, 255, 1);
-                color: rgb(226, 148, 3);
-            }
+      #plus {
+        position: fixed;
+        top: 70%;
+        left: 75%;
+        background-color: rgb(226, 148, 3);
+        color: white;
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 35px;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #plus {
-                position: fixed;
-                top: 70%;
-                left: 75%;
-                background-color: rgb(226, 148, 3);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 35px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #plus:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
 
-            #plus:hover {
-                background-color: rgba(255, 255, 255, 1);
-                color: rgb(226, 148, 3);
-            }
+      #equal {
+        position: fixed;
+        top: 84%;
+        left: 75%;
+        background-color: rgb(226, 148, 3);
+        color: white;
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 35px;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #result {
-                position: fixed;
-                top: 84%;
-                left: 75%;
-                background-color: rgb(226, 148, 3);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 35px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #equal:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
 
-            #result:hover {
-                background-color: rgba(255, 255, 255, 1);
-                color: rgb(226, 148, 3);
-            }
+      .num1 {
+        top: 70%;
+        left: 5%;
+        width: 60px;
+      }
 
-            #one {
-                position: fixed;
-                top: 70%;
-                left: 5%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      .num2 {
+        top: 70%;
+        left: 28%;
+        width: 60px;
+      }
 
-            #one:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
+      .num3 {
+        top: 70%;
+        left: 51%;
+        width: 60px;
+      }
 
-            #two {
-                position: fixed;
-                top: 70%;
-                left: 28%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      .num4 {
+        top: 56.5%;
+        left: 5%;
+        width: 60px;
+      }
 
-            #two:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
+      .num5 {
+        top: 56.5%;
+        left: 28%;
+        width: 60px;
+      }
 
-            #three {
-                position: fixed;
-                top: 70%;
-                left: 51%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      .num6 {
+        top: 56.5%;
+        left: 51%;
+        width: 60px;
+      }
 
-            #three:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
+      .num7 {
+        top: 43%;
+        left: 5%;
+        width: 60px;
+      }
 
-            #four {
-                position: fixed;
-                top: 56.5%;
-                left: 5%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      .num8 {
+        top: 43%;
+        left: 28%;
+        width: 60px;
+      }
 
-            #four:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
+      .num9 {
+        top: 43%;
+        left: 51%;
+        width: 60px;
+      }
 
-            #five {
-                position: fixed;
-                top: 56.5%;
-                left: 28%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      .num0 {
+        top: 84%;
+        left: 5%;
+        width: 130px;
+      }
 
-            #five:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
+      #num {
+        position: fixed;
+        text-align: left;
+        background-color: rgb(54, 54, 54);
+        color: white;
+        border: 1px black;
+        border-radius: 30px;
+        font-size: 27px;
+        padding-left: 20px;
+        cursor: pointer;
+        outline: none;
+        height: 60px;
+      }
 
-            #six {
-                position: fixed;
-                top: 56.5%;
-                left: 51%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #num:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
 
-            #six:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
+      #point {
+        position: fixed;
+        top: 84%;
+        left: 51%;
+        background-color: rgb(54, 54, 54);
+        color: white;
+        border: 1px black;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 27px;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+      }
 
-            #seven {
-                position: fixed;
-                top: 43%;
-                left: 5%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
+      #point:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
 
-            #seven:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-
-            #eight {
-                position: fixed;
-                top: 43%;
-                left: 28%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
-
-            #eight:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-
-            #nine {
-                position: fixed;
-                top: 43%;
-                left: 51%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
-
-            #nine:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-
-            #zero {
-                position: fixed;
-                top: 84%;
-                left: 5%;
-                text-align: left;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 130px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding-left: 20px;
-                cursor: pointer;
-                outline: none;
-            }
-
-            #zero:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-
-            #point {
-                position: fixed;
-                top: 84%;
-                left: 51%;
-                background-color: rgb(54, 54, 54);
-                color: white;
-                border: 1px black;
-                width: 60px;
-                height: 60px;
-                border-radius: 30px;
-                font-size: 27px;
-                padding: 10px;
-                cursor: pointer;
-                outline: none;
-            }
-
-            #point:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-        </style>
-    </head>
-
-<body>
-    <!-- <input class="result1" id="result1" value="0"> -->
-    <p class="result1" id="result1"></p>
-    <input type="button" id="remove" value="AC" onclick="clean()">
-    <input type="button" id="pm" value="<" onclick="back()">
-    <input type="button" id="percent" value="%">
-    <input type="button" id="division" value="÷">
-    <input type="button" id="multiply" value="×">
-    <input type="button" id="minus" value="-">
-    <input type="button" id="plus" value="+">
-    <input type="button" id="result" value="=">
-    <input type="button" id="one" value="1" onclick="insert(1)">
-    <input type="button" id="two" value="2" onclick="insert(2)">
-    <input type="button" id="three" value="3" onclick="insert(3)">
-    <input type="button" id="four" value="4" onclick="insert(4)">
-    <input type="button" id="five" value="5" onclick="insert(5)">
-    <input type="button" id="six" value="6" onclick="insert(6)">
-    <input type="button" id="seven" value="7" onclick="insert(7)">
-    <input type="button" id="eight" value="8" onclick="insert(8)">
-    <input type="button" id="nine" value="9" onclick="insert(9)">
-    <input type="button" id="zero" value="0">
-    <input type="button" id="point" value=".">
+      #display1 {
+        padding: 100px;
+      }
+    </style>
 
     <script>
-        var all = '';
-        var result1 = document.getElementById('result1');
+      // 숫자를 클릭하여 입력
+      function num(num) {
+        var display = document.getElementById("display");
 
-        // 숫자를 클릭하여 입력
-        function insert(num) {
-            var result1 = document.getElementById('result1');
-            result1.value = result1.value + num;
+        if (display.value == "0") {
+          display.value = "";
         }
 
-        // 한 숫자씩 지우기
-        function back() {
-            var exp = result1.innerText;
-            result1.innerText = exp.slice(0, -1);
-            // console.log(result1.innerText);
+        if (num == "=") {
+          document.getElementById("result").value = eval(display.value);
+          display.value = "";
+          document.getElementById("division").style.color = "white";
+          document.getElementById("division").style.backgroundColor = "orange";
+          document.getElementById("multiply").style.color = "white";
+          document.getElementById("multiply").style.backgroundColor = "orange";
+          document.getElementById("minus").style.color = "white";
+          document.getElementById("minus").style.backgroundColor = "orange";
+          document.getElementById("plus").style.color = "white";
+          document.getElementById("plus").style.backgroundColor = "orange";
         }
 
-        // 전체 지우기
-        function clean() {
-            all = "";
-            result1.value = "0";
+        if (num == "/") {
+          document.getElementById("division").style.backgroundColor = "white";
+          document.getElementById("division").style.color = "orange";
         }
+
+        if (num == "*") {
+          document.getElementById("multiply").style.backgroundColor = "white";
+          document.getElementById("multiply").style.color = "orange";
+        }
+
+        if (num == "-") {
+          document.getElementById("minus").style.backgroundColor = "white";
+          document.getElementById("minus").style.color = "orange";
+        }
+
+        if (num == "+") {
+          document.getElementById("plus").style.backgroundColor = "white";
+          document.getElementById("plus").style.color = "orange";
+        }
+
+        if (num == "=") {
+          document.getElementById("equal").style.backgroundColor = "white";
+          document.getElementById("equal").style.color = "orange";
+        }
+
+        display.value += num;
+
+        if (num == "=") {
+          //   display.value =
+          //     display.value.length != 1
+          //       ? display.value.substring(0, display.value.length - 1)
+          //       : "0";
+          document.getElementById("equal").style.color = "white";
+          document.getElementById("equal").style.backgroundColor = "orange";
+          var result = eval(display.value);
+          document.getElementById("result").value = result;
+        }
+
+        if (num == "<") {
+          display.value =
+            display.value.length != 1
+              ? display.value.substring(0, display.value.length - 2)
+              : "0";
+          if (display.value == "") {
+            display.value = "0";
+          }
+        }
+
+        if (num == "a") {
+          display.value = "0";
+          document.getElementById("result").value = "0";
+        }
+
+        var result = eval(display.value);
+        document.getElementById("result").value = result;
+      }
     </script>
-</body>
+  </head>
 
+  <body>
+    <input class="display" id="display" disabled />
+    <input class="display" id="result" disabled />
+    <input type="button" id="remove" value="AC" onclick="num('a')" />
+    <input type="button" id="pm" value="<" onclick="num('<')" />
+    <input type="button" id="percent" value="%" onclick="num('%')" />
+    <input type="button" id="division" value="÷" onclick="num('/')" />
+    <input type="button" id="multiply" value="×" onclick="num('*')" />
+    <input type="button" id="minus" value="-" onclick="num('-')" />
+    <input type="button" id="plus" value="+" onclick="num('+')" />
+    <input type="button" id="equal" value="=" onclick="num('=')" />
+    <input type="button" id="num" class="num1" value="1" onclick="num('1')" />
+    <input type="button" id="num" class="num2" value="2" onclick="num('2')" />
+    <input type="button" id="num" class="num3" value="3" onclick="num('3')" />
+    <input type="button" id="num" class="num4" value="4" onclick="num('4')" />
+    <input type="button" id="num" class="num5" value="5" onclick="num('5')" />
+    <input type="button" id="num" class="num6" value="6" onclick="num('6')" />
+    <input type="button" id="num" class="num7" value="7" onclick="num('7')" />
+    <input type="button" id="num" class="num8" value="8" onclick="num('8')" />
+    <input type="button" id="num" class="num9" value="9" onclick="num('9')" />
+    <input type="button" id="num" class="num0" value="0" onclick="num('0')" />
+    <input type="button" id="point" value="." onclick="num('.')" />
+  </body>
 </html>
