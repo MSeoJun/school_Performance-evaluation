@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../fontello/fontello-messenger/css/s.css">
     <title>Messenger</title>
     <style>
+        /* 스크롤바 를 보이지 않게 표시함 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
         /* 처음 깜빡이는 모션 */
         @keyframes display {
             from {
@@ -129,16 +133,32 @@
             width:100%;
             height:20vh;
             border:1px solid red;
-            line-height: 20vh;
+            overflow:auto;
+            white-space: nowrap;
         }
         /* 상단 스토리 프로필 */
         .story_profile {
-            background-color: rgba(0,0,0,0.1);
+            font-size: 3rem;
+            font-weight: lighter;
+            transform: translate(18%,-15%);
+        }
+        .story_back {
+            width:18%;
+            height:11vh;
             border-radius: 100%;
-            height:1px;
+            transform: translate(30%,25%);
+            background-color: rgba(0,0,0,0.05);
             display: inline-block;
         }
-        /* 스토리 p태그 공백없애기 */
+        /* 스토리 이름 */
+        .story_name {
+            font-size: .5rem;
+            transform: translate(10%,0%);
+        }
+        /* 두 번째 스토리부터 간격 */
+        .story_after {
+            margin-left:1rem;
+        }
     </style>
 
 </head>
@@ -171,7 +191,30 @@
     </center>
     <!-- 상단 스토리 -->
     <div class="top_story">
-        <p class="story_profile story_p">+</p>
+        <div class="story_back">
+            <p class="story_profile">+</p>
+            <p class="story_name">내스토리</p>
+        </div>
+        <div class="story_back story_after">
+            <p class="story_profile">+</p>
+            <p class="story_name">내스토리</p>
+        </div>
+        <div class="story_back story_after">
+            <p class="story_profile">+</p>
+            <p class="story_name">내스토리</p>
+        </div>
+        <div class="story_back story_after">
+            <p class="story_profile">+</p>
+            <p class="story_name">내스토리</p>
+        </div>
+        <div class="story_back story_after">
+            <p class="story_profile">+</p>
+            <p class="story_name">내스토리</p>
+        </div>
+        <div class="story_back story_after">
+            <p class="story_profile">+</p>
+            <p class="story_name">내스토리</p>
+        </div>
     </div>
     <script>
         // 가장 윗 라인 시간 스크립트
