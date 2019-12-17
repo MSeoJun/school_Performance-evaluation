@@ -1,157 +1,169 @@
 <!DOCTYPE html>
 <html onselectstart="return false">
-  <head>
-    <meta charset="UTF-8" />
-    <title>game</title>
-    <style>
-      body {
-        padding: 10px;
-      }
 
-      .pad {
-        padding: 45px;
-      }
-
-      button {
-        border: none;
-        outline: none;
-      }
-
-      #border {
-        border: 2px solid black;
-      }
-    </style>
-  </head>
-
-  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <center>
-      <h2 id="bestscore"></h2>
-      <h2 id="score"></h2>
-      <table>
-        <tr>
-          <td>
-            <div id="border">
-              <button class="pad" id="Rcolor1" onclick="clc(1);" />
-            </div>
-          </td>
-          <td>
-            <div id="border">
-              <button class="pad" id="Rcolor2" onclick="clc(2);" />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div id="border">
-              <button class="pad" id="Rcolor3" onclick="clc(3);" />
-            </div>
-          </td>
-          <td>
-            <div id="border">
-              <button class="pad" id="Rcolor4" onclick="clc(4);" />
-            </div>
-          </td>
-        </tr>
-      </table>
-
-      <br /><br />
-      <div id="ViewTimer"></div>
-      <h5 id="end"></h5>
-    </center>
-  </body>
-  <script>
-    var SetTime = 400;
-
-    function msg_time() {
-      m = Math.floor(SetTime / 100) + "." + (SetTime % 100) + "초 ";
-
-      var msg =
-        "<font color='black'>남은 시간 : </font> <font color='red'>" +
-        m +
-        "</font>";
-
-      document.all.ViewTimer.innerHTML = msg;
-      SetTime--;
-
-      if (SetTime < 0) {
-        end.innerText = `시간내에 다른색을 찾지 못했습니다.`;
-        setTimeout(() => {
-          localStorage.bestscore = localStorage.score;
-          localStorage.clear();
-          window.location.reload();
-        }, 500);
-        clearInterval(tid);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>game</title>
+  <style>
+    body {
+      padding: 10px;
     }
 
-    tid = setInterval("msg_time()", 9);
-
-    let result = Math.floor(Math.random() * 0xffffff).toString(16);
-    let result1 = result;
-    let num;
-    let num1;
-
-    if (result.length != 6) {
-      result = result + Math.floor(Math.random() * 0xf).toString(16);
+    .pad {
+      padding: 45px;
     }
 
-    num = result.slice(0, 1);
-    num1 = result.slice(2, 3);
-    result1 = result.slice(0, -1);
-    result1 = result1.slice(4);
-    result1 =
-      num +
-      Math.floor(Math.random() * 0xf).toString(16) +
-      num1 +
-      Math.floor(Math.random() * 0xf).toString(16) +
-      result1 +
-      Math.floor(Math.random() * 0xf).toString(16);
-
-    let bcolor = "#" + result;
-    let bcolor1 = "#" + result1;
-
-    for (i = 1; i < 5; i++) {
-      document.getElementById("Rcolor" + i).style.backgroundColor = bcolor;
-      document.getElementById("Rcolor" + i).style.opacity = 0.6;
+    button {
+      border: none;
+      outline: none;
     }
 
-    let random = Math.floor(Math.random() * 4) + 1;
-    let random1 = Math.floor(Math.random() * 7) + 2;
-
-    document.getElementById("Rcolor" + random).style.backgroundColor = bcolor1;
-    document.getElementById("Rcolor" + random).style.opacity =
-      0 + "." + random1;
-
-    var score = document.getElementById("score");
-    var bestscore = document.getElementById("bestscore");
-
-    if (localStorage.score === undefined) {
-      localStorage.score = 0;
+    #border {
+      border: 2px solid black;
     }
 
-    if (localStorage.bestscore === undefined) {
-      localStorage.bestscore = 0;
+    #finish {
+      position: fixed;
+      top: 90%;
+      left: 37%;
+      font-size: 20px;
+      background-color: white;
+      cursor: pointer;
     }
+  </style>
+</head>
 
-    var result4 = localStorage.score;
-    score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+  <center>
+    <h2 id="bestscore"></h2>
+    <h2 id="score"></h2>
+    <table>
+      <tr>
+        <td>
+          <div id="border">
+            <button class="pad" id="Rcolor1" onclick="clc(1);" />
+          </div>
+        </td>
+        <td>
+          <div id="border">
+            <button class="pad" id="Rcolor2" onclick="clc(2);" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="border">
+            <button class="pad" id="Rcolor3" onclick="clc(3);" />
+          </div>
+        </td>
+        <td>
+          <div id="border">
+            <button class="pad" id="Rcolor4" onclick="clc(4);" />
+          </div>
+        </td>
+      </tr>
+    </table>
 
-    function clc(e) {
-      if (random === e) {
-        localStorage.score++;
-        score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
+    <br /><br />
+    <div id="ViewTimer"></div>
+    <h5 id="end"></h5>
+    <button id="finish" onclick="location.href='../iphone/iphone_main.html'">끝내기</button>
+  </center>
+</body>
+<script>
+  var SetTime = 400;
+
+  function msg_time() {
+    m = Math.floor(SetTime / 100) + "." + (SetTime % 100) + "초 ";
+
+    var msg =
+      "<font color='black'>남은 시간 : </font> <font color='red'>" +
+      m +
+      "</font>";
+
+    document.all.ViewTimer.innerHTML = msg;
+    SetTime--;
+
+    if (SetTime < 0) {
+      end.innerText = `시간내에 다른색을 찾지 못했습니다.`;
+      setTimeout(() => {
+        localStorage.bestscore = localStorage.score;
+        localStorage.clear();
         window.location.reload();
-      } else {
-        end.innerText = `다른색을 찾지 못했습니다.`;
-
-        clearInterval(tid);
-
-        setTimeout(() => {
-          localStorage.bestscore = localStorage.score;
-          localStorage.clear();
-          window.location.reload();
-        }, 500);
-      }
+      }, 500);
+      clearInterval(tid);
     }
-  </script>
+  }
+
+  tid = setInterval("msg_time()", 9);
+
+  let result = Math.floor(Math.random() * 0xffffff).toString(16);
+  let result1 = result;
+  let num;
+  let num1;
+
+  if (result.length != 6) {
+    result = result + Math.floor(Math.random() * 0xf).toString(16);
+  }
+
+  num = result.slice(0, 1);
+  num1 = result.slice(2, 3);
+  result1 = result.slice(0, -1);
+  result1 = result1.slice(4);
+  result1 =
+    num +
+    Math.floor(Math.random() * 0xf).toString(16) +
+    num1 +
+    Math.floor(Math.random() * 0xf).toString(16) +
+    result1 +
+    Math.floor(Math.random() * 0xf).toString(16);
+
+  let bcolor = "#" + result;
+  let bcolor1 = "#" + result1;
+
+  for (i = 1; i < 5; i++) {
+    document.getElementById("Rcolor" + i).style.backgroundColor = bcolor;
+    document.getElementById("Rcolor" + i).style.opacity = 0.6;
+  }
+
+  let random = Math.floor(Math.random() * 4) + 1;
+  let random1 = Math.floor(Math.random() * 7) + 2;
+
+  document.getElementById("Rcolor" + random).style.backgroundColor = bcolor1;
+  document.getElementById("Rcolor" + random).style.opacity =
+    0 + "." + random1;
+
+  var score = document.getElementById("score");
+  var bestscore = document.getElementById("bestscore");
+
+  if (localStorage.score === undefined) {
+    localStorage.score = 0;
+  }
+
+  if (localStorage.bestscore === undefined) {
+    localStorage.bestscore = 0;
+  }
+
+  var result4 = localStorage.score;
+  score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
+
+  function clc(e) {
+    if (random === e) {
+      localStorage.score++;
+      score.innerText = `맞춘 갯 수 : ${localStorage.score}`;
+      window.location.reload();
+    } else {
+      end.innerText = `다른색을 찾지 못했습니다.`;
+
+      clearInterval(tid);
+
+      setTimeout(() => {
+        localStorage.bestscore = localStorage.score;
+        localStorage.clear();
+        window.location.reload();
+      }, 500);
+    }
+  }
+</script>
+
 </html>

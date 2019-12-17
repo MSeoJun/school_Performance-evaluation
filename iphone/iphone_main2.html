@@ -161,13 +161,18 @@
         /* 게임 제목 스타일 */
         .app_title {
             position: fixed;
+            top: 20%;
+            left: 5%;
             color: white;
             font-size: 0.1rem;
         }
 
-        .app_title.mole {
+        .app_title.cal {
+            position: fixed;
+            color: white;
+            font-size: 0.1rem;
             top: 20%;
-            left: 5%;
+            left: 33%;
         }
 
         .cover {
@@ -246,6 +251,9 @@
         <center>
             <div id="mole" onclick="mole_location()" class="app icon-hammer"></div>
             <p class="app_title mole">캐치 두더지</p>
+
+            <div id="cal" onclick="cal_location()" class="app icon-calculator"></div>
+            <p class="app_title cal">계산기</p>
         </center>
     </article>
     <nav>
@@ -262,10 +270,10 @@
                 <p class="icon-phone"></p>
             </div>
             <div class="box2">
-                <p onclick="location.href='./iphone_youtube.html'" class="icon-youtube-play"></p>
+                <p onclick="location.href='../app/youtube.html'" class="icon-youtube-play"></p>
             </div>
             <div class="box3">
-                <p onclick="location.href='./iphone_facebook.html'" class="icon-facebook-squared"></p>
+                <p onclick="location.href='../app/facebook.html'" class="icon-facebook-squared"></p>
             </div>
             <div class="box4">
                 <a href="http://developers.kakao.com">
@@ -277,7 +285,7 @@
     <script>
         var body = document.querySelector("body");
 
-        // 배경 하얀색으로 깜빡
+        // 배경 하얀색으로 깜빡거리는 효과 없애기
         var back = document.getElementsByClassName("back");
         setTimeout(() => {
             back[0].style.display = "none";
@@ -288,6 +296,8 @@
 
         // 화면 넘어갈때 아이콘들 없애기
         var mole = document.getElementById("mole");
+        var cal = document.getElementById("cal");
+        var title_cal = document.getElementsByClassName("app_title cal");
         var title_mole = document.getElementsByClassName("app_title mole");
         var circle_one = document.getElementsByClassName("circle one");
         var circle_two = document.getElementsByClassName("circle two");
@@ -305,7 +315,9 @@
         body.addEventListener("keydown", e => {
             if (e.keyCode === 32) {
                 mole.style.display = "none";
+                cal.style.display = "none";
                 time.style.display = "none";
+                title_cal[0].style.display = "none";
                 title_mole[0].style.display = "none";
                 circle_one[0].style.display = "none";
                 circle_two[0].style.display = "none";
@@ -334,6 +346,14 @@
         var mole_location = () => {
             mole.addEventListener("click", () => {
                 location.href = "../game/mole.html";
+            });
+        };
+
+        // 계산기로 이동
+        var cal = document.getElementById("cal");
+        var cal_location = () => {
+            cal.addEventListener("click", () => {
+                location.href = "../app/calculator.html";
             });
         };
 
