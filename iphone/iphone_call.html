@@ -1,392 +1,425 @@
 <!DOCTYPE html>
 <html onselectstart="return false" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../fontello/fontello-call/css/fontello.css" />
-    <title>Call</title>
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-      }
-      p {
-        padding: 0;
-        margin: 0;
-      }
-      center {
-        padding: 0;
-        margin: 0;
-      }
-      .top {
-        position: fixed;
-        font-size: 0.7rem;
-        top: 0%;
-        display: inline-block;
-      }
-      .top.percent {
-        margin-left: 15%;
-        right: 8.5%;
-      }
-      .top.dater {
-        left: 14%;
-      }
-      .top.icon-battery-2 {
-        right: 3%;
-      }
-      .top.time {
-        left: 42%;
-      }
-      .top.icon-signal {
-        left: 0%;
-      }
-      .top.team {
-        left: 6.5%;
-      }
-      /* 숫자 키패드 스타일링 */
-      .num {
-        background-color: rgb(216, 214, 214);
-        position: fixed;
-        width: 20%;
-        height: 12vh;
-        border-radius: 100%;
-        text-align: center;
-        display: inline-block;
-        font-size: 1rem;
-        line-height: 12vh;
-        z-index: 1;
-      }
-      .num:hover {
-        background-color: rgb(153, 152, 152);
-        cursor: pointer;
-      }
-      .num.left {
-        left: 12.5%;
-      }
-      .num.mid {
-        left: 39.5%;
-      }
-      .num.right {
-        left: 66.5%;
-      }
-      .num.firstline {
-        top: 20%;
-      }
-      .num.secondline {
-        top: 35%;
-      }
-      .num.thirdline {
-        top: 50%;
-      }
-      .num.fourthline {
-        top: 65%;
-      }
-      .num.fifthline {
-        top: 80%;
-      }
-      .num.mid.call {
-        top: 65%;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../fontello/fontello-call/css/fontello.css" />
+  <title>Call</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    center {
+      padding: 0;
+      margin: 0;
+    }
+
+    .top {
+      position: fixed;
+      font-size: 0.7rem;
+      top: 0%;
+      display: inline-block;
+    }
+
+    .top.percent {
+      margin-left: 15%;
+      right: 8.5%;
+    }
+
+    .top.dater {
+      left: 14%;
+    }
+
+    .top.icon-battery-2 {
+      right: 3%;
+    }
+
+    .top.time {
+      left: 42%;
+    }
+
+    .top.icon-signal {
+      left: 0%;
+    }
+
+    .top.team {
+      left: 6.5%;
+    }
+
+    /* 숫자 키패드 스타일링 */
+    .num {
+      background-color: rgb(216, 214, 214);
+      position: fixed;
+      width: 20%;
+      height: 12vh;
+      border-radius: 100%;
+      text-align: center;
+      display: inline-block;
+      font-size: 1rem;
+      line-height: 12vh;
+      z-index: 1;
+    }
+
+    .num:hover {
+      background-color: rgb(153, 152, 152);
+      cursor: pointer;
+    }
+
+    .num.left {
+      left: 12.5%;
+    }
+
+    .num.mid {
+      left: 39.5%;
+    }
+
+    .num.right {
+      left: 66.5%;
+    }
+
+    .num.firstline {
+      top: 20%;
+    }
+
+    .num.secondline {
+      top: 35%;
+    }
+
+    .num.thirdline {
+      top: 50%;
+    }
+
+    .num.fourthline {
+      top: 65%;
+    }
+
+    .num.fifthline {
+      top: 80%;
+    }
+
+    .num.mid.call {
+      top: 65%;
+    }
+
+    /* 후에 없앨 것 */
+    .call {
+      position: fixed;
+    }
+
+    .nump {
+      font-size: 0.7rem;
+      position: fixed;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    /* 키패드 및 글자 */
+    .nump.left {
+      left: 17.5%;
+    }
+
+    .nump.mid {
+      left: 45%;
+    }
+
+    .nump.right {
+      left: 71%;
+    }
+
+    .nump.firstline {
+      top: 27.5%;
+    }
+
+    .nump.secondline {
+      top: 42.5%;
+    }
+
+    .nump.thirdline {
+      top: 57.5%;
+    }
+
+    .nump.fourthline {
+      top: 72.5%;
+    }
+
+    #number {
+      margin-top: 10%;
+      font-size: 1.2rem;
+    }
+
+    /* 전화수신  */
+    .call {
+      background-color: rgb(98, 200, 77);
+      position: fixed;
+      width: 20%;
+      height: 12vh;
+      border-radius: 100%;
+      text-align: center;
+      display: inline-block;
+      font-size: 1rem;
+      line-height: 12vh;
+      z-index: 1;
+      left: 39.5%;
+      top: 80%;
+    }
+
+    .call:hover {
+      background-color: rgb(71, 146, 56);
+    }
+
+    .call p {
+      font-size: 2rem;
+      color: white;
+    }
+
+    @keyframes display {
+      from {
+        opacity: 1;
       }
 
-      /* 후에 없앨 것 */
-      .call {
-        position: fixed;
+      to {
+        opacity: 0;
       }
-      .nump {
-        font-size: 0.7rem;
-        position: fixed;
-        z-index: 2;
-        cursor: pointer;
+    }
+
+    @keyframes no_display {
+      from {
+        opacity: 0;
       }
-      /* 키패드 및 글자 */
-      .nump.left {
-        left: 17.5%;
+
+      to {
+        opacity: 1;
       }
-      .nump.mid {
-        left: 45%;
-      }
-      .nump.right {
-        left: 71%;
-      }
-      .nump.firstline {
-        top: 27.5%;
-      }
-      .nump.secondline {
-        top: 42.5%;
-      }
-      .nump.thirdline {
-        top: 57.5%;
-      }
-      .nump.fourthline {
-        top: 72.5%;
-      }
-      #number {
-        margin-top: 10%;
-        font-size: 1.2rem;
-      }
-      /* 전화수신  */
-      .call {
-        background-color: rgb(98, 200, 77);
-        position: fixed;
-        width: 20%;
-        height: 12vh;
-        border-radius: 100%;
-        text-align: center;
-        display: inline-block;
-        font-size: 1rem;
-        line-height: 12vh;
-        z-index: 1;
-        left: 39.5%;
-        top: 80%;
-      }
-      .call:hover {
-        background-color: rgb(71, 146, 56);
-      }
-      .call p {
-        font-size: 2rem;
-        color: white;
-      }
-      @keyframes display {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
-      }
-      @keyframes no_display {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      #remove {
-        /* animation-name: display;
+    }
+
+    #remove {
+      /* animation-name: display;
             animation-duration: 1s;
             animation-play-state: paused;
             animation-fill-mode: both; */
 
-        animation-name: no_display;
-        animation-duration: 0.5s;
-        animation-play-state: running;
-        animation-fill-mode: both;
+      animation-name: no_display;
+      animation-duration: 0.5s;
+      animation-play-state: running;
+      animation-fill-mode: both;
 
-        display: none;
-      }
-      #add_num {
-        color: rgb(35, 69, 224);
+      display: none;
+    }
 
-        animation-name: no_display;
-        animation-duration: 0.5s;
-        animation-play-state: running;
-        animation-fill-mode: both;
-        position: fixed;
-        display: none;
-        left: 38%;
-        top: 11.5%;
-      }
-      .back {
-        width: 100%;
-        height: 100vh;
-        background-color: white;
-        position: fixed;
-        top: 0%;
-        z-index: 100;
-        animation-name: display;
-        animation-play-state: running;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-      }
-    </style>
-  </head>
-  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <div class="back"></div>
-    <header>
-      <p class="top icon-signal"></p>
-      <p class="top team">SKT</p>
-      <p class="top dater">LTE</p>
-      <p id="time" class="top time"></p>
-      <p class="top icon-bluetooth-b"></p>
-      <p class="top icon-headphones"></p>
-      <p class="top percent">49%</p>
-      <p class="top icon-battery-2"></p>
-    </header>
-    <nav>
-      <center>
-        <p id="number"></p>
-        <p id="add_num">번호 추가</p>
-      </center>
-    </nav>
-    <article>
-      <div id="n1" class="num left firstline">1</div>
-      <div id="n4" class="num left secondline">4</div>
-      <p id="b4" class="nump left secondline">G H I</p>
-      <div id="n7" class="num left thirdline">7</div>
-      <p id="b7" class="nump left thirdline">P Q R</p>
-      <div id="special1" class="num left fourthline">*</div>
-      <div id="n2" class="num mid firstline">2</div>
-      <p id="b2" class="nump mid firstline">A B C</p>
-      <div id="n5" class="num mid secondline">5</div>
-      <p id="b5" class="nump mid secondline">J K L</p>
-      <div id="n8" class="num mid thirdline">8</div>
-      <p id="b8" class="nump mid thirdline">S T U</p>
-      <div id="n0" class="num mid fourthline">0</div>
-      <p id="b0" class="nump mid fourthline">Y Z +</p>
-      <div class="call"><p class="icon-phone"></p></div>
-      <div id="n3" class="num right firstline">3</div>
-      <p id="b3" class="nump right firstline">D E F</p>
-      <div id="n6" class="num right secondline">6</div>
-      <p id="b6" class="nump right secondline">M N O</p>
-      <div id="n9" class="num right thirdline">9</div>
-      <p id="b9" class="nump right thirdline">V W X</p>
-      <div id="special2" class="num right fourthline">#</div>
-      <div id="remove" onclick="remove2()" class="num right fifthline remove">
-        <<
-      </div>
-    </article>
-    <script>
-      var press_call = new Audio();
-      press_call.src = "../sound/call_board.mp3";
-      var back = document.getElementsByClassName("back");
-      var body = document.querySelector("body");
-      var add_num = document.getElementById("add_num");
-      var remove = document.getElementById("remove");
-      var number = document.getElementById("number");
-      var n0 = document.getElementById("n0");
-      var n1 = document.getElementById("n1");
-      var n2 = document.getElementById("n2");
-      var n3 = document.getElementById("n3");
-      var n4 = document.getElementById("n4");
-      var n5 = document.getElementById("n5");
-      var n6 = document.getElementById("n6");
-      var n7 = document.getElementById("n7");
-      var n8 = document.getElementById("n8");
-      var n9 = document.getElementById("n9");
-      var b0 = document.getElementById("b0");
-      var b2 = document.getElementById("b2");
-      var b3 = document.getElementById("b3");
-      var b4 = document.getElementById("b4");
-      var b5 = document.getElementById("b5");
-      var b6 = document.getElementById("b6");
-      var b7 = document.getElementById("b7");
-      var b8 = document.getElementById("b8");
-      var b9 = document.getElementById("b9");
-      var special1 = document.getElementById("special1");
-      var special2 = document.getElementById("special2");
-      setTimeout(() => {
-        back[0].style.display = "none";
-      }, 1000);
-      // 빠져나가게 할 때 사용할 이벤트리스너
-      body.addEventListener("keypress", () => {});
-      const remove2 = () => {
-        var char = number.innerText;
-        var char2 = char.slice(0, -1);
-        number.innerText = char2;
-        if (number.innerText.length == 0) {
-          remove.style.animationName = "display";
-          add_num.style.animationName = "display";
-          setTimeout(() => {
-            add_num.style.animationName = "no_display";
-            add_num.style.display = "none";
-            remove.style.animationName = "no_display";
-            remove.style.display = "none";
-          }, 500);
-        }
-      };
-      const remove3 = () => {
-        if (number.innerText.length >= 1) {
-          remove.style.display = "inline-block";
-          add_num.style.display = "inline-block";
-        }
-        if (number.innerText.length == 3) {
-          number.innerText = `${number.innerText}-`;
-        }
-        if (number.innerText.length == 8) {
-          number.innerText = `${number.innerText}-`;
-        }
-      };
-      n0.addEventListener("click", () => {
-        number.innerText = `${number.innerText}0`;
-        remove3();
-        this.press_call.play();
-      });
-      n1.addEventListener("click", () => {
-        number.innerText = `${number.innerText}1`;
-        remove3();
-        this.press_call.play();
-      });
-      n2.addEventListener("click", () => {
-        number.innerText = `${number.innerText}2`;
-        remove3();
-        this.press_call.play();
-      });
-      n3.addEventListener("click", () => {
-        number.innerText = `${number.innerText}3`;
-        remove3();
-        this.press_call.play();
-      });
-      n4.addEventListener("click", () => {
-        number.innerText = `${number.innerText}4`;
-        remove3();
-        this.press_call.play();
-      });
-      n5.addEventListener("click", () => {
-        number.innerText = `${number.innerText}5`;
-        remove3();
-        this.press_call.play();
-      });
-      n6.addEventListener("click", () => {
-        number.innerText = `${number.innerText}6`;
-        remove3();
-        this.press_call.play();
-      });
-      n7.addEventListener("click", () => {
-        number.innerText = `${number.innerText}7`;
-        remove3();
-        this.press_call.play();
-      });
-      n8.addEventListener("click", () => {
-        number.innerText = `${number.innerText}8`;
-        remove3();
-        this.press_call.play();
-      });
-      n9.addEventListener("click", () => {
-        number.innerText = `${number.innerText}9`;
-        remove3();
-        this.press_call.play();
-      });
-      special1.addEventListener("click", () => {
-        number.innerText = `${number.innerText}*`;
-        remove3();
-        this.press_call.play();
-      });
-      special2.addEventListener("click", () => {
-        number.innerText = `${number.innerText}#`;
-        remove3();
-        this.press_call.play();
-      });
-      b0.addEventListener("click", () => {
-        number.innerText = `${number.innerText}0`;
-        remove3();
-        this.press_call.play();
-      });
-      var time = document.getElementById("time");
-      var date = new Date();
-      if (Number(date.getHours()) > 12) {
-        var hour = `오후${Number(date.getHours()) - 12}:`;
-      } else {
-        var hour = `오전${Number(date.getHours())}:`;
-      }
-      if (Number(date.getMinutes()) < 10) {
-        var minute = `0${date.getMinutes()}`;
-      } else {
-        var minute = date.getMinutes();
-      }
+    #add_num {
+      color: rgb(35, 69, 224);
 
-      time.innerHTML = `${hour}${minute}`;
-    </script>
-  </body>
-</html>
+      animation-name: no_display;
+      animation-duration: 0.5s;
+      animation-play-state: running;
+      animation-fill-mode: both;
+      position: fixed;
+      display: none;
+      left: 38%;
+      top: 11.5%;
+    }
+
+    .back {
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      position: fixed;
+      top: 0%;
+      z-index: 100;
+      animation-name: display;
+      animation-play-state: running;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+  </style>
+</head>
+
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+  <div class="back"></div>
+  <header>
+    <p class="top icon-signal"></p>
+    <p class="top team">SKT</p>
+    <p class="top dater">LTE</p>
+    <p id="time" class="top time"></p>
+    <p class="top icon-bluetooth-b"></p>
+    <p class="top icon-headphones"></p>
+    <p class="top percent">87%</p>
+    <p class="top icon-battery-3"></p>
+  </header>
+  <nav>
+    <center>
+      <p id="number"></p>
+      <p id="add_num">번호 추가</p>
+    </center>
+  </nav>
+  <article>
+    <div id="n1" class="num left firstline">1</div>
+    <div id="n4" class="num left secondline">4</div>
+    <p id="b4" class="nump left secondline">G H I</p>
+    <div id="n7" class="num left thirdline">7</div>
+    <p id="b7" class="nump left thirdline">P Q R</p>
+    <div id="special1" class="num left fourthline">*</div>
+    <div id="n2" class="num mid firstline">2</div>
+    <p id="b2" class="nump mid firstline">A B C</p>
+    <div id="n5" class="num mid secondline">5</div>
+    <p id="b5" class="nump mid secondline">J K L</p>
+    <div id="n8" class="num mid thirdline">8</div>
+    <p id="b8" class="nump mid thirdline">S T U</p>
+    <div id="n0" class="num mid fourthline">0</div>
+    <p id="b0" class="nump mid fourthline">Y Z +</p>
+    <div class="call">
+      <p class="icon-phone"></p>
+    </div>
+    <div id="n3" class="num right firstline">3</div>
+    <p id="b3" class="nump right firstline">D E F</p>
+    <div id="n6" class="num right secondline">6</div>
+    <p id="b6" class="nump right secondline">M N O</p>
+    <div id="n9" class="num right thirdline">9</div>
+    <p id="b9" class="nump right thirdline">V W X</p>
+    <div id="special2" class="num right fourthline">#</div>
+    <div id="remove" onclick="remove2()" class="num right fifthline remove">
+      << </div> </article> <script>
+        var press_call = new Audio();
+        press_call.src = "../sound/call_board.mp3";
+        var back = document.getElementsByClassName("back");
+        var body = document.querySelector("body");
+        var add_num = document.getElementById("add_num");
+        var remove = document.getElementById("remove");
+        var number = document.getElementById("number");
+        var n0 = document.getElementById("n0");
+        var n1 = document.getElementById("n1");
+        var n2 = document.getElementById("n2");
+        var n3 = document.getElementById("n3");
+        var n4 = document.getElementById("n4");
+        var n5 = document.getElementById("n5");
+        var n6 = document.getElementById("n6");
+        var n7 = document.getElementById("n7");
+        var n8 = document.getElementById("n8");
+        var n9 = document.getElementById("n9");
+        var b0 = document.getElementById("b0");
+        var b2 = document.getElementById("b2");
+        var b3 = document.getElementById("b3");
+        var b4 = document.getElementById("b4");
+        var b5 = document.getElementById("b5");
+        var b6 = document.getElementById("b6");
+        var b7 = document.getElementById("b7");
+        var b8 = document.getElementById("b8");
+        var b9 = document.getElementById("b9");
+        var special1 = document.getElementById("special1");
+        var special2 = document.getElementById("special2");
+        setTimeout(() => {
+          back[0].style.display = "none";
+        }, 1000);
+        // 빠져나가게 할 때 사용할 이벤트리스너
+        body.addEventListener("keypress", () => { });
+        const remove2 = () => {
+          var char = number.innerText;
+          var char2 = char.slice(0, -1);
+          number.innerText = char2;
+          if (number.innerText.length == 0) {
+            remove.style.animationName = "display";
+            add_num.style.animationName = "display";
+            setTimeout(() => {
+              add_num.style.animationName = "no_display";
+              add_num.style.display = "none";
+              remove.style.animationName = "no_display";
+              remove.style.display = "none";
+            }, 500);
+          }
+        };
+        const remove3 = () => {
+          if (number.innerText.length >= 1) {
+            remove.style.display = "inline-block";
+            add_num.style.display = "inline-block";
+          }
+          if (number.innerText.length == 3) {
+            number.innerText = `${number.innerText}-`;
+          }
+          if (number.innerText.length == 8) {
+            number.innerText = `${number.innerText}-`;
+          }
+        };
+        n0.addEventListener("click", () => {
+          number.innerText = `${number.innerText}0`;
+          remove3();
+          this.press_call.play();
+        });
+        n1.addEventListener("click", () => {
+          number.innerText = `${number.innerText}1`;
+          remove3();
+          this.press_call.play();
+        });
+        n2.addEventListener("click", () => {
+          number.innerText = `${number.innerText}2`;
+          remove3();
+          this.press_call.play();
+        });
+        n3.addEventListener("click", () => {
+          number.innerText = `${number.innerText}3`;
+          remove3();
+          this.press_call.play();
+        });
+        n4.addEventListener("click", () => {
+          number.innerText = `${number.innerText}4`;
+          remove3();
+          this.press_call.play();
+        });
+        n5.addEventListener("click", () => {
+          number.innerText = `${number.innerText}5`;
+          remove3();
+          this.press_call.play();
+        });
+        n6.addEventListener("click", () => {
+          number.innerText = `${number.innerText}6`;
+          remove3();
+          this.press_call.play();
+        });
+        n7.addEventListener("click", () => {
+          number.innerText = `${number.innerText}7`;
+          remove3();
+          this.press_call.play();
+        });
+        n8.addEventListener("click", () => {
+          number.innerText = `${number.innerText}8`;
+          remove3();
+          this.press_call.play();
+        });
+        n9.addEventListener("click", () => {
+          number.innerText = `${number.innerText}9`;
+          remove3();
+          this.press_call.play();
+        });
+        special1.addEventListener("click", () => {
+          number.innerText = `${number.innerText}*`;
+          remove3();
+          this.press_call.play();
+        });
+        special2.addEventListener("click", () => {
+          number.innerText = `${number.innerText}#`;
+          remove3();
+          this.press_call.play();
+        });
+        b0.addEventListener("click", () => {
+          number.innerText = `${number.innerText}0`;
+          remove3();
+          this.press_call.play();
+        });
+        var time = document.getElementById("time");
+        var date = new Date();
+        if (Number(date.getHours()) > 12) {
+          var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+          var hour = `오전${Number(date.getHours())}:`;
+        }
+        if (Number(date.getMinutes()) < 10) { var minute = `0${date.getMinutes()}`; } else {
+          var minute = date.getMinutes();
+        } time.innerHTML = `${hour}${minute}`; </script> </body> </html>
