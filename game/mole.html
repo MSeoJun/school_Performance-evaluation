@@ -1,382 +1,407 @@
 <!DOCTYPE html>
 <html oncontextmenu="return false" onselectstart="return false">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Catch The Mole</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
 
-        /* 제목 */
-        h1 {
-            text-align: center;
-            color: white;
-            font-size: 20px;
-        }
+      /* 제목 */
+      h1 {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+      }
 
-        /* 두더지가 나올 땅 */
-        #ground {
-            background: #6e4d00;
-            width: 80%;
-            height: 53%;
-            border-radius: 20px;
-            position: fixed;
-            left: 10%;
-            top: 17%;
-        }
+      /* 두더지가 나올 땅 */
+      #ground {
+        background: #6e4d00;
+        width: 80%;
+        height: 53%;
+        border-radius: 20px;
+        position: fixed;
+        left: 10%;
+        top: 20%;
+      }
 
-        /* .mole {
-            background-color: white;
-            color: white;
-            float: left;
-            width: 50px;
-            height: 50px;
-            margin: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 20px;
-            background: no-repeat center/cover url("C:/Users/김영훈/Desktop/hole.png");
+      /* 버튼 관련 */
+      .btn-wrap {
+        position: fixed;
+        top: 84%;
+        width: 100%;
+      }
 
-        } */
+      .start-btn {
+        width: 100%;
+        height: 70px;
+        font-size: 20px;
+        font-weight: 900;
+        background: #222;
+        border: none;
+        color: #f2ecff;
+        border-radius: 20px;
+        outline: none;
+      }
 
-        /* .mole>img {
-            position: relative;
-            bottom: -5px;
-            display: block;
-            width: 100%;
-            opacity: 0;
-            transition: 0.05s ease-out;
-        }
+      .start-btn:hover {
+        opacity: 0.5;
+        color: #f9f871;
+      }
 
-        .checkthemole .active {
-            bottom: 0;
-            opacity: 1;
-            animation: shake 0.5s;
-            animation-iteration-count: infinite;
-        }
+      /* 포인트 관련 합침 */
+      .point-wrap {
+        position: fixed;
+        top: 68%;
+        width: 100%;
+        height: 60%;
+        margin: 20px 0 0 0;
+      }
 
-        @keyframes shake {
-            0% {
-                transform: translate(1px, 1px) rotate(0deg);
-            }
+      /* 포인트 영문 */
+      #point-text {
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        color: #f2ecff;
+        margin: 15px 0 0 40px;
+      }
 
-            10% {
-                transform: translate(-1px, -2px) rotate(-1deg);
-            }
+      /* 현재 점수 */
+      #score {
+        float: left;
+        font-size: 30px;
+        font-weight: bold;
+        color: #f9f871;
+        margin: 10px 10px 0 60px;
+      }
 
-            20% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
+      /* 목표 점수 */
+      #score2 {
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        color: #f2ecff;
+        margin: 15px 0 0 0;
+      }
 
-            30% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
+      /* 두더지가 나올 구멍 */
+      #hole1 {
+        position: fixed;
+        top: 23%;
+        left: 15%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole1 {
+        position: fixed;
+        top: 23%;
+        left: 15%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole2 {
+        position: fixed;
+        top: 23%;
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole2 {
+        position: fixed;
+        top: 23%;
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
 
-            40% {
-                transform: translate(1px, -1px) rotate(1deg);
-            }
-
-            50% {
-                transform: translate(-1px, 2px) rotate(-1deg);
-            }
-
-            60% {
-                transform: translate(-3px, 1px) rotate(0deg);
-            }
-
-            70% {
-                transform: translate(3px, 1px) rotate(-1deg);
-            }
-
-            80% {
-                transform: translate(-1px, -1px) rotate(1deg);
-            }
-
-            90% {
-                transform: translate(1px, 2px) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(1px, -2px) rotate(-1deg);
-            }
-        } */
-
-        /* 버튼 관련 */
-        .btn-wrap {
-            position: fixed;
-            top: 84%;
-            width: 100%;
-        }
-
-        .start-btn {
-            width: 100%;
-            height: 70px;
-            font-size: 20px;
-            font-weight: 900;
-            background: #222;
-            border: none;
-            color: #f2ecff;
-            border-radius: 20px;
-            outline: none;
-        }
-
-        .start-btn:hover {
-            opacity: 0.5;
-            color: #f9f871;
-        }
-
-        /* 포인트 관련 합침 */
-        .point-wrap {
-            position: fixed;
-            top: 65%;
-            width: 100%;
-            height: 60%;
-            margin: 20px 0 0 0;
-        }
-
-        /* 포인트 영문 */
-        #point-text {
-            float: left;
-            font-size: 24px;
-            font-weight: bold;
-            color: #f2ecff;
-            margin: 15px 0 0 40px;
-        }
-
-        /* 현재 점수 */
-        #score {
-            float: left;
-            font-size: 30px;
-            font-weight: bold;
-            color: #f9f871;
-            margin: 10px 10px 0 60px;
-        }
-
-        /* 목표 점수 */
-        #score2 {
-            float: left;
-            font-size: 24px;
-            font-weight: bold;
-            color: #f2ecff;
-            margin: 15px 0 0 0;
-        }
-
-        /* 두더지가 나올 구멍 */
-        #hole1 {
-            position: fixed;
-            top: 20%;
-            left: 15%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole2 {
-            position: fixed;
-            top: 20%;
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole3 {
-            position: fixed;
-            top: 20%;
-            left: 64%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole4 {
-            position: fixed;
-            top: 37%;
-            left: 15%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole5 {
-            position: fixed;
-            top: 37%;
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole6 {
-            position: fixed;
-            top: 37%;
-            left: 64%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole7 {
-            position: fixed;
-            top: 54%;
-            left: 15%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole8 {
-            position: fixed;
-            top: 54%;
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
-
-        #hole9 {
-            position: fixed;
-            top: 54%;
-            left: 64%;
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: black;
-            cursor: pointer;
-        }
+      #hole3 {
+        position: fixed;
+        top: 23%;
+        left: 64%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole3 {
+        position: fixed;
+        top: 23%;
+        left: 64%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole4 {
+        position: fixed;
+        top: 40%;
+        left: 15%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole4 {
+        position: fixed;
+        top: 40%;
+        left: 15%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole5 {
+        position: fixed;
+        top: 40%;
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole5 {
+        position: fixed;
+        top: 40%;
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole6 {
+        position: fixed;
+        top: 40%;
+        left: 64%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole6 {
+        position: fixed;
+        top: 40%;
+        left: 64%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole7 {
+        position: fixed;
+        top: 57%;
+        left: 15%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole7 {
+        position: fixed;
+        top: 57%;
+        left: 15%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole8 {
+        position: fixed;
+        top: 57%;
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole8 {
+        position: fixed;
+        top: 57%;
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #hole9 {
+        position: fixed;
+        top: 57%;
+        left: 64%;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: black;
+        cursor: pointer;
+      }
+      #mole9 {
+        position: fixed;
+        top: 57%;
+        left: 64%;
+        width: 60px;
+        height: 60px;
+        display: none;
+      }
+      #timer {
+        position: fixed;
+        top: 14%;
+        left: 40%;
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
-    <h1>Welcome<br>Catch The Mole</h1>
+  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <h1>Welcome<br />Catch The Mole</h1>
+    <div id="timer" style="color: white;"><div id="count"></div></div>
 
     <!-- 두더지가 나오는 곳 -->
     <div id="ground"></div>
-    <div id="hole1"></div>
-    <div id="hole2"></div>
-    <div id="hole3"></div>
-    <div id="hole4"></div>
-    <div id="hole5"></div>
-    <div id="hole6"></div>
-    <div id="hole7"></div>
-    <div id="hole8"></div>
-    <div id="hole9"></div>
-
+    <div class="hole">
+      <div id="hole1">
+        <img class="mole" id="mole1" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole2">
+        <img class="mole" id="mole2" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole3">
+        <img class="mole" id="mole3" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole4">
+        <img class="mole" id="mole4" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole5">
+        <img class="mole" id="mole5" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole6">
+        <img class="mole" id="mole6" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole7">
+        <img class="mole" id="mole7" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole8">
+        <img class="mole" id="mole8" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+      <div id="hole9">
+        <img class="mole" id="mole9" src="C:/Users/pc/Desktop/mole.png" />
+      </div>
+    </div>
     <!-- 점수 -->
     <div class="point-wrap">
-        <p id="point-text">Point :</p>
-        <p id="score"></p>
-        <p id="score2">/10</p>
+      <p id="point-text">Point :</p>
+      <p id="score"></p>
     </div>
 
     <!-- 시작 버튼 -->
-    <div class="btn-wrap">
-        <button type="button" class="start-btn">PRESS START</button>
+    <div class="btn-wrap" onclick="TimerStart(),start();">
+      <button type="button" class="start-btn">PRESS START</button>
     </div>
     <script>
-        // 제목 색 변화
-        var flag;
+      // 제목 색 변화
+      var flag;
 
-        setInterval(bling, 1000);
+      setInterval(bling, 1000);
 
-        function bling() {
-            if (flag === 0) {
-                document.querySelector('h1').style.color = '#d6806e';
-                flag++;
-            }
-            else if (flag === 1) {
-                document.querySelector('h1').style.color = '#fbb666';
-                flag++;
-            }
-            else if (flag === 2) {
-                document.querySelector('h1').style.color = '#f9f871';
-                flag++;
-            }
-            else {
-                document.querySelector('h1').style.color = '#f2ecff';
-                flag = 0;
-            }
+      function bling() {
+        if (flag === 0) {
+          document.querySelector("h1").style.color = "#d6806e";
+          flag++;
+        } else if (flag === 1) {
+          document.querySelector("h1").style.color = "#fbb666";
+          flag++;
+        } else if (flag === 2) {
+          document.querySelector("h1").style.color = "#f9f871";
+          flag++;
+        } else {
+          document.querySelector("h1").style.color = "#f2ecff";
+          flag = 0;
         }
+      }
 
-        // 점수임
-        let point = 0;
-        const score = document.getElementById('score');
+      // 점수임
+      let point = 0;
+      const score = document.getElementById("score");
+      setInterval(() => {
         score.innerText = `${point}`;
+      }, 100);
 
-        // 두더지 랜덤으로 나오게하기
-        var moleNum;
-        var randomNum;
-        var preNum;
-        function randomHole() {
-            randomNum = Math.floor(Math.random() * 10);
-            if (preNum !== randomNum && randomNum > 0) {
-                preNum = randomNum;
-                return randomNum;
-            }
-            return randomHole();
+      localStorage.setItem(score, Number(localStorage.getItem(score)) + 0);
+      // 두더지가 나오는 함수
+      function start() {
+        setTimeout(() => {
+          mole();
+        }, 1000);
+      }
+      document.getElementById("timer").style.display = "block";
+
+      var SetTime = 5;
+      var count = document.getElementById("count");
+      function msg_time() {
+        m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";
+        count.innerHTML = m;
+
+        SetTime--;
+        if (SetTime < 0) {
+          clearInterval(tid);
+          document.getElementById("count").style.display = "none";
+
+          for (let i = 1; i < 10; i++) {
+            document.getElementById("mole" + i).style.display = "none";
+          }
         }
+        document.querySelector("h1").style.display = "block";
+      }
 
-        function moleActive() {
-            num.classList.add('active');
+      function TimerStart() {
+        tid = setInterval("msg_time()", 1000);
+      }
+
+      var prenum;
+      var destroy = 1.5;
+
+      function cut() {
+        destroy = destroy - 1;
+      }
+      function mole() {
+        let random = Math.floor(Math.random() * 9) + 1;
+        document.getElementById("mole" + random).style.display = "block";
+        setTimeout(() => {
+          document.getElementById("mole" + random).style.display = "none";
+        }, 1500);
+
+        document.getElementById("mole" + random).onclick = function() {
+          document.getElementById("mole" + random).style.display = "none";
+          point = point + 10;
+        };
+        setInterval(() => {
+          cut();
+        }, 1000);
+
+        if (destroy <= 0) {
+          clearInterval;
         }
-
-        function moleHide() {
-            num.classList.remove('active');
+        if (SetTime <= 0) {
+          clearInterval(() => {
+            mole();
+          }, 0);
+        } else {
+          setTimeout(() => {
+            mole();
+          }, 700);
         }
-
-        var moleCatch = 0;
-
-        function showingMole() {
-            if (turn < 10) {
-                moleNum = document.getElementById(`${randomHole()}`);
-                moleActive(moleNum);
-                moleNum.addEventListener('click', startMole);
-                moleCatch = setTimeout(seeMole, 3000);
-                turn++;
-            } else {
-                modalEvent();
-                startBtn.addEventListener('click', startMole);
-                startBtn.textContent = 'PRESS AGAIN';
-                startBtn.style.color = '#f2ecff';
-            }
-        }
-
-
-        var startBtn = document.querySelector('.start-btn');
-
-        startBtn.addEventListener('click', startMole);
-
-        function startMole() {
-            startBtn.removeEventListener('click', startMole);
-            startBtn.style.color = '#3d3f43';
-            getPoint = 0;
-            turn = 0;
-            setTimeout(showingMole, 1000);
-        }
+      }
     </script>
-</body>
-
-
+  </body>
 </html>

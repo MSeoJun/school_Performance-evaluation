@@ -23,7 +23,7 @@
     </style>
   </head>
 
-  <body>
+  <body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
     <center>
       <h2 id="bestscore"></h2>
       <h2 id="score"></h2>
@@ -79,7 +79,7 @@
           localStorage.bestscore = localStorage.score;
           localStorage.clear();
           window.location.reload();
-        }, 1000);
+        }, 500);
         clearInterval(tid);
       }
     }
@@ -112,11 +112,11 @@
 
     for (i = 1; i < 5; i++) {
       document.getElementById("Rcolor" + i).style.backgroundColor = bcolor;
-      document.getElementById("Rcolor" + i).style.opacity = 0.7;
+      document.getElementById("Rcolor" + i).style.opacity = 0.6;
     }
 
     let random = Math.floor(Math.random() * 4) + 1;
-    let random1 = Math.floor(Math.random() * 5) + 4;
+    let random1 = Math.floor(Math.random() * 7) + 2;
 
     document.getElementById("Rcolor" + random).style.backgroundColor = bcolor1;
     document.getElementById("Rcolor" + random).style.opacity =
@@ -150,7 +150,7 @@
           localStorage.bestscore = localStorage.score;
           localStorage.clear();
           window.location.reload();
-        }, 1000);
+        }, 500);
       }
     }
   </script>
