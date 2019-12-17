@@ -413,6 +413,7 @@
 <body>
     <!-- <input class="result1" id="result1" value="0"> -->
     <p class="result1" id="result1"></p>
+    <!-- <div id="result1"></div> -->
     <input type="button" id="remove" value="AC" onclick="clean()">
     <input type="button" id="pm" value="<" onclick="back()">
     <input type="button" id="percent" value="%">
@@ -421,26 +422,30 @@
     <input type="button" id="minus" value="-">
     <input type="button" id="plus" value="+">
     <input type="button" id="result" value="=">
-    <input type="button" id="one" value="1" onclick="insert(1)">
-    <input type="button" id="two" value="2" onclick="insert(2)">
-    <input type="button" id="three" value="3" onclick="insert(3)">
-    <input type="button" id="four" value="4" onclick="insert(4)">
-    <input type="button" id="five" value="5" onclick="insert(5)">
-    <input type="button" id="six" value="6" onclick="insert(6)">
-    <input type="button" id="seven" value="7" onclick="insert(7)">
-    <input type="button" id="eight" value="8" onclick="insert(8)">
-    <input type="button" id="nine" value="9" onclick="insert(9)">
+    <input type="button" id="one" value="1" onclick="insert('1')">
+    <input type="button" id="two" value="2" onclick="insert('2')">
+    <input type="button" id="three" value="3" onclick="insert('3')">
+    <input type="button" id="four" value="4" onclick="insert('4')">
+    <input type="button" id="five" value="5" onclick="insert('5')">
+    <input type="button" id="six" value="6" onclick="insert('6')">
+    <input type="button" id="seven" value="7" onclick="insert('7')">
+    <input type="button" id="eight" value="8" onclick="insert('8')">
+    <input type="button" id="nine" value="9" onclick="insert('9')">
     <input type="button" id="zero" value="0">
     <input type="button" id="point" value=".">
 
     <script>
-        var all = '';
         var result1 = document.getElementById('result1');
+
+        var all = '';
+
+        restult1.innerText = all;
 
         // 숫자를 클릭하여 입력
         function insert(num) {
-            var result1 = document.getElementById('result1');
-            result1.value = result1.value + num;
+            console.log(result1.innerText);
+            result1.innerText = result.innerText + num;
+            // alert(num);
         }
 
         // 한 숫자씩 지우기
