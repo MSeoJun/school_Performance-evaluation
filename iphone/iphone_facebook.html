@@ -602,30 +602,35 @@
     </div>
     <!-- 하단 메뉴 -->
     <div class="bottom_menu">
-        <div class="bottom_active">
+        <<<<<<< HEAD <div class="bottom_active">
             <p class="icon-home"></p>
-        </div>
-        <div class="bottom_object">
-            <p class="icon-youtube-play"></p>
-        </div>
-        <div class="bottom_object">
-            <p class="icon-user"></p>
-        </div>
-        <div class="bottom_object">
-            <p class="icon-group"></p>
-        </div>
-        <div class="bottom_object">
-            <p class="icon-bell-alt"></p>
-        </div>
-        <div class="bottom_object">
-            <p class="icon-menu"></p>
-        </div>
     </div>
-    <!-- fixed 되어있는 하단 메뉴를 보기 위한 div -->
+    <div class="bottom_object">
+        <p class="icon-youtube-play"></p>
+    </div>
+    <div class="bottom_object">
+        <p class="icon-user"></p>
+    </div>
+    <div class="bottom_object">
+        <p class="icon-group"></p>
+    </div>
+    <div class="bottom_object">
+        <p class="icon-bell-alt"></p>
+    </div>
+    <div class="bottom_object">
+        <p class="icon-menu"></p>
+    </div>
+    </div>
+    <!-- ed 되어있는 하단 메뉴를 보기 위한 div -->
     <div class="bottom_blank">
     </div>
     <script>
-        // 스토리 사이드 스크롤 시 변화
+        //   하단 메뉴 활성화 / 비활성화
+        var active = document.getElementsByClassName('bottom_active');
+        //   클래스 및 아이디 변수
+        var bottom_object = document.getElementsByClassName('bottom_object');
+        // 시작하며 클래스 변경
+        bottom_object[0].className = 'bottom_active';
 
         // 가장 윗 라인 시간 스크립트
         var time = document.getElementsByClassName("time");
@@ -645,6 +650,31 @@
         var bottom_object = document.getElementsByClassName('bottom_object');
         for (var i = 0; i < bottom_object.length; i++) {
             console.log(bottom_object[i], i);
+        };
+        // 가장 윗 라인 시간 스크립트
+        var time = document.getElementsByClassName("time");
+        var date = new Date();
+        if (Number(date.getHours()) > 12) {
+            var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+            var hour = `오전${Number(date.getHours())}:`;
+        }
+        if (Number(date.getMinutes()) < 10) {
+            var minute = `0${date.getMinutes()}`;
+        } else {
+            var minute = date.getMinutes();
+        }
+        time[0].innerHTML = `${hour}${minute}`;
+
+        for (var i = 0; i < bottom_object.length; i++) {
+            bottom_object[i].addEventListener('click', () => {
+                console.log(i);
+
+                for (var i = 0; i < bottom_object.length; i++) {
+                    // console.log(i);
+                    // bottom_object[i].className = 'bottom_active';
+                }
+            });
         };
     </script>
 </body>
