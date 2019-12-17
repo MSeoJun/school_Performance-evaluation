@@ -13,6 +13,30 @@
       "src": "fontawesome"
     },
     {
+      "uid": "52177c3387cdac48d6ed18bebe84c34a",
+      "css": "headphones",
+      "code": 59395,
+      "src": "iconic"
+    },
+    {
+      "uid": "9a0873ae5167deefbf38061b7cddbe34",
+      "css": "bluetooth-b",
+      "code": 62100,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7222571caa5c15f83dcfd447c58d68d9",
+      "css": "search",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "0f99ab40ab0b4d64a74f2d0deeb03e42",
+      "css": "videocam",
+      "code": 59406,
+      "src": "fontawesome"
+    },
+    {
       "uid": "cd4bfdae4dc89b175ff49330ce29611a",
       "css": "wifi",
       "code": 61931,
@@ -25,22 +49,10 @@
       "src": "fontawesome"
     },
     {
-      "uid": "7222571caa5c15f83dcfd447c58d68d9",
-      "css": "search",
-      "code": 59392,
-      "src": "entypo"
-    },
-    {
       "uid": "51fb22f9ff9d7f60c95ef31e4c59502d",
       "css": "comment",
       "code": 62636,
       "src": "mfglabs"
-    },
-    {
-      "uid": "0f99ab40ab0b4d64a74f2d0deeb03e42",
-      "css": "videocam",
-      "code": 59406,
-      "src": "fontawesome"
     },
     {
       "uid": "3def559c3c39b8500882e02892b7daa8",
@@ -79,16 +91,16 @@
       "src": "elusive"
     },
     {
-      "uid": "ebb8fb741e0b3e794c90555e5f225adf",
-      "css": "bell",
-      "code": 61503,
-      "src": "mfglabs"
+      "uid": "671f29fa10dda08074a4c6a341bb4f39",
+      "css": "bell-alt",
+      "code": 61683,
+      "src": "fontawesome"
     },
     {
-      "uid": "2cfb3f2b46b34a1790aec0aa846297b6",
+      "uid": "c55fdf978f617992b43ee7cbaa6ef87e",
       "css": "menu",
-      "code": 59395,
-      "src": "entypo"
+      "code": 61448,
+      "src": "mfglabs"
     }
   ]
 }
