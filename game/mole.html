@@ -367,7 +367,9 @@
 
     <!-- 시작 버튼 -->
     <div class="btn-wrap" onclick="TimerStart(),start();">
-      <button type="button" class="start-btn">PRESS START</button>
+      <button type="button" class="start-btn" id="start-btn">
+        PRESS START
+      </button>
     </div>
     <script>
       // 제목 색 변화
@@ -415,6 +417,7 @@
       // 두더지가 나오는 함수
       function start() {
         setTimeout(() => {
+          document.getElementById("start-btn").style.display = "none";
           mole();
         }, 1000);
       }
