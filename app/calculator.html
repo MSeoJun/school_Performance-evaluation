@@ -95,6 +95,11 @@
         outline: none;
       }
 
+      #division:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
+
       #multiply {
         position: fixed;
         top: 43%;
@@ -109,6 +114,11 @@
         padding: 10px;
         cursor: pointer;
         outline: none;
+      }
+
+      #multiply:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
       }
 
       #minus {
@@ -127,6 +137,11 @@
         outline: none;
       }
 
+      #minus:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
+
       #plus {
         position: fixed;
         top: 70%;
@@ -143,6 +158,11 @@
         outline: none;
       }
 
+      #plus:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
+      }
+
       #equal {
         position: fixed;
         top: 84%;
@@ -157,6 +177,11 @@
         padding: 10px;
         cursor: pointer;
         outline: none;
+      }
+
+      #equal:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgb(226, 148, 3);
       }
 
       .num1 {
@@ -263,91 +288,95 @@
     </style>
 
     <script>
-      // 숫자를 클릭하여 입력
-      function num(num) {
-        var display = document.getElementById("display");
+          // 숫자를 클릭하여 입력
+          function num(num) {
+            var display = document.getElementById("display");
 
-        if (display.value == "0") {
-          display.value = "";
-        }
+            if (display.value == "0") {
+              display.value = "";
+            }
 
-        if (num == "=") {
-          document.getElementById("result").value = eval(display.value);
-          display.value = "";
-          document.getElementById("division").style.color = "white";
-          document.getElementById("division").style.backgroundColor = "orange";
-          document.getElementById("multiply").style.color = "white";
-          document.getElementById("multiply").style.backgroundColor = "orange";
-          document.getElementById("minus").style.color = "white";
-          document.getElementById("minus").style.backgroundColor = "orange";
-          document.getElementById("plus").style.color = "white";
-          document.getElementById("plus").style.backgroundColor = "orange";
-        }
+            if (num == "=") {
+              document.getElementById("result").value = eval(display.value);
+              display.value = "";
+              document.getElementById("division").style.color = "white";
+              document.getElementById("division").style.backgroundColor = "orange";
+              document.getElementById("multiply").style.color = "white";
+              document.getElementById("multiply").style.backgroundColor = "orange";
+              document.getElementById("minus").style.color = "white";
+              document.getElementById("minus").style.backgroundColor = "orange";
+              document.getElementById("plus").style.color = "white";
+              document.getElementById("plus").style.backgroundColor = "orange";
+            }
 
-        if (num == "/") {
-          document.getElementById("division").style.backgroundColor = "white";
-          document.getElementById("division").style.color = "orange";
-        }
+            if (num == "/") {
+              document.getElementById("division").style.backgroundColor = "white";
+              document.getElementById("division").style.color = "orange";
+            }
 
-        if (num == "*") {
-          document.getElementById("multiply").style.backgroundColor = "white";
-          document.getElementById("multiply").style.color = "orange";
-        }
+            if (num == "*") {
+              document.getElementById("multiply").style.backgroundColor = "white";
+              document.getElementById("multiply").style.color = "orange";
+            }
 
-        if (num == "-") {
-          document.getElementById("minus").style.backgroundColor = "white";
-          document.getElementById("minus").style.color = "orange";
-        }
+            if (num == "-") {
+              document.getElementById("minus").style.backgroundColor = "white";
+              document.getElementById("minus").style.color = "orange";
+            }
 
-        if (num == "+") {
-          document.getElementById("plus").style.backgroundColor = "white";
-          document.getElementById("plus").style.color = "orange";
-        }
+            if (num == "+") {
+              document.getElementById("plus").style.backgroundColor = "white";
+              document.getElementById("plus").style.color = "orange";
+            }
 
-        if (num == "=") {
-          document.getElementById("equal").style.backgroundColor = "white";
-          document.getElementById("equal").style.color = "orange";
-        }
+            if (num == "=") {
+              document.getElementById("equal").style.backgroundColor = "white";
+              document.getElementById("equal").style.color = "orange";
+            }
 
-        display.value += num;
+            display.value += num;
 
-        if (num == "=") {
-          //   display.value =
-          //     display.value.length != 1
-          //       ? display.value.substring(0, display.value.length - 1)
-          //       : "0";
-          document.getElementById("equal").style.color = "white";
-          document.getElementById("equal").style.backgroundColor = "orange";
-          var result = eval(display.value);
-          document.getElementById("result").value = result;
-        }
+            if (num == "=") {
+              //   display.value =
+              //     display.value.length != 1
+              //       ? display.value.substring(0, display.value.length - 1)
+              //       : "0";
+              document.getElementById("equal").style.color = "white";
+              document.getElementById("equal").style.backgroundColor = "orange";
+              var result = eval(display.value);
+              document.getElementById("result").value = result;
+            }
 
-        if (num == "<") {
-          display.value =
-            display.value.length != 1
-              ? display.value.substring(0, display.value.length - 2)
-              : "0";
-          if (display.value == "") {
-            display.value = "0";
+            if (num == "<") {
+              display.value =
+                display.value.length != 1
+                  ? display.value.substring(0, display.value.length - 2)
+                  : "0";
+              if (display.value == "") {
+                display.value = "0";
+      <<<<<<< HEAD
+                document.getElementById("result").value = "0";
+                document.getElementById("division").style.color = "white";
+                document.getElementById("division").style.backgroundColor = "orange";
+                document.getElementById("multiply").style.color = "white";
+                document.getElementById("multiply").style.backgroundColor = "orange";
+                document.getElementById("minus").style.color = "white";
+                document.getElementById("minus").style.backgroundColor = "orange";
+                document.getElementById("plus").style.color = "white";
+                document.getElementById("plus").style.backgroundColor = "orange";
+      =======
+      >>>>>>> 3cce5d4be8bb8319770ef91e084930356705a470
+              }
+            }
+
+            if (num == "a") {
+              display.value = "0";
+              document.getElementById("result").value = "0";
+            }
+
+            var result = eval(display.value);
+            document.getElementById("result").value = result;
           }
-        }
-
-        if (num == "a") {
-          display.value = "0";
-          document.getElementById("result").value = "0";
-          document.getElementById("division").style.color = "white";
-          document.getElementById("division").style.backgroundColor = "orange";
-          document.getElementById("multiply").style.color = "white";
-          document.getElementById("multiply").style.backgroundColor = "orange";
-          document.getElementById("minus").style.color = "white";
-          document.getElementById("minus").style.backgroundColor = "orange";
-          document.getElementById("plus").style.color = "white";
-          document.getElementById("plus").style.backgroundColor = "orange";
-        }
-
-        var result = eval(display.value);
-        document.getElementById("result").value = result;
-      }
     </script>
   </head>
 
