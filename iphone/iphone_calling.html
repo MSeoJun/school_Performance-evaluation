@@ -172,7 +172,7 @@
             color: white;
         }
 
-        #mute:hover {
+        #up:hover {
             background-color: white;
             color: black;
             border: 2px solid white;
@@ -199,6 +199,13 @@
             display: inline-block;
             font-size: 2rem;
             line-height: 14vh;
+            color: white;
+        }
+
+        #plus:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
         }
 
         #plus_title {
@@ -221,6 +228,13 @@
             display: inline-block;
             font-size: 2rem;
             line-height: 14vh;
+            color: white;
+        }
+
+        #cam:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
         }
 
         #cam_title {
@@ -243,6 +257,13 @@
             display: inline-block;
             font-size: 2rem;
             line-height: 14vh;
+            color: white;
+        }
+
+        #user:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
         }
 
         #user_title {
@@ -250,6 +271,124 @@
             position: fixed;
             top: 65%;
             right: 13%;
+            font-size: 13px;
+        }
+
+        #circle {
+            position: fixed;
+            top: 25%;
+            left: 38%;
+            border: 2px solid rgb(235, 204, 235);
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            line-height: 14vh;
+        }
+
+        #circle1 {
+            position: fixed;
+            top: 36%;
+            left: 45.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle2 {
+            position: fixed;
+            top: 36%;
+            left: 49.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle3 {
+            position: fixed;
+            top: 36%;
+            left: 53.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle4 {
+            position: fixed;
+            top: 38.5%;
+            left: 45.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle5 {
+            position: fixed;
+            top: 38.5%;
+            left: 49.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle6 {
+            position: fixed;
+            top: 38.5%;
+            left: 53.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle7 {
+            position: fixed;
+            top: 41%;
+            left: 45.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle8 {
+            position: fixed;
+            top: 41%;
+            left: 49.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle9 {
+            position: fixed;
+            top: 41%;
+            left: 53.5%;
+            background-color: white;
+            width: 2.5%;
+            height: 1.5vh;
+            border-radius: 100%;
+        }
+
+        #circle:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+        }
+
+        #circle_title {
+            color: white;
+            position: fixed;
+            top: 44%;
+            left: 44%;
             font-size: 13px;
         }
     </style>
@@ -273,6 +412,19 @@
         <p id="mute" class="icon-mute"></p>
         <p id="mute_title">소리 끔</p>
         <p id="up" class="icon-volume-up"></p>
+        <p id="circle"></p>
+        <div id="cir">
+            <div id="circle1" class="gg a1"></div>
+            <div id="circle2" class="gg a2"></div>
+            <div id="circle3" class="gg a3"></div>
+            <div id="circle4" class="gg a4"></div>
+            <div id="circle5" class="gg a5"></div>
+            <div id="circle6" class="gg a6"></div>
+            <div id="circle7" class="gg a7"></div>
+            <div id="circle8" class="gg a8"></div>
+            <div id="circle9" class="gg a9"></div>
+        </div>
+        <p id="circle_title">키패드</p>
         <p id="up_title">스피커</p>
         <p id="plus" class="icon-plus"></p>
         <p id="plus_title">통화 추가</p>
@@ -295,7 +447,19 @@
             back[0].style.display = "none";
         }, 1000);
 
-
+        // hover 시 점들 검게
+        var gg = document.getElementsByClassName('gg');
+        var circle = document.getElementById('circle');
+        circle.addEventListener('mouseover', () => {
+            for (var i = 0; i < gg.length; i++) {
+                gg[i].style.backgroundColor = 'black';
+            };
+        });
+        circle.addEventListener('mouseout', () => {
+            for (var i = 0; i < gg.length; i++) {
+                gg[i].style.backgroundColor = 'white';
+            };
+        });
         // 시간
         var time = document.getElementById("time");
         var date = new Date();
