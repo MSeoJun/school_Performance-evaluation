@@ -1,0 +1,11 @@
+
+.icon-volume-up:before { content: '\e800'; } /* '' */
+.icon-plus:before { content: '\e801'; } /* '' */
+.icon-signal:before { content: '\e802'; } /* '' */
+.icon-headphones:before { content: '\e803'; } /* '' */
+.icon-videocam:before { content: '\e804'; } /* '' */
+.icon-user:before { content: '\e805'; } /* '' */
+.icon-phone:before { content: '\e806'; } /* '' */
+.icon-mute:before { content: '\f131'; } /* '' */
+.icon-battery-2:before { content: '\f242'; } /* '' */
+.icon-bluetooth-b:before { content: '\f294'; } /* '' */

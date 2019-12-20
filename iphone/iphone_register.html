@@ -224,15 +224,17 @@
 <body>
     <h1 id="title">Apple ID 생성</h1>
     <div class="back"></div>
-    <input type="text" id="last" placeholder="성" autocomplete="off" required>
-    <input type="text" id="name" placeholder="이름" autocomplete="off" required>
-    <input type="text" id="birth" placeholder="0000-00-00" autocomplete="off" required>
-    <hr id="line" />
-    <input type="email" id="email" placeholder="name@example.com" autocomplete="off" required>
-    <input type="password" id="pw" placeholder="암호" autocomplete="off" required>
-    <h5 id="inp">※숫자와 문자를 포함한 6~12자리의 형태</h5>
-    <input type="password" id="pwok" placeholder="암호 확인" autocomplete="off" required>
-    <a href="./iphone_login.html"><input type="submit" id="ok" value="확인"></a>
+    <form action="./iphone_login.html" onsubmit="return check()">
+        <input type="text" id="last" placeholder="성" autocomplete="off" required pattern="^[가-힣]"
+            title="성을 형식에 맞게 작성해 주세요.">
+        <input type="text" id="name" placeholder="이름" autocomplete="off" required>
+        <input type="text" id="birth" placeholder="0000-00-00" autocomplete="off" required>
+        <hr id="line" />
+        <input type="email" id="email" placeholder="name@example.com" autocomplete="off" required>
+        <input type="password" id="pw" placeholder="암호" autocomplete="off" required>
+        <h5 id="inp">※숫자와 문자를 포함한 6~12자리의 형태</h5>
+        <input type="password" id="pwok" placeholder="암호 확인" autocomplete="off" required>
+        <input type="submit" id="ok" value="확인">
     </form>
 
     <script>
@@ -282,12 +284,12 @@
                 return false;
             }
 
-            if (!last.test($("#last").val())) {
-                alert("성 을 맞게 입력해주세요.");
-                $("#last").val("");
-                $("#last").focus();
-                return false;
-            }
+            // if (!last.test($("#last").val())) {
+            //     alert("성 을 맞게 입력해주세요.");
+            //     $("#last").val("");
+            //     $("#last").focus();
+            //     return false;
+            // }
 
             // 생일 유효성 검사
             if (!birth.test($("#birth").val())) {

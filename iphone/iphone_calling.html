@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../fontello/fontello-calling/css/fontello.css" />
+    <title>Iphone_main</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .blur {
+            position: fixed;
+            top: 0%;
+            height: 100vh;
+            width: 100%;
+            background-image: url("../img/iphoneback.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: blur(10px);
+            /* display: none; */
+        }
+
+        .call {
+            background-color: red;
+            position: fixed;
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            line-height: 14vh;
+            z-index: 1;
+            left: 39%;
+            top: 80%;
+        }
+
+        .call:hover {
+            background-color: rgb(230, 26, 11, 0.5);
+        }
+
+        .team {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.8rem;
+            left: 8%;
+            top: 0.5%;
+        }
+
+        .dater {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.8rem;
+            left: 17%;
+            top: 0.5%;
+        }
+
+        .time {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.8rem;
+            left: 40%;
+            top: 0.5%;
+        }
+
+        .percent {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            color: white;
+            font-weight: 400;
+            font-size: 0.7rem;
+            right: 11%;
+            top: 0.7%;
+        }
+
+        .cover {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .back {
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            height: 100vh;
+            top: 0%;
+            z-index: 100;
+            animation-name: display;
+            animation-duration: 1s;
+            animation-play-state: running;
+            animation-fill-mode: both;
+        }
+
+        @keyframes display {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        #name {
+            color: white;
+            position: fixed;
+            top: 5%;
+            left: 35%;
+            font-size: 30px;
+        }
+
+        /* 음소거 관련 */
+        #mute {
+            position: fixed;
+            top: 25%;
+            left: 7%;
+            border: 2px solid rgb(235, 204, 235);
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            line-height: 14vh;
+            color: white;
+        }
+
+        #mute:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+        }
+
+        #mute_title {
+            color: white;
+            position: fixed;
+            top: 44%;
+            left: 11.7%;
+            font-size: 13px;
+        }
+
+        /* 스피커 관련 */
+        #up {
+            position: fixed;
+            top: 25%;
+            right: 7%;
+            border: 2px solid rgb(235, 204, 235);
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            line-height: 14vh;
+            color: white;
+        }
+
+        #mute:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+        }
+
+        #up_title {
+            color: white;
+            position: fixed;
+            top: 44%;
+            right: 12.5%;
+            font-size: 13px;
+        }
+
+        /* 통화 추가 관련 */
+        #plus {
+            position: fixed;
+            top: 46%;
+            left: 7%;
+            border: 2px solid rgb(235, 204, 235);
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            line-height: 14vh;
+        }
+
+        #plus_title {
+            color: white;
+            position: fixed;
+            top: 65%;
+            left: 9.8%;
+            font-size: 13px;
+        }
+
+        #cam {
+            position: fixed;
+            top: 46%;
+            left: 38%;
+            border: 2px solid rgb(235, 204, 235);
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            line-height: 14vh;
+        }
+
+        #cam_title {
+            color: white;
+            position: fixed;
+            top: 65%;
+            left: 41.5%;
+            font-size: 13px;
+        }
+
+        #user {
+            position: fixed;
+            top: 46%;
+            right: 7%;
+            border: 2px solid rgb(235, 204, 235);
+            width: 24%;
+            height: 14vh;
+            border-radius: 100%;
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            line-height: 14vh;
+        }
+
+        #user_title {
+            color: white;
+            position: fixed;
+            top: 65%;
+            right: 13%;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body onresize="parent.resizeTo(300,550)" onload="parent.resizeTo(300,550)">
+    <div class="back"></div>
+    <div class="blur"></div>
+    <header>
+        <p class="icon-signal"></p>
+        <p class="team">SKT</p>
+        <p class="dater">LTE</p>
+        <p id="time" class="time"></p>
+        <p class="icon-bluetooth-b"></p>
+        <p class="icon-headphones"></p>
+        <p class="percent">45%</p>
+        <p class="icon-battery-2"></p>
+    </header>
+    <nav>
+        <p id="name">봉준호</p>
+        <p id="mute" class="icon-mute"></p>
+        <p id="mute_title">소리 끔</p>
+        <p id="up" class="icon-volume-up"></p>
+        <p id="up_title">스피커</p>
+        <p id="plus" class="icon-plus"></p>
+        <p id="plus_title">통화 추가</p>
+        <p id="cam" class="icon-videocam"></p>
+        <p id="cam_title">FaceTime</p>
+        <p id="user" class="icon-user"></p>
+        <p id="user_title">연락처</p>
+    </nav>
+    <article>
+        <div class="call">
+            <p class="icon-phone"></p>
+        </div>
+    </article>
+    <script>
+        var body = document.querySelector("body");
+
+        // 배경 하얀색으로 깜빡거리는 효과 없애기
+        var back = document.getElementsByClassName("back");
+        setTimeout(() => {
+            back[0].style.display = "none";
+        }, 1000);
+
+
+        // 시간
+        var time = document.getElementById("time");
+        var date = new Date();
+
+        // 시간 나타내기
+        if (Number(date.getHours()) > 12) {
+            var hour = `오후${Number(date.getHours()) - 12}:`;
+        } else {
+            var hour = `오전${Number(date.getHours())}:`;
+        }
+        if (Number(date.getMinutes()) < 10) {
+            var minute = `0${date.getMinutes()}`;
+        } else {
+            var minute = date.getMinutes();
+        }
+        time.innerHTML = `${hour}${minute}`;
+        // body.addEventListener('keypress', (e) => {
+        //     if (e.keyCode === 32) {
+        //         cover[0].style.backgroundColor = "rgba(255,255,255,0.8)";
+        //     }
+        // });
+    </script>
+</body>
+
+</html>

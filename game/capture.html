@@ -70,6 +70,8 @@
             position: fixed;
             top: 85%;
             left: 41.5%;
+            text-decoration: none;
+            color: black;
         }
     </style>
 </head>
@@ -85,7 +87,7 @@
         const desc = document.getElementById('desc');
         const best = document.getElementById('best');
         var back = document.getElementsByClassName("back");
-        desc.innerText = '게임을 시작하려면 스페이스바 를 눌러주세요!';
+        desc.innerText = '게임을 시작하려면 스페이스바를 눌러주세요!';
         localStorage.best ? best.innerText = `당신의 최고 반응 속도는?? : ${localStorage.best} ms` : best.innerText = ``;
         var start;
         var end;
