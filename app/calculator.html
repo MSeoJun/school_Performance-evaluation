@@ -296,7 +296,7 @@
       if (display.value == "0") {
         display.value = "";
       }
-
+      display.value += num;
       if (num == "=") {
         document.getElementById("result").value = eval(display.value);
         display.value = "";
@@ -311,37 +311,35 @@
       }
 
       if (num == "/") {
+        document.getElementById("result").value /= display.value;
         document.getElementById("division").style.backgroundColor = "white";
         document.getElementById("division").style.color = "orange";
+
+        display.value = "0";
       }
 
       if (num == "*") {
+        document.getElementById("result").value *= display.value;
         document.getElementById("multiply").style.backgroundColor = "white";
         document.getElementById("multiply").style.color = "orange";
+        display.value = "0";
       }
 
       if (num == "-") {
+        document.getElementById("result").value -= display.value;
         document.getElementById("minus").style.backgroundColor = "white";
         document.getElementById("minus").style.color = "orange";
+        display.value = "0";
       }
 
       if (num == "+") {
+        document.getElementById("result").value += display.value;
         document.getElementById("plus").style.backgroundColor = "white";
         document.getElementById("plus").style.color = "orange";
+        display.value = "0";
       }
 
       if (num == "=") {
-        document.getElementById("equal").style.backgroundColor = "white";
-        document.getElementById("equal").style.color = "orange";
-      }
-
-      display.value += num;
-
-      if (num == "=") {
-        //   display.value =
-        //     display.value.length != 1
-        //       ? display.value.substring(0, display.value.length - 1)
-        //       : "0";
         document.getElementById("equal").style.color = "white";
         document.getElementById("equal").style.backgroundColor = "orange";
         var result = eval(display.value);
@@ -349,10 +347,10 @@
       }
 
       if (num == "<") {
-        display.value =
-          display.value.length != 1
-            ? display.value.substring(0, display.value.length - 2)
-            : "0";
+        // display.value =
+        //   display.value.length != 1
+        //     ? display.value.substring(0, display.value.length - 2)
+        //     : "0";
         if (display.value == "") {
           display.value = "0";
         }

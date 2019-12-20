@@ -1,20 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- (false 기준) oncontextmenu는 우클릭이 안되게 하는거고, onselectstart는 드래그가 안되게 하는거다.-->
+<html oncontextmenu="return false" onselectstart="return false">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
+  <meta charset="utf-8" />
+  <title>아이폰 계산기</title>
+
+
   <script>
-    const url = "./game/mole.html";
-    const name = "IPHONE";
-    const option =
-      "width = 300, height = 500 , top = 100 , left = 100 , scrollbars = no , location = 0 , toolbars = 0 , status = no,menubar=no ,resizable=0";
-    window.open(url, name, option);
-    self.close();
+    // 숫자를 클릭하여 입력
+    function num(num) {
+      var display = document.getElementById("display");
+
+      if (display.value == "0") {
+        display.value = "";
+      }
+      display.value += num;
+      if (num == "=") {
+        document.getElementById("result").value = eval(display.value);
+        display.value = "";
+        document.getElementById("division").style.color = "white";
+        document.getElementById("division").style.backgroundColor = "orange";
+        document.getElementById("multiply").style.color = "white";
+        document.getElementById("multiply").style.backgroundColor = "orange";
+        document.getElementById("minus").style.color = "white";
+        document.getElementById("minus").style.backgroundColor = "orange";
+        document.getElementById("plus").style.color = "white";
+        document.getElementById("plus").style.backgroundColor = "orange";
+      }
+
+      if (num == "/") {
+        document.getElementById("result").value /= display.value;
+        document.getElementById("division").style.backgroundColor = "white";
+        document.getElementById("division").style.color = "orange";
+
+        display.value = "0";
+      }
+
+      if (num == "*") {
+        document.getElementById("result").value *= display.value;
+        document.getElementById("multiply").style.backgroundColor = "white";
+        document.getElementById("multiply").style.color = "orange";
+        display.value = "0";
+      }
+
+      if (num == "-") {
+        document.getElementById("result").value -= display.value;
+        document.getElementById("minus").style.backgroundColor = "white";
+        document.getElementById("minus").style.color = "orange";
+        display.value = "0";
+      }
+
+      if (num == "+") {
+        document.getElementById("result").value += display.value;
+        document.getElementById("plus").style.backgroundColor = "white";
+        document.getElementById("plus").style.color = "orange";
+        display.value = "0";
+      }
+
+      if (num == "=") {
+        document.getElementById("equal").style.color = "white";
+        document.getElementById("equal").style.backgroundColor = "orange";
+        var result = eval(display.value);
+        document.getElementById("result").value = result;
+      }
+
+      if (num == "<") {
+        // display.value =
+        //   display.value.length != 1
+        //     ? display.value.substring(0, display.value.length - 2)
+        //     : "0";
+        if (display.value == "") {
+          display.value = "0";
+        }
+      }
+
+      if (num == "a") {
+        display.value = "0";
+        document.getElementById("result").value = "0";
+      }
+
+      var result = eval(display.value);
+      document.getElementById("result").value = result;
+    }
   </script>
 </head>
+
+<body>
+  <input class="display" id="display" disabled />
+  <input class="display" id="result" disabled />
+  <input type="button" id="remove" value="AC" onclick="num('a')" />
+  <input type="button" id="pm" value="<" onclick="num('<')" />
+  <input type="button" id="percent" value="%" onclick="num('%')" />
+  <input type="button" id="division" value="÷" onclick="num('/')" />
+  <input type="button" id="multiply" value="×" onclick="num('*')" />
+  <input type="button" id="minus" value="-" onclick="num('-')" />
+  <input type="button" id="plus" value="+" onclick="num('+')" />
+  <input type="button" id="equal" value="=" onclick="num('=')" />
+  <input type="button" id="num" class="num1" value="1" onclick="num('1')" />
+  <input type="button" id="num" class="num2" value="2" onclick="num('2')" />
+  <input type="button" id="num" class="num3" value="3" onclick="num('3')" />
+  <input type="button" id="num" class="num4" value="4" onclick="num('4')" />
+  <input type="button" id="num" class="num5" value="5" onclick="num('5')" />
+  <input type="button" id="num" class="num6" value="6" onclick="num('6')" />
+  <input type="button" id="num" class="num7" value="7" onclick="num('7')" />
+  <input type="button" id="num" class="num8" value="8" onclick="num('8')" />
+  <input type="button" id="num" class="num9" value="9" onclick="num('9')" />
+  <input type="button" id="num" class="num0" value="0" onclick="num('0')" />
+  <input type="button" id="point" value="." onclick="num('.')" />
 </body>
 
 </html>

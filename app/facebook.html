@@ -113,6 +113,8 @@
 
         #right {
             margin-right: 1rem;
+            cursor: default;
+            color: black;
         }
 
         .facebook_top {
@@ -452,7 +454,9 @@
     <!-- 페이스북 로고 및 검색 대화 창 -->
     <div class="facebook_top">
         <p class="top-line main">facebook</p>
-        <p id="right" class="top-line sup icon-comment"></p>
+        <a href="../app/messenger.html">
+            <p id="right" class="top-line sup icon-comment"></p>
+        </a>
         <p class="top-line sup icon-search"></p>
     </div>
     <!-- 프로필 과 나의 상태 -->
@@ -602,7 +606,7 @@
     </div>
     <!-- 하단 메뉴 -->
     <div class="bottom_menu">
-        <div class="bottom_active">
+        <div class="bottom_object">
             <p class="icon-home"></p>
         </div>
         <div class="bottom_object">
@@ -646,11 +650,13 @@
             var minute = date.getMinutes();
         }
         time[0].innerHTML = `${hour}${minute}`;
-        //   클래스 및 아이디 변수
-        var bottom_object = document.getElementsByClassName('bottom_object');
-        for (var i = 0; i < bottom_object.length; i++) {
+        //   클래스 및 아이디 변수        
+        for (var i = bottom_object.length - 1; i >= 0; i--) {
             console.log(bottom_object[i], i);
         };
+        bottom_object[0].addEventListener('click', () => {
+            bottom_object[0].className = "bottom_active";
+        });
         // 가장 윗 라인 시간 스크립트
         var time = document.getElementsByClassName("time");
         var date = new Date();
@@ -666,16 +672,16 @@
         }
         time[0].innerHTML = `${hour}${minute}`;
 
-        for (var i = 0; i < bottom_object.length; i++) {
-            bottom_object[i].addEventListener('click', () => {
-                console.log(i);
+        // for (var i = 0; i < bottom_object.length; i++) {
+        //     bottom_object[i].addEventListener('click', () => {
+        //         console.log(i);
 
-                for (var i = 0; i < bottom_object.length; i++) {
-                    // console.log(i);
-                    // bottom_object[i].className = 'bottom_active';
-                }
-            });
-        };
+        //         for (var i = 0; i < bottom_object.length; i++) {
+        //             // console.log(i);
+        //             // bottom_object[i].className = 'bottom_active';
+        //         }
+        //     });
+        // };
     </script>
 </body>
 

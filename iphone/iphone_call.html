@@ -287,139 +287,144 @@
     <p id="b9" class="nump right thirdline">V W X</p>
     <div id="special2" class="num right fourthline">#</div>
     <div id="remove" onclick="remove2()" class="num right fifthline remove">
-      << </div> </article> <script>
-        var press_call = new Audio();
-        press_call.src = "../sound/call_board.mp3";
-        var back = document.getElementsByClassName("back");
-        var body = document.querySelector("body");
-        var add_num = document.getElementById("add_num");
-        var remove = document.getElementById("remove");
-        var number = document.getElementById("number");
-        var n0 = document.getElementById("n0");
-        var n1 = document.getElementById("n1");
-        var n2 = document.getElementById("n2");
-        var n3 = document.getElementById("n3");
-        var n4 = document.getElementById("n4");
-        var n5 = document.getElementById("n5");
-        var n6 = document.getElementById("n6");
-        var n7 = document.getElementById("n7");
-        var n8 = document.getElementById("n8");
-        var n9 = document.getElementById("n9");
-        var b0 = document.getElementById("b0");
-        var b2 = document.getElementById("b2");
-        var b3 = document.getElementById("b3");
-        var b4 = document.getElementById("b4");
-        var b5 = document.getElementById("b5");
-        var b6 = document.getElementById("b6");
-        var b7 = document.getElementById("b7");
-        var b8 = document.getElementById("b8");
-        var b9 = document.getElementById("b9");
-        var special1 = document.getElementById("special1");
-        var special2 = document.getElementById("special2");
+    </div>
+  </article>
+  <script>
+    var press_call = new Audio();
+    press_call.src = "../sound/call_board.mp3";
+    var back = document.getElementsByClassName("back");
+    var body = document.querySelector("body");
+    var add_num = document.getElementById("add_num");
+    var remove = document.getElementById("remove");
+    var number = document.getElementById("number");
+    var n0 = document.getElementById("n0");
+    var n1 = document.getElementById("n1");
+    var n2 = document.getElementById("n2");
+    var n3 = document.getElementById("n3");
+    var n4 = document.getElementById("n4");
+    var n5 = document.getElementById("n5");
+    var n6 = document.getElementById("n6");
+    var n7 = document.getElementById("n7");
+    var n8 = document.getElementById("n8");
+    var n9 = document.getElementById("n9");
+    var b0 = document.getElementById("b0");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+    var b4 = document.getElementById("b4");
+    var b5 = document.getElementById("b5");
+    var b6 = document.getElementById("b6");
+    var b7 = document.getElementById("b7");
+    var b8 = document.getElementById("b8");
+    var b9 = document.getElementById("b9");
+    var special1 = document.getElementById("special1");
+    var special2 = document.getElementById("special2");
+    setTimeout(() => {
+      back[0].style.display = "none";
+    }, 1000);
+    // 빠져나가게 할 때 사용할 이벤트리스너
+    body.addEventListener("keypress", () => { });
+    const remove2 = () => {
+      var char = number.innerText;
+      var char2 = char.slice(0, -1);
+      number.innerText = char2;
+      if (number.innerText.length == 0) {
+        remove.style.animationName = "display";
+        add_num.style.animationName = "display";
         setTimeout(() => {
-          back[0].style.display = "none";
-        }, 1000);
-        // 빠져나가게 할 때 사용할 이벤트리스너
-        body.addEventListener("keypress", () => { });
-        const remove2 = () => {
-          var char = number.innerText;
-          var char2 = char.slice(0, -1);
-          number.innerText = char2;
-          if (number.innerText.length == 0) {
-            remove.style.animationName = "display";
-            add_num.style.animationName = "display";
-            setTimeout(() => {
-              add_num.style.animationName = "no_display";
-              add_num.style.display = "none";
-              remove.style.animationName = "no_display";
-              remove.style.display = "none";
-            }, 500);
-          }
-        };
-        const remove3 = () => {
-          if (number.innerText.length >= 1) {
-            remove.style.display = "inline-block";
-            add_num.style.display = "inline-block";
-          }
-          if (number.innerText.length == 3) {
-            number.innerText = `${number.innerText}-`;
-          }
-          if (number.innerText.length == 8) {
-            number.innerText = `${number.innerText}-`;
-          }
-        };
-        n0.addEventListener("click", () => {
-          number.innerText = `${number.innerText}0`;
-          remove3();
-          this.press_call.play();
-        });
-        n1.addEventListener("click", () => {
-          number.innerText = `${number.innerText}1`;
-          remove3();
-          this.press_call.play();
-        });
-        n2.addEventListener("click", () => {
-          number.innerText = `${number.innerText}2`;
-          remove3();
-          this.press_call.play();
-        });
-        n3.addEventListener("click", () => {
-          number.innerText = `${number.innerText}3`;
-          remove3();
-          this.press_call.play();
-        });
-        n4.addEventListener("click", () => {
-          number.innerText = `${number.innerText}4`;
-          remove3();
-          this.press_call.play();
-        });
-        n5.addEventListener("click", () => {
-          number.innerText = `${number.innerText}5`;
-          remove3();
-          this.press_call.play();
-        });
-        n6.addEventListener("click", () => {
-          number.innerText = `${number.innerText}6`;
-          remove3();
-          this.press_call.play();
-        });
-        n7.addEventListener("click", () => {
-          number.innerText = `${number.innerText}7`;
-          remove3();
-          this.press_call.play();
-        });
-        n8.addEventListener("click", () => {
-          number.innerText = `${number.innerText}8`;
-          remove3();
-          this.press_call.play();
-        });
-        n9.addEventListener("click", () => {
-          number.innerText = `${number.innerText}9`;
-          remove3();
-          this.press_call.play();
-        });
-        special1.addEventListener("click", () => {
-          number.innerText = `${number.innerText}*`;
-          remove3();
-          this.press_call.play();
-        });
-        special2.addEventListener("click", () => {
-          number.innerText = `${number.innerText}#`;
-          remove3();
-          this.press_call.play();
-        });
-        b0.addEventListener("click", () => {
-          number.innerText = `${number.innerText}0`;
-          remove3();
-          this.press_call.play();
-        });
-        var time = document.getElementById("time");
-        var date = new Date();
-        if (Number(date.getHours()) > 12) {
-          var hour = `오후${Number(date.getHours()) - 12}:`;
-        } else {
-          var hour = `오전${Number(date.getHours())}:`;
-        }
-        if (Number(date.getMinutes()) < 10) { var minute = `0${date.getMinutes()}`; } else {
-          var minute = date.getMinutes();
-        } time.innerHTML = `${hour}${minute}`; </script> </body> </html>
+          add_num.style.animationName = "no_display";
+          add_num.style.display = "none";
+          remove.style.animationName = "no_display";
+          remove.style.display = "none";
+        }, 500);
+      }
+    };
+    const remove3 = () => {
+      if (number.innerText.length >= 1) {
+        remove.style.display = "inline-block";
+        add_num.style.display = "inline-block";
+      }
+      if (number.innerText.length == 3) {
+        number.innerText = `${number.innerText}-`;
+      }
+      if (number.innerText.length == 8) {
+        number.innerText = `${number.innerText}-`;
+      }
+    };
+    n0.addEventListener("click", () => {
+      number.innerText = `${number.innerText}0`;
+      remove3();
+      this.press_call.play();
+    });
+    n1.addEventListener("click", () => {
+      number.innerText = `${number.innerText}1`;
+      remove3();
+      this.press_call.play();
+    });
+    n2.addEventListener("click", () => {
+      number.innerText = `${number.innerText}2`;
+      remove3();
+      this.press_call.play();
+    });
+    n3.addEventListener("click", () => {
+      number.innerText = `${number.innerText}3`;
+      remove3();
+      this.press_call.play();
+    });
+    n4.addEventListener("click", () => {
+      number.innerText = `${number.innerText}4`;
+      remove3();
+      this.press_call.play();
+    });
+    n5.addEventListener("click", () => {
+      number.innerText = `${number.innerText}5`;
+      remove3();
+      this.press_call.play();
+    });
+    n6.addEventListener("click", () => {
+      number.innerText = `${number.innerText}6`;
+      remove3();
+      this.press_call.play();
+    });
+    n7.addEventListener("click", () => {
+      number.innerText = `${number.innerText}7`;
+      remove3();
+      this.press_call.play();
+    });
+    n8.addEventListener("click", () => {
+      number.innerText = `${number.innerText}8`;
+      remove3();
+      this.press_call.play();
+    });
+    n9.addEventListener("click", () => {
+      number.innerText = `${number.innerText}9`;
+      remove3();
+      this.press_call.play();
+    });
+    special1.addEventListener("click", () => {
+      number.innerText = `${number.innerText}*`;
+      remove3();
+      this.press_call.play();
+    });
+    special2.addEventListener("click", () => {
+      number.innerText = `${number.innerText}#`;
+      remove3();
+      this.press_call.play();
+    });
+    b0.addEventListener("click", () => {
+      number.innerText = `${number.innerText}0`;
+      remove3();
+      this.press_call.play();
+    });
+    var time = document.getElementById("time");
+    var date = new Date();
+    if (Number(date.getHours()) > 12) {
+      var hour = `오후${Number(date.getHours()) - 12}:`;
+    } else {
+      var hour = `오전${Number(date.getHours())}:`;
+    }
+    if (Number(date.getMinutes()) < 10) { var minute = `0${date.getMinutes()}`; } else {
+      var minute = date.getMinutes();
+    } time.innerHTML = `${hour}${minute}`; </script>
+</body>
+
+</html>
