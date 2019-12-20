@@ -354,8 +354,17 @@
     <div id="hole3">
       <img class="mole" id="mole3" src="../img/mole.png" />
     </div>
+<<<<<<< HEAD
+
+    <!-- 시작 버튼 -->
+    <div class="btn-wrap" onclick="TimerStart(),start();">
+      <button type="button" class="start-btn" id="start-btn">
+        PRESS START
+      </button>
+=======
     <div id="hole4">
       <img class="mole" id="mole4" src="../img/mole.png" />
+>>>>>>> 3cce5d4be8bb8319770ef91e084930356705a470
     </div>
     <div id="hole5">
       <img class="mole" id="mole5" src="../img/mole.png" />
@@ -488,6 +497,7 @@
         }, 0);
       } else {
         setTimeout(() => {
+          document.getElementById("start-btn").style.display = "none";
           mole();
         }, 700);
       }
