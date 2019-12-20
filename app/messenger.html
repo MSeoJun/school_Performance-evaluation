@@ -132,7 +132,6 @@
         .top_story {
             width:100%;
             height:20vh;
-            border:1px solid red;
             overflow:auto;
             white-space: nowrap;
         }
@@ -142,6 +141,7 @@
             font-weight: lighter;
             transform: translate(18%,-15%);
         }
+        /* 나의 프로필 */
         .story_back {
             width:18%;
             height:11vh;
@@ -150,14 +150,121 @@
             background-color: rgba(0,0,0,0.05);
             display: inline-block;
         }
+        /* 다른 사용자 스토리 */
+        .story_other_back {
+            width:160%;
+            height:11vh;
+            border-radius: 100%;
+            transform: translate(30%,15%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+        /* 문서준 Background-image */
+        .seojun {
+            background-image: url('../img/seojun_intro.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 문서준 두 번째 Background-image */
+        .seojun2 {
+            background-image: url('../img/seojun.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 김우빈 Background-image */
+        .woobin {
+            background-image: url('../img/woobin_intro.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 김우빈 두 번째 Background-image */
+        .woobin2 {
+            background-image: url('../img/woobin.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 김영훈 Background-image */
+        .yunghoon {
+            background-image: url('../img/yunghoon_intro.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 김현준 Background-image */
+        .hyunjun {
+            background-image: url('../img/hyunjun.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* 펭수 Background-image */
+        .pengsu {
+            background-image: url('../img/pengsu.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         /* 스토리 이름 */
         .story_name {
             font-size: .5rem;
             transform: translate(10%,0%);
         }
-        /* 두 번째 스토리부터 간격 */
+        /* 다른 사용자 스토리 이름 */
+        .story_other_name {
+            font-size: .5rem;
+            transform: translate(85%,90%);
+        }
+        /* 두 번째 간격 */
+        .story_second {
+            margin-left:.7rem;
+            display: inline-block;
+        }
+        /* 세 번째 스토리부터 간격 */
         .story_after {
-            margin-left:1rem;
+            margin-left:2rem;
+            display: inline-block;
+        }
+        /* 메시지 */
+        .message {
+            width:100%;
+            height:12vh;
+            float: left;
+        }
+        /* 메시지 프로필 이미지 */
+        .message_profile {
+            width:17%;
+            height:10vh;
+            border-radius: 100%;
+            margin-top: 4px;
+            margin-left: 5px;
+            float:left;
+        }
+        /* 메시지 대화명 이름 등 */
+        .message_detail {
+            float: left;
+            margin-top: 10px;
+        }
+        /* 메시지 이름 */
+        .message_name {
+            display: block;
+        }
+        /* 메시지 대화내용 */
+        .message_message {
+            float:left;
+            font-size: 10px;
+            color: gray;
+        }
+        /* 메시지 현재활동중 */
+        .message_active {
+            width:4%;
+            height:2vh;
+            background-color: rgb(41, 78, 245);
+            float:right;
+            border-radius: 100%;
+            margin-top: 15px;
+            margin-right: 4px;
+        }
+        /* 메시지 hover */
+        .message:hover {
+            background-color: rgba(255,255,255,0.1);
         }
     </style>
 
@@ -195,26 +302,81 @@
             <p class="story_profile">+</p>
             <p class="story_name">내스토리</p>
         </div>
-        <div class="story_back story_after">
-            <p class="story_profile">+</p>
-            <p class="story_name">내스토리</p>
+        <div class="story_second">
+            <div class="seojun story_other_back"></div>
+            <p class="story_other_name">문서준</p>
         </div>
-        <div class="story_back story_after">
-            <p class="story_profile">+</p>
-            <p class="story_name">내스토리</p>
+        <div class="story_after">
+            <div class="yunghoon story_other_back"></div>
+            <p class="story_other_name">김영훈</p>
         </div>
-        <div class="story_back story_after">
-            <p class="story_profile">+</p>
-            <p class="story_name">내스토리</p>
+        <div class="story_after">
+            <div class="woobin story_other_back"></div>
+            <p class="story_other_name">김우빈</p>
         </div>
-        <div class="story_back story_after">
-            <p class="story_profile">+</p>
-            <p class="story_name">내스토리</p>
+        <div class="story_after">
+            <div class="hyunjun story_other_back"></div>
+            <p class="story_other_name">김현준</p>
         </div>
-        <div class="story_back story_after">
-            <p class="story_profile">+</p>
-            <p class="story_name">내스토리</p>
+    </div>
+    <!-- 메시지 -->
+    <div class="message" onmouseover="hover(0)" onmouseout="mouseout(0)">
+        <div class="message_profile yunghoon"></div>
+        <div class="message_detail">
+            <p class="message_name">김영훈</p>
+            <p class="message_message">회원님: 아니 페메보라고 ㅅㅂ년아 ．오전 9:39</p>
         </div>
+        <div class="message_active"></div>
+    </div>
+    <!-- 메시지2 -->
+    <div class="message" onmouseover="hover(1)" onmouseout="mouseout(1)">
+        <div class="message_profile seojun"></div>
+        <div class="message_detail">
+            <p class="message_name">문서준</p>
+            <p class="message_message">회원님: 페메를 확인해주세요 ．오전 9:39</p>
+        </div>
+        <div class="message_active"></div>
+    </div>
+    <!-- 메시지3 -->
+    <div class="message" onmouseover="hover(2)" onmouseout="mouseout(2)">
+        <div class="message_profile hyunjun"></div>
+        <div class="message_detail">
+            <p class="message_name">김현준</p>
+            <p class="message_message">회원님: 내일 몇시에 만날꺼야?? ．오전 9:39</p>
+        </div>
+        <div class="message_active"></div>
+    </div>
+    <div class="message" onmouseover="hover(3)" onmouseout="mouseout(3)">
+        <div class="message_profile pengsu"></div>
+        <div class="message_detail">
+            <p class="message_name">박펭수</p>
+            <p class="message_message">회원님: 손흔들기 받아주세요. ．오전 9:39</p>
+        </div>
+        <div class="message_active"></div>
+    </div>
+    <div class="message" onmouseover="hover(4)" onmouseout="mouseout(4)">
+        <div class="message_profile woobin"></div>
+        <div class="message_detail">
+            <p class="message_name">김우빈</p>
+            <p class="message_message">회원님: 오빠 너무 잘생겼어요 ㅜ ．오전 9:39</p>
+        </div>
+        <div class="message_active"></div>
+    </div>
+    <div class="message" onmouseover="hover(5)" onmouseout="mouseout(5)">
+        <div class="message_profile woobin2"></div>
+        <div class="message_detail">
+            <p class="message_name">차은우</p>
+            <p class="message_message">회원님: 오빠 너무 잘생겼어요 ㅜ ．오전 9:39</p>
+        </div>
+        <div class="message_active"></div>
+    </div>
+    <div class="message" onmouseover="hover(6)" onmouseout="mouseout(6)">
+        <div class="message_profile seojun2"></div>
+        <div class="message_detail">
+            <p class="message_name">하정우</p>
+            <p class="message_message">회원님: 오빠ㅜㅜㅜㅜ ．오전 9:39</p>
+        </div>
+        <div class="message_active"></div>
     </div>
     <script>
         // 가장 윗 라인 시간 스크립트
@@ -236,6 +398,20 @@
         setTimeout(() => {
             start[0].style.display = "none";
         }, 1000);
+        // 페메 hover
+        var message = document.getElementsByClassName('message');
+        // for(var i =0; i<message.length; i++) {
+        //     message[i].addEventListener('mouseover',(e) => {
+        //         // e.style.backgroundColor='gray';
+        //         // message[i].style.backgroundColor='gray';
+        //     });
+        // }
+        var hover = (e) => {
+            message[e].style.opacity='0.5';
+        }
+        var mouseout = (e) => {
+            message[e].style.opacity='1';
+        }
     </script>
 </body>
 </html>
